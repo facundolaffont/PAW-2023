@@ -5,5 +5,35 @@
     <meta charset="utf-8">
 </head>
 <body>
+    <main>
+        <section>
+            <h1>Contacto</h1>
+            <p>Las consultas telefónicas se realizan a los siguientes números:</p>
+            <ul>
+                <li>0800-333-2548 (Turnos).</li>
+                <li>0800-235-3856 (Urgencias).</li>
+                <li>0800-233-5869 (Administración).</li>
+                <li>0800-223-8468 (Proveedores).</li>
+            </ul>
+        </section>
+        <hr>
+        <section>
+            <p>También puede consultarnos utilizando el siguiente formulario:</p>
+            <form
+                accept-charset="utf-8"
+                name="form-contacto"
+                autocomplete="on"
+                action="/contacto.cgi"
+                method="post"
+                target="_blank"
+            >
+                <p><label>Nombre <input type="text" alt="Campo de texto 'Nombre'"></label></p>
+                <p><label>Teléfono <input type="tel" alt="Campo de text 'Teléfono'"></label></p>
+                <p><label>Mail <input type="email" alt="Campo de texto 'Mail'"></label></p>
+                <p><label>Consulta <textarea type="text" alt="Campo de text 'Consulta'"></textarea></p>
+                <p><input type="submit" value="Enviar" height="500" alt="Botón 'Enviar'"></p>
+            </form>
+        </section>
+    </main>
 </body>
 </html>

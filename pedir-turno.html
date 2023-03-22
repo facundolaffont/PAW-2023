@@ -5,26 +5,96 @@
     <meta charset="utf-8">
 </head>
 <body>
-    <h1>Solicitar un turno</h1>
-    <form
-        accept-charset="utf-8"
-        name="form-pedir-turno"
-        autocomplete="on"
-        action="/turno-solicitado.cgi"
-        method="post"
-        target="_blank"
-    >
-        <p><label>Especialidad <input type="text"></label></p>
-        <p><label>Profesional <input type="text"></label></p>
-        <p><label>Turno <input type="text"></label></p>
-        <p><label>Paciente <input type="text"></label></p>
-        <p><label>Nombre <input type="text" disabled></label></p>
-        <p><label>Apellido <input type="text" disabled></label></p>
-        <p><label>Edad <input type="text" disabled></label></p>
-        <p>
-            <input type="submit" value="Solicitar">
-            <input type="reset" value="Limpiar">
-        </p>
-    </form>
+    <main>
+        <h1>Solicitar un turno</h1>
+        <form
+            accept-charset="utf-8"
+            name="form-pedir-turno"
+            action="/turno-solicitado.cgi"
+            method="post"
+            target="_blank"
+        >
+            <p>
+                <label>Servicio
+                    <select size=1 required alt="Campo de selección 'Servicio'">
+                        <option>Alergología e inmunología</option>
+                        <option>Anestesiología</option>
+                        <option>Angiología y cirugía vascular</option>
+                        <option>Bioquímica clínica</option>
+                        <option>Cardiología</option>
+                        <option>Cirugía cardiovascular</option>
+                        <option>Cirugía de la mano</option>
+                        <option>Cirugía general</option>
+                        <option>Cirugía maxilofacial</option>
+                        <option>Cirugía pediátrica</option>
+                        <option>Cirugía plástica y reconstructiva</option>
+                        <option>Cirugía torácica</option>
+                        <option>Citopatología</option>
+                        <option>Dermatología</option>
+                        <option>Dermatología pediátrica</option>
+                        <option>Diagnóstico por imagen</option>
+                        <option>Endocrinología</option>
+                        <option>Endoscopia</option>
+                        <option>Epidemiología</option>
+                        <option>Farmacología clínica</option>
+                        <option>Gastroenterología</option>
+                        <option>Genética médica</option>
+                        <option>Geriatría</option>
+                        <option>Ginecología oncológica</option>
+                        <option>Hematología</option>
+                        <option>Hematología y oncología pediátrica</option>
+                        <option>Infectología</option>
+                        <option>Inmunohematología y transfusión</option>
+                        <option>Medicina crítica y cuidados intensivos</option>
+                        <option>Medicina de emergencia</option>
+                        <option>Medicina del deporte</option>
+                        <option>Medicina del sueño</option>
+                        <option>Medicina del trabajo</option>
+                        <option>Medicina del viajero</option>
+                        <option>Medicina familiar y comunitaria</option>
+                        <option>Medicina interna</option>
+                        <option>Medicina nuclear</option>
+                        <option>Medicina paliativa</option>
+                        <option>Nefrología</option>
+                        <option>Neumología</option>
+                        <option>Neurocirugía</option>
+                        <option>Neurofisiología clínica</option>
+                        <option>Neurología</option>
+                        <option>Neuropsicología</option>
+                        <option>Nutrición clínica</option>
+                        <option>Obstetricia y ginecología</option>
+                        <option>Odontología</option>
+                        <option>Oftalmología</option>
+                        <option>Oncología</option>
+                        <option>Ortopedia y traumatología</option>
+                        <option>Otorrinolaringología</option>
+                        <option>Patología</option>
+                        <option>Patología forense</option>
+                        <option>Pediatría</option>
+                        <option>Psicología clínica</option>
+                        <option>Psiquiatría</option>
+                        <option>Radiología</option>
+                        <option>Rehabilitación</option>
+                        <option>Reumatología</option>
+                        <option>Toxicología médica</option>
+                        <option>Traumatología deportiva</option>
+                        <option>Urgencias médicas</option>
+                        <option>Urología</option>
+                        <option>Venereología</option>
+                    </select>
+                </label>
+            </p>
+            <p><label>Profesional <input type="text" alt="Campo de texto 'Profesional'"></label></p>
+            <p><label>Turno <input type="text" alt="Campo de texto 'Turno'"></label></p>
+            <p><label>Paciente <input type="text" alt="Campo de texto 'Paciente'"></label></p>
+            <p><label>Nombre <input type="text" alt="Campo de texto 'Nombre'" disabled></label></p>
+            <p><label>Apellido <input type="text" alt="Campo de texto 'Apellido'" disabled></label></p>
+            <p><label>Edad <input type="text" alt="Campo de texto 'Edad'" disabled></label></p>
+            <p>
+                <input type="submit" value="Solicitar" alt="Botón 'Solicitar'">
+                <input type="reset" value="Limpiar" alt="Botón 'Limpiar'">
+            </p>
+        </form>
+    </main>
 </body>
 </html>
