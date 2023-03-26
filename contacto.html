@@ -1,39 +1,36 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang=es>
 <head>
     <title>PAW Medical - Contacto</title>
-    <meta charset="utf-8">
+    <meta charset=utf-8>
 </head>
 <body>
-    <main>
-        <section>
-            <h1>Contacto</h1>
-            <p>Las consultas telefónicas se realizan a los siguientes números:</p>
-            <ul>
-                <li>0800-333-2548 (Turnos).</li>
-                <li>0800-235-3856 (Urgencias).</li>
-                <li>0800-233-5869 (Administración).</li>
-                <li>0800-223-8468 (Proveedores).</li>
-            </ul>
-        </section>
-        <hr>
-        <section>
-            <p>También puede consultarnos utilizando el siguiente formulario:</p>
-            <form
-                accept-charset="utf-8"
-                name="form-contacto"
-                autocomplete="on"
-                action="/contacto.cgi"
-                method="post"
-                target="_blank"
-            >
-                <p><label>Nombre <input type="text" alt="Campo de texto 'Nombre'"></label></p>
-                <p><label>Teléfono <input type="tel" alt="Campo de text 'Teléfono'"></label></p>
-                <p><label>Mail <input type="email" alt="Campo de texto 'Mail'"></label></p>
-                <p><label>Consulta <textarea type="text" alt="Campo de text 'Consulta'"></textarea></p>
-                <p><input type="submit" value="Enviar" height="500" alt="Botón 'Enviar'"></p>
-            </form>
-        </section>
-    </main>
+    <!--Header-->
+    <h2>Contacto</h2>
+    <section>
+        <p>Las consultas telefónicas se realizan a los siguientes números:</p>
+        <ul>
+            <li><a href=tel:0800-235-3856>0800-235-3856</a> (Urgencias).</li>
+            <li><a href=tel:0800-333-2548>0800-333-2548</a> (Turnos).</li>
+            <li><a href=tel:0800-233-5869>0800-233-5869</a> (Administración).</li>
+            <li><a href=tel:0800-223-8468>0800-223-8468</a> (Proveedores).</li>
+        </ul>
+    </section>
+    <section>
+        <p>También puede consultarnos utilizando el siguiente formulario:</p>
+        <form accept-charset=utf-8 name=form-contacto action=contacto.cgi method=post target=_blank autocomplete=on>
+            <fieldset name=nombre-apellido>
+                <p><label>Nombre <input name=nombre id=nombre type=text autocomplete=name maxlength=30 tabindex=1 placeholder=Nombre autofocus required></label></p>
+                <p><label>Apellido <input name=apellido id=apellido type=text autocomplete=family-name maxlength=30 tabindex=2 placeholder=Apellido required></label></p>
+            </fieldset>
+            <fieldset name=formas-de-contacto>
+                <p><label>Teléfono <input name=telefono id=telefono type=tel autocomplete="home tel" maxlength=20 tabindex=3 placeholder=Teléfono required></label></p>
+                <p><label>Mail <input name=mail id=mail type=email autocomplete="home email" maxlength=40 tabindex=4 placeholder=Mail required></label></p>
+            </fieldset>
+            <p><label>Consulta <textarea name=consulta id=consulta type=text maxlength=250 tabindex=5 placeholder=Consulta required></textarea></p>
+            <p><input type=submit value=Enviar height=500 tabindex=6></p>
+        </form>
+    </section>
+    <!--Footer-->
 </body>
 </html>

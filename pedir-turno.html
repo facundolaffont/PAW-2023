@@ -1,100 +1,140 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang=es>
 <head>
     <title>PAW Medical - Solicitar turno</title>
-    <meta charset="utf-8">
+    <meta charset=utf-8>
 </head>
 <body>
-    <main>
-        <h1>Solicitar un turno</h1>
-        <form
-            accept-charset="utf-8"
-            name="form-pedir-turno"
-            action="/turno-solicitado.cgi"
-            method="post"
-            target="_blank"
-        >
+    <!--Header-->
+    <h2>Solicitar un turno</h2>
+    <form accept-charset=utf-8 name=form-pedir-turno action=turno-solicitado.cgi method=post target=_blank autocomplete=on>
+        <fieldset name=profesional-servicio>
             <p>
                 <label>Servicio
-                    <select size=1 required alt="Campo de selección 'Servicio'">
-                        <option>Alergología e inmunología</option>
-                        <option>Anestesiología</option>
-                        <option>Angiología y cirugía vascular</option>
-                        <option>Bioquímica clínica</option>
-                        <option>Cardiología</option>
-                        <option>Cirugía cardiovascular</option>
-                        <option>Cirugía de la mano</option>
-                        <option>Cirugía general</option>
-                        <option>Cirugía maxilofacial</option>
-                        <option>Cirugía pediátrica</option>
-                        <option>Cirugía plástica y reconstructiva</option>
-                        <option>Cirugía torácica</option>
-                        <option>Citopatología</option>
-                        <option>Dermatología</option>
-                        <option>Dermatología pediátrica</option>
-                        <option>Diagnóstico por imagen</option>
-                        <option>Endocrinología</option>
-                        <option>Endoscopia</option>
-                        <option>Epidemiología</option>
-                        <option>Farmacología clínica</option>
-                        <option>Gastroenterología</option>
-                        <option>Genética médica</option>
-                        <option>Geriatría</option>
-                        <option>Ginecología oncológica</option>
-                        <option>Hematología</option>
-                        <option>Hematología y oncología pediátrica</option>
-                        <option>Infectología</option>
-                        <option>Inmunohematología y transfusión</option>
-                        <option>Medicina crítica y cuidados intensivos</option>
-                        <option>Medicina de emergencia</option>
-                        <option>Medicina del deporte</option>
-                        <option>Medicina del sueño</option>
-                        <option>Medicina del trabajo</option>
-                        <option>Medicina del viajero</option>
-                        <option>Medicina familiar y comunitaria</option>
-                        <option>Medicina interna</option>
-                        <option>Medicina nuclear</option>
-                        <option>Medicina paliativa</option>
-                        <option>Nefrología</option>
-                        <option>Neumología</option>
-                        <option>Neurocirugía</option>
-                        <option>Neurofisiología clínica</option>
-                        <option>Neurología</option>
-                        <option>Neuropsicología</option>
-                        <option>Nutrición clínica</option>
-                        <option>Obstetricia y ginecología</option>
-                        <option>Odontología</option>
-                        <option>Oftalmología</option>
-                        <option>Oncología</option>
-                        <option>Ortopedia y traumatología</option>
-                        <option>Otorrinolaringología</option>
-                        <option>Patología</option>
-                        <option>Patología forense</option>
-                        <option>Pediatría</option>
-                        <option>Psicología clínica</option>
-                        <option>Psiquiatría</option>
-                        <option>Radiología</option>
-                        <option>Rehabilitación</option>
-                        <option>Reumatología</option>
-                        <option>Toxicología médica</option>
-                        <option>Traumatología deportiva</option>
-                        <option>Urgencias médicas</option>
-                        <option>Urología</option>
-                        <option>Venereología</option>
+                    <select size=1 name=servicio id=servicio required>
+                        <option value=1>Alergología e inmunología</option>
+                        <option value=2>Anestesiología</option>
+                        <option value=3>Angiología y cirugía vascular</option>
+                        <option value=4>Bioquímica clínica</option>
+                        <option value=5>Cardiología</option>
+                        <option value=6>Cirugía cardiovascular</option>
+                        <option value=7>Cirugía de la mano</option>
+                        <option value=8>Cirugía general</option>
+                        <option value=9>Cirugía maxilofacial</option>
+                        <option value=10>Cirugía pediátrica</option>
+                        <option value=11>Cirugía plástica y reconstructiva</option>
+                        <option value=12>Cirugía torácica</option>
+                        <option value=13>Citopatología</option>
+                        <option value=14>Dermatología</option>
+                        <option value=15>Dermatología pediátrica</option>
+                        <option value=16>Diagnóstico por imagen</option>
+                        <option value=17>Endocrinología</option>
+                        <option value=18>Endoscopia</option>
+                        <option value=19>Epidemiología</option>
+                        <option value=20>Farmacología clínica</option>
+                        <option value=21>Gastroenterología</option>
+                        <option value=22>Genética médica</option>
+                        <option value=23>Geriatría</option>
+                        <option value=24>Ginecología oncológica</option>
+                        <option value=25>Hematología</option>
+                        <option value=26>Hematología y oncología pediátrica</option>
+                        <option value=27>Infectología</option>
+                        <option value=28>Inmunohematología y transfusión</option>
+                        <option value=29>Medicina crítica y cuidados intensivos</option>
+                        <option value=30>Medicina de emergencia</option>
+                        <option value=31>Medicina del deporte</option>
+                        <option value=32>Medicina del sueño</option>
+                        <option value=33>Medicina del trabajo</option>
+                        <option value=34>Medicina del viajero</option>
+                        <option value=35>Medicina familiar y comunitaria</option>
+                        <option value=36>Medicina interna</option>
+                        <option value=37>Medicina nuclear</option>
+                        <option value=38>Medicina paliativa</option>
+                        <option value=39>Nefrología</option>
+                        <option value=40>Neumología</option>
+                        <option value=41>Neurocirugía</option>
+                        <option value=42>Neurofisiología clínica</option>
+                        <option value=43>Neurología</option>
+                        <option value=44>Neuropsicología</option>
+                        <option value=45>Nutrición clínica</option>
+                        <option value=46>Obstetricia y ginecología</option>
+                        <option value=47>Odontología</option>
+                        <option value=48>Oftalmología</option>
+                        <option value=49>Oncología</option>
+                        <option value=50>Ortopedia y traumatología</option>
+                        <option value=51>Otorrinolaringología</option>
+                        <option value=52>Patología</option>
+                        <option value=53>Patología forense</option>
+                        <option value=54>Pediatría</option>
+                        <option value=55>Psicología clínica</option>
+                        <option value=56>Psiquiatría</option>
+                        <option value=57>Radiología</option>
+                        <option value=58>Rehabilitación</option>
+                        <option value=59>Reumatología</option>
+                        <option value=60>Toxicología médica</option>
+                        <option value=61>Traumatología deportiva</option>
+                        <option value=62>Urgencias médicas</option>
+                        <option value=63>Urología</option>
+                        <option value=64>Venereología</option>
                     </select>
                 </label>
             </p>
-            <p><label>Profesional <input type="text" alt="Campo de texto 'Profesional'"></label></p>
-            <p><label>Turno <input type="text" alt="Campo de texto 'Turno'"></label></p>
-            <p><label>Paciente <input type="text" alt="Campo de texto 'Paciente'"></label></p>
-            <p><label>Nombre <input type="text" alt="Campo de texto 'Nombre'" disabled></label></p>
-            <p><label>Apellido <input type="text" alt="Campo de texto 'Apellido'" disabled></label></p>
-            <p><label>Edad <input type="text" alt="Campo de texto 'Edad'" disabled></label></p>
             <p>
-                <input type="submit" value="Solicitar" alt="Botón 'Solicitar'">
-                <input type="reset" value="Limpiar" alt="Botón 'Limpiar'">
+                <label>Profesional
+                    <select size=1 name=profesional id=profesional required>
+                        <option value=1>Alejandro Medina</option>
+                        <option value=2>Ana López</option>
+                        <option value=3>Ana Martínez</option>
+                        <option value=4>Andrea Morales</option>
+                        <option value=5>Antonio García</option>
+                        <option value=6>Carlos Pérez</option>
+                        <option value=7>Carmen Pérez</option>
+                        <option value=8>Daniel Hernández</option>
+                        <option value=9>David Vargas</option>
+                        <option value=10>Diego Rodríguez</option>
+                        <option value=11>Elena Sánchez</option>
+                        <option value=12>Isabel Díaz</option>
+                        <option value=13>Javier Rodríguez</option>
+                        <option value=14>Juan Jiménez</option>
+                        <option value=15>Laura Ruiz</option>
+                        <option value=16>Lucía Castro</option>
+                        <option value=17>Luis Gómez</option>
+                        <option value=18>Manuel Ortiz</option>
+                        <option value=19>Maria Ramos</option>
+                        <option value=20>Pablo García</option>
+                        <option value=21>Paula Torres</option>
+                        <option value=22>Sara Núñez</option>
+                        <option value=23>Sergio Flores</option>
+                        <option value=24>Sofia García</option>
+                    </select>
+                </label>
             </p>
-        </form>
-    </main>
+        </fieldset>
+        <fieldset name=fechahora-turno>
+            <p><label>Fecha del turno <input type=date name=fecha-turno id=fecha-turno required></label></p>
+            <p><label>Horario del turno <input type=time name=hora-turno id=hora-turno required></label></p>
+        </fieldset>
+        <fieldset name=familiar>
+            <p>
+                <label>Paciente
+                    <select size=1 name=paciente id=paciente>
+                        <option value=1>Lautaro Pérez (yo)</option>
+                        <option value=2>Juan Pérez</option>
+                        <option value=3>Emilia Pérez</option>
+                        <option value=4>Estefanía Pérez</option>
+                        <option value=5>NUEVO FAMILIAR</option>
+                    </select>
+                </label>
+            </p>
+            <p><label hidden=hidden>Nombre <input type=text name=nombre id=nombre maxlength=30 placeholder=Nombre disabled></label></p>
+            <p><label hidden=hidden>Apellido <input type=text name=apellido id=apellido maxlength=30 placeholder=Apellido disabled></label></p>
+            <p><label hidden=hidden>Edad <input type=number name=edad id=edad min=0 max=200 placeholder=Edad disabled></label></p>
+        </fieldset>
+        <p>
+            <input type=submit value=Solicitar>
+            <input type=reset value=Limpiar>
+        </p>
+    </form>
+    <!--Footer-->
 </body>
 </html>
