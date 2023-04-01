@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang=es>
+<head>
+    <title>PAW Medical - Registrarse</title>
+    <meta charset=utf-8>
+</head>
+<body>
+    <!--Header-->
+    <h2>Registrarse</h2>
+    <form accept-charset=utf-8 name=form-pedir-turno action=turno-solicitado.cgi method=post target=_blank autocomplete=on>
+        <fieldset name=nombre-apellido>
+            <p><label>Nombre <input name=nombre id=nombre type=text autocomplete=name maxlength=30 tabindex=1 placeholder=Nombre autofocus required></label></p>
+            <p><label>Apellido <input name=apellido id=apellido type=text autocomplete=family-name maxlength=30 tabindex=2 placeholder=Apellido required></label></p>
+        </fieldset>
+        <p><label>DNI <input type=number name=dni id=dni min=1 max=999999999 tabindex=3 placeholder=DNI required></label></p>
+        <p><label>Fecha de nacimiento <input type=date name=fecha-nac id=fecha-nac tabindex=4 required></label></p>
+        <fieldset name=formas-de-contacto>
+            <p><label>Teléfono <input name=telefono id=telefono type=tel autocomplete="home tel" maxlength=20 tabindex=5 placeholder=Teléfono required></label></p>
+            <p><label>Correo electrónico <input name=mail id=mail type=email autocomplete="home email" maxlength=40 tabindex=6 placeholder="Correo electrónico" required></label></p>
+            <p><label>Reingrese su correo <input name=mail2 id=mail2 type=email maxlength=40 tabindex=7 placeholder="Correo electrónico" required></label></p>
+        </fieldset>
+        <fieldset name=pass-y-verif>
+            <p><label>Contraseña <input name=pass id=pass type=password minlength=10 tabindex=8 placeholder=Contraseña required></label></p>
+            <p><label>Reingrese su contraseña <input name=pass2 id=pass2 type=password minlength=10 tabindex=9 placeholder=Contraseña required></label></p>
+        </fieldset>
+        <p><label for=""><input type="checkbox" name="term-y-cond"> Acepto los términos y condiciones.</label></p>
+        <p><label for=""><input type="checkbox" name="polit-y-priv"> Acepto las políticas de privacidad.</label></p>
+        <p><input type=submit value="Crear cuenta"></p>
+    </form>
+    <p>¿Ya tiene su cuenta?</p>
+    <p><a href="/ingresar.html">Ingresar</a></p>
+    <!--Footer-->
+</body>
+</html>
