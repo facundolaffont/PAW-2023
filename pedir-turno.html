@@ -5,13 +5,84 @@
     <meta charset=utf-8>
 </head>
 <body>
-    <!--Header-->
-    <h2>Solicitar un turno</h2>
+    <header>
+        <a href="index.html">
+            <img src="images/index-logo-desktop.jpeg" alt="Logo del PAW Medical">
+        </a>
+        <nav>
+            <section class="logged">
+                <ul>
+                    <li>
+                        <p><a href="perfil.html">Perfil</a></p>
+                    </li>
+                    <li>
+                        <p><a href="logout.html">Cerrar Sesión</a></p>
+                    </li>
+                </ul>
+            </section>
+            <section class="not-logged">
+                <ul>
+                    <li>
+                        <p><a href="login.html">Ingresar</a></p>
+                    </li>
+                    <li>
+                        <p><a href="signup.html">Crear Cuenta</a></p>
+                    </li>
+                </ul>
+            </section>
+            <section class="mobile">
+                <ul>
+                    <li>
+                        <p><a href="solicitar-turno.html">Solicitar Turno</a></p>
+                    </li>
+                    <li>
+                        <p><a href="servicios.html">Servicios</a></p>
+                    </li>
+                    <li>
+                        <p><a href="obras-sociales.html">Obras Sociales</a></p>
+                    </li>
+                    <li>
+                        <p><a href="institucional.html">Institucional</a></p>
+                    </li>
+                    <li>
+                        <p><a href="contacto.html">Contacto</a></p>
+                    </li>
+                    <li>
+                        <p><a href="noticias.html">Noticias</a></p>
+                    </li>
+                </ul>
+            </section>
+            <section class="desktop">
+                <ul>
+                    <li>
+                        <p><a href="institucional.html">Institucional</a></p>
+                    </li>
+                    <li>
+                        <p><a href="contacto.html">Contacto</a></p>
+                    </li>
+                    <li>
+                        <p><a href="obras-sociales.html">Obras Sociales</a></p>
+                    </li>
+                    <li>
+                        <p><a href="servicios.html">Servicios</a></p>
+                    </li>
+                    <li>
+                        <p><a href="solicitar-turno.html">Solicitar Turno</a></p>
+                    </li>
+                </ul>
+            </section>
+            <section class="desktop">
+                    <address>Ruta 5 y Avenida Constitución - (6700) Luján, Buenos Aires, Argentina.</address>
+                    <p>Teléfonos: <a href="tel:0800-233-5869">0800-233-5869 (Administración).</a></p>
+            </section>
+        </nav>
+    </header>
+    <h1>Solicitar un turno</h1>
     <form accept-charset=utf-8 name=form-pedir-turno action=pedir-turno.cgi method=post target=_self autocomplete=on>
-        <fieldset name=profesional-servicio>
+        <fieldset name=fs-profesional-servicio>
             <p>
                 <label>Servicio
-                    <select size=1 name=servicio id=servicio required>
+                    <select size=1 name=servicio id=servicio autofocus required>
                         <option value=1>Alergología e inmunología</option>
                         <option value=2>Anestesiología</option>
                         <option value=3>Angiología y cirugía vascular</option>
@@ -114,27 +185,109 @@
             <p><label>Fecha del turno <input type=date name=fecha-turno id=fecha-turno required></label></p>
             <p><label>Horario del turno <input type=time name=hora-turno id=hora-turno required></label></p>
         </fieldset>
-        <fieldset name=familiar>
+        <fieldset name=fs-paciente>
             <p>
                 <label>Paciente
                     <select size=1 name=paciente id=paciente>
-                        <option value=1>Lautaro Pérez (yo)</option>
+                        <option value=1>Lautaro Pérez</option>
                         <option value=2>Juan Pérez</option>
                         <option value=3>Emilia Pérez</option>
                         <option value=4>Estefanía Pérez</option>
-                        <option value=5>NUEVO FAMILIAR</option>
+                        <option value=5>NUEVO PACIENTE...</option>
                     </select>
                 </label>
             </p>
-            <p><label hidden=hidden>Nombre <input type=text name=nombre id=nombre maxlength=30 placeholder=Nombre disabled></label></p>
-            <p><label hidden=hidden>Apellido <input type=text name=apellido id=apellido maxlength=30 placeholder=Apellido disabled></label></p>
-            <p><label hidden=hidden>Edad <input type=number name=edad id=edad min=0 max=200 placeholder=Edad disabled></label></p>
+            <fieldset name=fs-datos-nuevo-paciente hidden=hidden>
+                <fieldset name=fs-nombre-apellido>
+                    <p><label>Nombre <input type=text name=nombre id=nombre maxlength=30 placeholder=Nombre></label></p>
+                    <p><label>Apellido <input type=text name=apellido id=apellido maxlength=30 placeholder=Apellido></label></p>
+                </fieldset>
+                <p><label>Fecha de nacimiento <input type=date name=fecha-nac id=fecha-nac></label></p>
+                <p><label>Edad <input type=number name=edad id=edad min=0 max=200 placeholder=Edad></label></p>
+                <fieldset name=fs-formas-de-contacto>
+                    <p><label>Teléfono <input name=telefono id=telefono type=tel autocomplete="home tel" maxlength=20 placeholder=Teléfono></label></p>
+                    <p><label>Correo electrónico <input name=mail id=mail type=email autocomplete="home email" maxlength=40 placeholder="Correo electrónico"></label></p>
+                </fieldset>
+            </fieldset>
         </fieldset>
         <p>
             <input type=submit value=Solicitar>
             <input type=reset value=Limpiar>
         </p>
     </form>
-    <!--Footer-->
+    <footer>
+        <ul>
+            <li>
+                <p><a href="institucional.html">Institucional</a></p>
+            </li>
+            <li class="mobile">
+                <p><a href="contacto.html">Contacto</a></p>
+            </li>
+            <li class="mobile">
+                <p><a href="politicas-privacidad.html"></a>Políticas de Privacidad</p>
+            </li>
+            <li class="mobile">
+                <p><a href="tos.html"></a>Términos y Condiciones</p>
+            </li>
+            <li class="mobile">
+                <a href="www.facebook.com/PAWMedical">
+                    <picture>
+                        <source srcset="images/facebook-logo-mobile.jpeg">
+                        <img src="images/facebook-logo-desktop.jpeg" alt="Logo de Facebook">
+                    </picture>
+                </a>
+            <li class="mobile">
+                <a href="www.instagram.com/PAWMedical">
+                    <picture>
+                        <source srcset="images/instagram-logo-mobile.jpeg">
+                        <img src="images/instagram-logo-desktop.jpeg" alt="Logo de Instagram">
+                    </picture>
+                </a>
+            </li>
+            <li class="mobile">
+                <a href="www.twitter.com/PAWMedical">
+                    <picture>
+                        <source srcset="images/twitter-logo-mobile.jpeg">
+                        <img src="images/twitter-logo-desktop.jpeg" alt="Logo de Twitter">
+                    </picture>
+                </a>
+            </li>
+            <li class="mobile">
+                <p><a href="solicitar-turno.html">Solicitar Turno</a></p>
+            </li>
+            <li>
+                <p><a href="servicios.html">Servicios</a></p>
+            </li>
+            <li>
+                <p><a href="obras-sociales.html">Obras Sociales</a></p>
+            </li>
+            <li>
+                <p><a href="noticias.html">Noticias</a></p>
+            </li>
+            <li>
+                <p>Urgencias: <a href="tel:0800-235-3856">0800-235-3856</a></p>
+            </li>
+            <li>
+                <p>Turnos <a href="tel:0800-333-2548">0800-333-2548</a></p>
+            </li>
+            <li>
+                <p>Administración <a href="tel:0800-233-5869">0800-233-5869</a></p>
+            </li>
+            <li>
+                <p>Proveedores <a href="tel:0800-223-8468">0800-233-8468</a></p>
+            </li>
+            <li>
+                <a href="index.html">
+                    <picture>
+                        <source srcset="images/index-logo-mobile.jpeg">
+                        <img src="images/index-logo-desktop.jpeg" alt="Logo del PAW Medical">
+                    </picture>
+                </a>
+            </li>
+            <li>
+                <p>&copy; 2023 Universidad Nacional de Luján.</p>
+            </li>
+        </ul>
+    </footer>
 </body>
 </html>
