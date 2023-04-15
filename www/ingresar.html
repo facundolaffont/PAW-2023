@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang=es>
 <head>
-    <title>PAW Medical - Servicios</title>
-    <meta charset="utf-8">
+    <title>PAW Medical - Crear cuenta</title>
+    <meta charset=utf-8>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/general.css">
 </head>
 <body>
     <header>
@@ -77,33 +79,19 @@
             </section>
         </nav>
     </header>
-    <ul>
-        <li>
-            <a href="servicio1.html">Servicio 1</a>
-            <a href="servicio2.html">Servicio 2</a>
-            <a href="servicio3.html">Servicio 3</a>
-        </li>
-        <li>
-            <a href="servicio4.html">Servicio 4</a>
-            <a href="servicio5.html">Servicio 5</a>
-            <a href="servicio6.html">Servicio 6</a>
-        </li>
-        <li>
-            <a href="servicio7.html">Servicio 7</a>
-            <a href="servicio8.html">Servicio 8</a>
-            <a href="servicio9.html">Servicio 9</a>
-        </li>
-        <li>
-            <a href="servicio10.html">Servicio 10</a>
-            <a href="servicio11.html">Servicio 11</a>
-            <a href="servicio12.html">Servicio 12</a>
-        </li>
-        <li>
-            <a href="servicio13.html">Servicio 13</a>
-            <a href="servicio14.html">Servicio 14</a>
-            <a href="servicio15.html">Servicio 15</a>
-        </li>
-    </ul>
+    <h1>Ingresar</h1>
+    <form accept-charset=utf-8 name=form-ingresar action=ingresar.cgi method=post target=_self autocomplete=on>
+        <p><label>Usuario <input name=usuario id=usuario type=text autocomplete=username maxlength=30 tabindex=1 placeholder=Usuario autofocus required></label></p>
+        <p>
+            <label>Contraseña 
+                <input name=pass id=pass type=password minlength=10 tabindex=2 placeholder=Contraseña required>
+                <small><a href="renovar-pass.cgi">¿Olvidó su contraseña?</a></small>
+            </label>
+        </p>
+        <p><input type=submit name=boton-ingresar value="Ingresar" tabindex=3></p>
+        <p><input type=button name=boton-ingresar-google value="Ingresar con Google" tabindex=4></p>
+    </form>
+    <p><a href="/crear-cuenta.html">Crear cuenta</a></p>
     <footer>
         <ul>
             <li>

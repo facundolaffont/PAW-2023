@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang=es>
 <head>
-    <title>PAW Medical - Crear cuenta</title>
+    <title>PAW Medical</title>
     <meta charset=utf-8>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/general.css">
 </head>
 <body>
     <header>
@@ -77,19 +79,42 @@
             </section>
         </nav>
     </header>
-    <h1>Ingresar</h1>
-    <form accept-charset=utf-8 name=form-ingresar action=ingresar.cgi method=post target=_self autocomplete=on>
-        <p><label>Usuario <input name=usuario id=usuario type=text autocomplete=username maxlength=30 tabindex=1 placeholder=Usuario autofocus required></label></p>
-        <p>
-            <label>Contraseña 
-                <input name=pass id=pass type=password minlength=10 tabindex=2 placeholder=Contraseña required>
-                <small><a href="renovar-pass.cgi">¿Olvidó su contraseña?</a></small>
-            </label>
-        </p>
-        <p><input type=submit name=boton-ingresar value="Ingresar" tabindex=3></p>
-        <p><input type=button name=boton-ingresar-google value="Ingresar con Google" tabindex=4></p>
-    </form>
-    <p><a href="/crear-cuenta.html">Crear cuenta</a></p>
+    <main>
+        <section>
+            <ul>
+                <li>
+                    <figure>
+                        <img src="images/index-fachada-desktop.jpeg" alt="Fotografía del edificio del hospital.">
+                        <figcaption>Descripción.</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="images/index-interior-desktop.jpeg" alt="Fotografía del interior del hospital.">
+                        <figcaption>Descripción.</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="images/index-tomógrafo-desktop.jpeg" alt="Fotografía tomógrafo.">
+                        <figcaption>Descripción.</figcaption>
+                    </figure>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <nav>
+                <ul>
+                    <li><p><a href=servicios.html>Servicios</a></p></li>
+                    <li><p><a href=pedir-turno.html>Solicitar turno</a></p></li>
+                    <li><p><a href=mis-turnos.html>Mis turnos</a></p></li>
+                    <li><p><a href=quienes-somos.html>¿Quiénes somos?</a></p></li>
+                    <li><p><a href=contacto.html>Contacto</a></p></li>
+                    <li><p><a href=noticias.html>Noticias</a></p></li>
+                </ul>
+            </nav>
+        </section>
+    </main>
     <footer>
         <ul>
             <li>
