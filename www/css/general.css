@@ -1,0 +1,51 @@
+@import url('https://fonts.cdnfonts.com/css/gotham');
+
+:root {
+    --ulh-green: rgb(2,82,85);
+    --ulh-yellow: rgb(252,196,68);
+    --ulh-red: rgb(208,36,74);
+    --ulh-blue: rgb(0,157,218);
+    --ulh-copper: rgb(160,73,40);
+    --ulh-deep-brown: rgb(91,43,25);
+    --ulh-baby-blue: rgb(135,211,226);
+    --ulh-rich-olive: rgb(113,136,57);
+    --ulh-rich-grey: rgb(59,74,90);
+    --ulh-pale-gray: rgb(238,241,239);
+}
+
+header {
+    background-color: var(--ulh-pale-gray);
+}
+
+header img {
+    width: 200px;
+}
+
+p {
+    font-family: 'Gotham', sans-serif;
+    color: var(--ulh-rich-grey);
+    margin-bottom: 5px;
+}
+
+a:link {
+    text-decoration-line: none;
+    color: var(--ulh-rich-olive);
+}
+
+a:visited {
+    color: var(--ulh-green);
+}
+
+.enlaces-principales li {
+    width: 170px;
+}
+
+.enlaces-principales p {
+    padding: 10px;
+    margin: 5px 0 5px 0;
+    background-color: var(--ulh-pale-gray);
+}
+
+footer {
+    background-color: var(--ulh-pale-gray);
+}

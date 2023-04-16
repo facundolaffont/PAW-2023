@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="870px" height="1000px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 75019 86232"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil0 {fill:#025255}
+    .fil2 {fill:#11A7E0}
+    .fil1 {fill:#E5273C}
+    .fil3 {fill:#FFC13D}
+   ]]>
+  </style>
+ </defs>
+ <g id="ISOLogotipo">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="Isotipo">
+   <g id="Isotipo-H">
+    <path class="fil0" d="M1335 0l32037 0c801,0 1334,534 1334,1335l0 83563c0,800 -533,1334 -1334,1334l-32037 0c-801,0 -1335,-534 -1335,-1334l0 -83563c0,-801 534,-1335 1335,-1335z"/>
+    <path class="fil0" d="M41648 0l32037 0c801,0 1334,534 1334,1335l0 83563c0,800 -533,1334 -1334,1334l-32037 0c-801,0 -1335,-534 -1335,-1334l0 -83563c0,-801 534,-1335 1335,-1335z"/>
+   </g>
+   <path id="Isotipo-LineaRoja" class="fil1" d="M8543 13616l28032 0c801,0 1335,534 1335,1335l0 1601c0,801 -534,1335 -1335,1335l-28032 0c-801,0 -1335,-534 -1335,-1335l0 -1601c0,-801 534,-1335 1335,-1335z"/>
+   <g id="Isotipo-LineasCeleste">
+    <path class="fil2" d="M38711 29367l28032 0c801,0 1335,534 1335,1335l0 1602c0,801 -534,1335 -1335,1335l-28032 0c-801,0 -1335,-534 -1335,-1335l0 -1602c0,-801 534,-1335 1335,-1335z"/>
+    <path class="fil2" d="M38711 37109l28032 0c801,0 1335,534 1335,1335l0 1602c0,801 -534,1335 -1335,1335l-28032 0c-801,0 -1335,-534 -1335,-1335l0 -1602c0,-801 534,-1335 1335,-1335z"/>
+   </g>
+   <g id="Isotipo-LineasAmarillo">
+    <path class="fil3" d="M9878 52861l56331 0c801,0 1335,534 1335,1335l0 1601c0,801 -534,1335 -1335,1335l-56331 0c-801,0 -1335,-534 -1335,-1335l0 -1601c0,-801 534,-1335 1335,-1335z"/>
+    <path class="fil3" d="M9878 60603l56331 0c801,0 1335,534 1335,1335l0 1602c0,801 -534,1335 -1335,1335l-56331 0c-801,0 -1335,-534 -1335,-1335l0 -1602c0,-801 534,-1335 1335,-1335z"/>
+    <path class="fil3" d="M9878 68078l56331 0c801,0 1335,534 1335,1335l0 1602c0,801 -534,1335 -1335,1335l-56331 0c-801,0 -1335,-534 -1335,-1335l0 -1602c0,-801 534,-1335 1335,-1335z"/>
+   </g>
+  </g>
+ </g>
+</svg>
