@@ -1,4 +1,9 @@
+/*** Imports ***/
+
 @import url('https://fonts.cdnfonts.com/css/gotham');
+
+
+/*** Variables ***/
 
 :root {
     --ulh-green: rgb(2,82,85);
@@ -13,18 +18,102 @@
     --ulh-pale-gray: rgb(238,241,239);
 }
 
-header {
-    background-color: var(--ulh-pale-gray);
+
+/*** Media queries ***/
+
+@media screen and (max-width: 500px) {
+    .desktop {
+        display: none;
+    }
+
+    .paginas-relevantes {
+        display: none;
+    }
 }
 
-header img {
-    width: 200px;
+@media screen and (min-width: 501px) {
+    .mobile {
+        display: none;
+    }
 }
+
+
+/*** Estilos ***/
 
 p {
     font-family: 'Gotham', sans-serif;
+    font-size: 4vw;
     color: var(--ulh-rich-grey);
-    margin-bottom: 5px;
+    line-height: 1.5em;
+    letter-spacing: 0.1em;
+    text-align: left;
+}
+
+li {
+    line-height: 1.5em;
+}
+
+img {
+    font-size: 3vw;
+    font-style: italic;
+    color: var(--ulh-rich-grey);
+}
+
+header, footer {
+    background-color: var(--ulh-pale-gray);
+}
+
+.logo-header {
+    width: 60vw;
+}
+
+.logo-footer img {
+    width: 11vw;
+}
+
+.logo-footer small {
+    font-size: 3vw;
+}
+
+.iconos-redes {
+    display: block;
+}
+
+.iconos-redes li {
+    display: inline-block;
+}
+
+.logo-redes {
+    width: 5vw;
+}
+
+.logged {
+    display: none;
+}
+
+.enlace-boton {
+    width: 170px;
+    margin: 5px 0 5px 0;
+    background-color: var(--ulh-pale-gray);
+}
+
+.carrusel-imagenes {
+    display: inline;
+}
+
+.carrusel-imagenes li {
+    display: inline-block;
+    padding: 10px;
+}
+
+.carrusel-imagenes img::before {
+    background-color: var(--ulh-pale-gray);
+    border: 1px dashed var(--ulh-rich-grey);
+}
+
+.carrusel-imagenes figcaption {
+    font-style: italic;
+    font-size: 0.8em;
 }
 
 a:link {
@@ -34,18 +123,4 @@ a:link {
 
 a:visited {
     color: var(--ulh-green);
-}
-
-.enlaces-principales li {
-    width: 170px;
-}
-
-.enlaces-principales p {
-    padding: 10px;
-    margin: 5px 0 5px 0;
-    background-color: var(--ulh-pale-gray);
-}
-
-footer {
-    background-color: var(--ulh-pale-gray);
 }
