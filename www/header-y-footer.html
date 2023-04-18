@@ -1,201 +1,442 @@
 <!DOCTYPE html>
 <html lang=es>
-<head>
-    <meta charset=utf-8>
-    <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/general.css">
-    <style>
-        body {
-            grid-template-areas:    "header",
-                                    "body",
-                                    "footer";
-        }
+    <head>
+        <meta charset=utf-8>
+        <link rel="stylesheet" type="text/css" href="css/reset.css">
+        <link rel="stylesheet" type="text/css" href="css/general.css">
+        <style>
 
-        header {
-            /*display: grid;*/
-            grid-area: header;
-        }
+            /*** Media queries ***/
 
-        .cuerpo {
-            grid-area: body;
-        }
+            /* Mobile + NavBar. */
+            /* @media screen and (pointer: coarse) and (orientation: landscape) { */
 
-        footer {
-            /*display: grid;*/
-            grid-area: footer;
-        }
-    </style>
-</head>
-<body>
+            /* Mobile + Menú hamburguesa. */
+            /* @media screen and (pointer: coarse) and (orientation: portrait) {
 
-    <!-- HEADER EXTRAIDO -->
-    <header>
-        <a href="index.html">
-            <img src="images/Imagotipo_PAW_Hospitals.svg" alt="Logo del PAW Medical" class="logo-header">
-        </a>
-        <nav>
-            <section class="logged">
-                <ul>
-                    <li>
-                        <p><a href="mi-perfil.html">Perfil</a></p>
-                    </li>
-                    <li>
-                        <p><a href="logout.cgi">Cerrar Sesión</a></p>
-                    </li>
-                </ul>
-            </section>
-            <section class="not-logged">
-                <ul>
-                    <li>
-                        <p><a href="ingresar.html">Ingresar</a></p>
-                    </li>
-                    <li>
-                        <p><a href="crear-cuenta.html">Crear Cuenta</a></p>
-                    </li>
-                </ul>
-            </section>
-            <section class="mobile">
-                <ul>
-                    <li>
-                        <p><a href="pedir-turno.html">Solicitar Turno</a></p>
-                    </li>
-                    <li>
-                        <p><a href="servicios.html">Servicios</a></p>
-                    </li>
-                    <li>
-                        <p><a href="obras-sociales.html">Obras Sociales</a></p>
-                    </li>
-                    <li>
-                        <p><a href="institucional.html">Institucional</a></p>
-                    </li>
-                    <li>
-                        <p><a href="contacto.html">Contacto</a></p>
-                    </li>
-                    <li>
-                        <p><a href="noticias.html">Noticias</a></p>
-                    </li>
-                </ul>
-            </section>
-            <section class="desktop">
-                <ul>
-                    <li>
-                        <p><a href="institucional.html">Institucional</a></p>
-                    </li>
-                    <li>
-                        <p><a href="contacto.html">Contacto</a></p>
-                    </li>
-                    <li>
-                        <p><a href="obras-sociales.html">Obras Sociales</a></p>
-                    </li>
-                    <li>
-                        <p><a href="servicios.html">Servicios</a></p>
-                    </li>
-                    <li>
-                        <p><a href="pedir-turno.html">Solicitar Turno</a></p>
-                    </li>
-                </ul>
-            </section>
-            <section class="desktop">
-                <address>Ruta 5 y Avenida Constitución - (6700) Luján, Buenos Aires, Argentina.</address>
-                <p>Teléfonos: <a href="tel:0800-233-5869">0800-233-5869 (Administración).</a></p>
-            </section>
-        </nav>
-    </header>
-    <!-- HEADER EXTRAIDO -->
+            /* DEBUG: fuerza mobile en portrait. */
+            /* @media { */
 
-    <div class="cuerpo"><br /></div> <!-- DEBUG: sólo para separar visualmente header y footer -->
+            /* Mobile + Menú hamburguesa. */
+            @media screen and (pointer: coarse) and (orientation: portrait) {
+                .headernav,
+                .headernav-perfil,
+                .header-contacto,
 
-    <!-- FOOTER EXTRAIDO -->
-    <footer>
-        <ul class="paginas-relevantes-footer">
-            <li>
-                <p><a href="institucional.html">Institucional</a></p>
-            </li>
-            <li>
-                <p><a href="contacto.html">Contacto</a></p>
-            </li>
-            <li>
-                <p><a href="politicas-privacidad.html">Políticas de Privacidad</a></p>
-            </li>
-            <li>
-                <p><a href="tos.html">Términos y Condiciones</a></p>
-            </li>
-        </ul>
-        <ul class="iconos-redes">
-            <li>
-                <p>
+                .footer-telefonos,
+                .footernav-institucional,
+                .footernav-servicios,
+                .footernav-obras-sociales,
+                .footernav-noticias {
+                    display: none;
+                }
+
+                header nav {
+                    height: 100%;
+                }
+
+                footer {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-template-rows: repeat(2, 1fr);
+                }
+
+                .footernav {
+                    grid-column: 1 / 4;
+                    grid-row: 1;
+                    align-self: center;
+
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: repeat(2, 1fr);
+                }
+
+                .footernav-tyc, .footernav-contacto {
+                    justify-self: right;
+                }
+
+                .iconos-redes {
+                    grid-column: 3;
+                    grid-row: 2;
+                    align-self: center;
+                    justify-self: right;
+                }
+
+                .iconos-redes li {
+                    height: auto;
+                }
+
+                .logo-footer {
+                    grid-column: 1 / 3;
+                    grid-row: 2;
+                    align-self: center;
+                }
+
+                .logo-footer li {
+                    display: inline-block;
+                }
+
+
+                /* Menú hamburguesa. */
+
+                .container {
+                    margin: auto;
+                    height: 100%;
+                }
+
+                .navbar {
+                    height: 100%;
+                }
+
+                .logo {
+                    grid-column: 1 / 3;
+                }
+
+                .nav-container {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                }
+
+                .navbar .nav-container a {
+                    text-decoration: none;
+                    color: var(--ulh-green);
+                    padding: 0.7rem;
+                }
+
+                .navbar .nav-container a:hover{
+                    font-weight: bolder;
+                }
+
+                .nav-container .checkbox {
+                    display: block;
+                    position: relative;
+                    height: clamp(1vh, 6vw, 4vh);
+                    width: clamp(1vh, 8vw, 5.6vh);
+                    top: clamp(1vh, 6vw, 4vh);
+                    z-index: 5;
+                    opacity: 0;
+                    cursor: pointer;
+                }
+
+                .menu-hamburguesa {
+                    grid-column: 3;
+                    align-self: center;
+                    justify-self: right;
+
+                    padding-right: 5vw;
+                    height: 100%;
+                }
+                
+                .nav-container .lineas-hamburguesa {
+                    position: relative;
+                    right: 0;
+                    top: 0;
+                    height: clamp(1vh, 6vw, 4vh);
+                    width: clamp(1vh, 8vw, 5.6vh);
+                    z-index: 2;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
+
+                .nav-container .lineas-hamburguesa .linea {
+                    display: block;
+                    height: 4px;
+                    width: 100%;
+                    border-radius: 10px;
+                    background: var(--ulh-green);
+                }
+
+                .nav-container .lineas-hamburguesa .linea-arriba {
+                    transform-origin: 0% 0%;
+                    transition: transform 0.4s ease-in-out;
+                }
+
+                .nav-container .lineas-hamburguesa .linea-media {
+                    transition: transform 0.4s ease-in-out;
+                }
+
+                .nav-container .lineas-hamburguesa .linea-abajo {
+                    transform-origin: 0% 100%;
+                    transition: transform 0.4s ease-in-out;
+                }
+
+                .navbar .menu-items {
+                    padding-top: min(40vw, 20vh);
+                    height: 100vh;
+                    width: 100vw;
+                    transform: translate(-200%);
+                    display: flex;
+                    flex-direction: column;
+                    transition: transform 0.4s ease-in-out;
+                    text-align: center;
+                }
+
+                .navbar .menu-items li {
+                    margin-bottom: 1.2rem;
+                    list-style: none;
+                }
+
+                .navbar .menu-items p {
+                    color: var(--ulh-green);
+                    font-size: min(8vw, 4vh);
+                    text-align: center;
+                    margin-bottom: 2vw;
+                }
+
+                .nav-container .menu-items {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background-color: white;
+                    box-sizing: border-box;
+                }
+
+                .nav-container input[type="checkbox"]:checked ~ .menu-items {
+                    transform: translateX(0);
+                }
+
+                .nav-container input[type="checkbox"]:checked ~ .lineas-hamburguesa .linea-arriba {
+                    transform: rotateZ(45deg) scaleX(0.75) translate(3vw, -4vw);
+                }
+
+                .nav-container input[type="checkbox"]:checked ~ .lineas-hamburguesa .linea-media {
+                    transition-duration: 0.5s;
+                    transform: rotateZ(180deg);
+                }
+
+                .nav-container input[type="checkbox"]:checked ~ .lineas-hamburguesa .linea-abajo {
+                    transform: rotateZ(-45deg) scaleX(0.75) translate(3vw, 4vw);
+                }
+
+            }
+
+            /* Desktop + NavBar. */
+            /* @media screen and (pointer: fine) and (orientation: landscape) {} */
+
+
+            /*** Estilos generales ***/
+
+            body {
+                display: grid;
+                grid-template-areas:    "header"
+                                        "body"
+                                        "footer";
+                width: 100vw;
+                height: 100vh;
+            }
+
+            header {
+                grid-area: header;
+                height: min(25vw, 15vh);
+                box-sizing: border-box;
+            }
+
+            .cuerpo {
+                grid-area: body;
+            }
+
+            footer {
+                grid-area: footer;
+                height: min(25vw, 15vh);
+                align-self: end;
+                padding: 2vw 5vw 0 5vw; /* Funciona en versión mobile de desktop y de smartphone. */
+                box-sizing: border-box;
+            }
+
+            footer p {
+                line-height: 100%;
+            }
+
+            header, footer {
+                background-color: var(--ulh-pale-gray);
+            }
+
+            .footernav p {
+                font-size: min(2.5vw, 1.5vh);
+                padding: 0.5vw 0;
+            }
+
+            .logo-header {
+                height: min(25vw, 15vh);
+                position: relative;
+            }
+
+            .logo-footer img {
+                height: min(5vw, 3.5vh);
+            }
+
+            .logo-footer small {
+                font-family: 'Gotham', sans-serif;
+                font-size: min(2vw, 1.5vh);
+                color: var(--ulh-rich-grey);
+                line-height: 1.5em;
+                letter-spacing: 0.1em;
+                padding-left: 1.5vw;
+            }
+
+            .iconos-redes {
+                display: block;
+            }
+
+            .iconos-redes li {
+                display: inline-block;
+                padding: 0 0.5vw;
+            }
+
+            .logo-redes {
+                height: min(5vw, 2vh);
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <!-- HEADER EXTRAIDO -->
+        <header>
+            <nav>
+                <div class="navbar">
+                    <div class="container nav-container">
+                        <div class="logo">
+                            <a href="index.html">
+                                <img src="images/Imagotipo_PAW_Hospitals.svg" alt="Logo del PAW Medical" class="logo-header">
+                            </a>
+                        </div>
+                        <div class="menu-hamburguesa">
+                            <input class="checkbox" type="checkbox" />
+                            <div class="lineas-hamburguesa">
+                                <span class="linea linea-arriba"></span>
+                                <span class="linea linea-media"></span>
+                                <span class="linea linea-abajo"></span>
+                            </div>  
+                            <div class="menu-items">
+                                <li><p><a href="pedir-turno.html">Solicitar Turno</a></p></li>
+                                <li><p><a href="servicios.html">Servicios</a></p></li>
+                                <li><p><a href="obras-sociales.html">Obras Sociales</a></p></li>
+                                <li><p><a href="institucional.html">Institucional</a></p></li>
+                                <li><p><a href="contacto.html">Contacto</a></p></li>
+                                <li><p><a href="noticias.html">Noticias</a></p></li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <nav class="headernav-perfil">
+                <section>
+                    <ul>
+                        <li>
+                            <p class="headernav-ingresar"><a href="ingresar.html">Ingresar</a></p>
+                        </li>
+                        <li>
+                            <p class="headernav-crear-cuenta"><a href="crear-cuenta.html">Crear Cuenta</a></p>
+                        </li>
+                        <li>
+                            <p class="headernav-mi-perfil"><a href="mi-perfil.html">Perfil</a></p>
+                        </li>
+                        <li>
+                            <p class="headernav-logout"><a href="logout.cgi">Cerrar Sesión</a></p>
+                        </li>
+                    </ul>
+                </section>
+                <section class="header-contacto">
+                    <address>Ruta 5 y Avenida Constitución - (6700) Luján, Buenos Aires, Argentina.</address>
+                    <p>Teléfonos: <a href="tel:0800-233-5869">0800-233-5869 (Administración).</a></p>
+                </section>
+            </nav>
+        </header>
+        <!-- HEADER EXTRAIDO -->
+
+        <div class="cuerpo"><br /></div> <!-- DEBUG: sólo para separar visualmente header y footer -->
+
+        <!-- FOOTER EXTRAIDO -->
+        <footer>
+            <ul class="footernav">
+                <li class="footernav-institucional">
+                    <p><a href="institucional.html">Institucional</a></p>
+                </li>
+                <li class="footernav-pdp">
+                    <p><a href="politicas-privacidad.html">Políticas de Privacidad</a></p>
+                </li>
+                <li class="footernav-tyc">
+                    <p><a href="tos.html">Términos y Condiciones</a></p>
+                </li>
+                <li class="footernav-turnos">
+                    <p><a href="pedir-turno.html">Solicitar Turno</a></p>
+                </li>
+                <li class="footernav-servicios">
+                    <p><a href="servicios.html">Servicios</a></p>
+                </li>
+                <li class="footernav-obras-sociales">
+                    <p><a href="obras-sociales.html">Obras Sociales</a></p>
+                </li>
+                <li class="footernav-noticias">
+                    <p><a href="noticias.html">Noticias</a></p>
+                </li>
+                <li class="footernav-contacto">
+                    <p><a href="contacto.html">Contacto</a></p>
+                </li>
+            </ul>
+            <ul class="iconos-redes">
+                <li>
+                    <p>
                     <a href="www.facebook.com/PAWMedical">
                         <picture>
                             <source srcset="images/facebook-logo-mobile.png">
                             <img src="images/facebook-logo-desktop.png" alt="Logo de Facebook" class="logo-redes">
                         </picture>
                     </a>
-                </p>
-            </li>
-            <li>
-                <p>
+                    </p>
+                </li>
+                <li>
+                    <p>
                     <a href="www.instagram.com/PAWMedical">
                         <picture>
                             <source srcset="images/instagram-logo-mobile.png">
                             <img src="images/instagram-logo-desktop.png" alt="Logo de Instagram" class="logo-redes">
                         </picture>
                     </a>
-                </p>
-            </li>
-            <li>
-                <p>
+                    </p>
+                </li>
+                <li>
+                    <p>
                     <a href="www.twitter.com/PAWMedical">
                         <picture>
                             <source srcset="images/twitter-logo-mobile.png">
                             <img src="images/twitter-logo-desktop.png" alt="Logo de Twitter" class="logo-redes">
                         </picture>
                     </a>
-                </p>
-            </li>
-        </ul>
-        <ul class="paginas-relevantes-footer">
-            <li>
-                <p><a href="pedir-turno.html">Solicitar Turno</a></p>
-            </li>
-            <li>
-                <p><a href="servicios.html">Servicios</a></p>
-            </li>
-            <li>
-                <p><a href="obras-sociales.html">Obras Sociales</a></p>
-            </li>
-            <li>
-                <p><a href="noticias.html">Noticias</a></p>
-            </li>
-        </ul>
-        <ul class="telefonos-footer">
-            <li>
-                <p>Urgencias: <a href="tel:0800-235-3856">0800-235-3856</a></p>
-            </li>
-            <li>
-                <p>Turnos <a href="tel:0800-333-2548">0800-333-2548</a></p>
-            </li>
-            <li>
-                <p>Administración <a href="tel:0800-233-5869">0800-233-5869</a></p>
-            </li>
-            <li>
-                <p>Proveedores <a href="tel:0800-223-8468">0800-233-8468</a></p>
-            </li>
-        </ul>
-        <ul class="logo-footer">
-            <li>
-                <a href="index.html">
-                    <picture>
-                        <source srcset="images/isotipoUNLuPAW.svg">
-                        <img src="images/isotipoUNLuPAW.svg" alt="Logo del PAW Hospitals">
-                    </picture>
-                </a>
-            </li>
-            <li>
-                <p><small>&copy; 2023 Universidad Nacional de Luján.</small></p>
-            </li>
-        </ul>
-    </footer>
-    <!-- FOOTER EXTRAIDO -->
+                    </p>
+                </li>
+            </ul>
+            <ul class="footer-telefonos">
+                <li>
+                    <p>Urgencias: <a href="tel:0800-235-3856">0800-235-3856</a></p>
+                </li>
+                <li>
+                    <p>Turnos <a href="tel:0800-333-2548">0800-333-2548</a></p>
+                </li>
+                <li>
+                    <p>Administración <a href="tel:0800-233-5869">0800-233-5869</a></p>
+                </li>
+                <li>
+                    <p>Proveedores <a href="tel:0800-223-8468">0800-233-8468</a></p>
+                </li>
+            </ul>
+            <ul class="logo-footer">
+                <li>
+                    <a href="index.html">
+                        <picture>
+                            <source srcset="images/isotipoUNLuPAW.svg">
+                            <img src="images/isotipoUNLuPAW.svg" alt="Logo del PAW Hospitals">
+                        </picture>
+                    </a>
+                </li>
+                <li>
+                    <p><small>&copy; 2023 Universidad Nacional de Luján.</small></p>
+                </li>
+            </ul>
+        </footer>
+        <!-- FOOTER EXTRAIDO -->
 
-</body>
+    </body>
 </html>

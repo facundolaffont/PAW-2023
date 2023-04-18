@@ -19,30 +19,11 @@
 }
 
 
-/*** Media queries ***/
-
-@media screen and (max-width: 500px) {
-    .desktop {
-        display: none;
-    }
-
-    .paginas-relevantes {
-        display: none;
-    }
-}
-
-@media screen and (min-width: 501px) {
-    .mobile {
-        display: none;
-    }
-}
-
-
 /*** Estilos ***/
 
-p {
+p, address {
     font-family: 'Gotham', sans-serif;
-    font-size: 4vw;
+    font-size: min(4vw, 1.5vh);
     color: var(--ulh-rich-grey);
     line-height: 1.5em;
     letter-spacing: 0.1em;
@@ -57,38 +38,6 @@ img {
     font-size: 3vw;
     font-style: italic;
     color: var(--ulh-rich-grey);
-}
-
-header, footer {
-    background-color: var(--ulh-pale-gray);
-}
-
-.logo-header {
-    width: 60vw;
-}
-
-.logo-footer img {
-    width: 11vw;
-}
-
-.logo-footer small {
-    font-size: 3vw;
-}
-
-.iconos-redes {
-    display: block;
-}
-
-.iconos-redes li {
-    display: inline-block;
-}
-
-.logo-redes {
-    width: 5vw;
-}
-
-.logged {
-    display: none;
 }
 
 .enlace-boton {
