@@ -5,6 +5,59 @@
     <meta charset=utf-8>
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/general.css">
+    <style>
+        :root {
+            --sombra: 1px 1px teal;
+            --sombra-hover: 2px 2px teal;
+            --animacion-campo: box-shadow 0.2s ease-out, transform 0.2s ease-out;
+        }
+
+        main {
+            text-align: center;
+            width: 22rem;
+            justify-self: center;
+        }
+
+        main > * {
+            display: inline-block;
+            margin: 0 0 1rem 0;
+        }
+
+        .animado {
+            box-shadow: var(--sombra);
+            transform: translate(-0px, -0px);
+            transition: var(--animacion-campo);
+        }
+
+        .animado:hover {
+            box-shadow: var(--sombra-hover);
+            transform: translate(-1px, -1px);
+            transition: var(--animacion-campo);
+        }
+
+        form label {
+            font-size: 1rem;
+        }
+
+        form label > * {
+            display: block;
+            width: 15rem;
+            margin: 0 0 1rem 0;
+            box-sizing: border-box;
+        }
+
+        form > p {
+            text-align: center;
+        }
+
+        input[type="submit"],
+        input[type="reset"]
+        {
+            width: 47%;
+            margin-top: 1.2rem;
+        }
+
+    </style>
 </head>
 <body>
     <header>
@@ -59,12 +112,12 @@
         </nav>
     </header>
     <main>
-        <h1>Solicitar un turno</h1>
+        <h2>Solicitar un turno</h2>
         <form accept-charset=utf-8 name=form-pedir-turno action=pedir-turno.cgi method=post target=_self autocomplete=on>
             <fieldset name=fs-profesional-servicio>
                 <p>
                     <label>Servicio
-                        <select size=1 name=servicio id=servicio autofocus required>
+                        <select class="animado" size=1 name=servicio id=servicio autofocus required>
                             <option value=1>Alergología e inmunología</option>
                             <option value=2>Anestesiología</option>
                             <option value=3>Angiología y cirugía vascular</option>
@@ -134,7 +187,7 @@
                 </p>
                 <p>
                     <label>Profesional
-                        <select size=1 name=profesional id=profesional required>
+                        <select class="animado" size=1 name=profesional id=profesional required>
                             <option value=1>Alejandro Medina</option>
                             <option value=2>Ana López</option>
                             <option value=3>Ana Martínez</option>
@@ -164,13 +217,13 @@
                 </p>
             </fieldset>
             <fieldset name=fechahora-turno>
-                <p><label>Fecha del turno <input type=date name=fecha-turno id=fecha-turno required></label></p>
-                <p><label>Horario del turno <input type=time name=hora-turno id=hora-turno required></label></p>
+                <p><label>Fecha del turno <input class="animado" type=date name=fecha-turno id=fecha-turno required></label></p>
+                <p><label>Horario del turno <input class="animado" type=time name=hora-turno id=hora-turno required></label></p>
             </fieldset>
             <fieldset name=fs-paciente>
                 <p>
                     <label>Paciente
-                        <select size=1 name=paciente id=paciente>
+                        <select class="animado" size=1 name=paciente id=paciente>
                             <option value=1>Lautaro Pérez</option>
                             <option value=2>Juan Pérez</option>
                             <option value=3>Emilia Pérez</option>
@@ -181,20 +234,20 @@
                 </p>
                 <fieldset name=fs-datos-nuevo-paciente hidden=hidden>
                     <fieldset name=fs-nombre-apellido>
-                        <p><label>Nombre <input type=text name=nombre id=nombre maxlength=30 placeholder=Nombre></label></p>
-                        <p><label>Apellido <input type=text name=apellido id=apellido maxlength=30 placeholder=Apellido></label></p>
+                        <p><label>Nombre <input class="animado" type=text name=nombre id=nombre maxlength=30 placeholder=Nombre></label></p>
+                        <p><label>Apellido <input class="animado" type=text name=apellido id=apellido maxlength=30 placeholder=Apellido></label></p>
                     </fieldset>
-                    <p><label>Fecha de nacimiento <input type=date name=fecha-nac id=fecha-nac></label></p>
-                    <p><label>Edad <input type=number name=edad id=edad min=0 max=200 placeholder=Edad></label></p>
+                    <p><label>Fecha de nacimiento <input class="animado" type=date name=fecha-nac id=fecha-nac></label></p>
+                    <p><label>Edad <input class="animado" type=number name=edad id=edad min=0 max=200 placeholder=Edad></label></p>
                     <fieldset name=fs-formas-de-contacto>
-                        <p><label>Teléfono <input name=telefono id=telefono type=tel autocomplete="home tel" maxlength=20 placeholder=Teléfono></label></p>
-                        <p><label>Correo electrónico <input name=mail id=mail type=email autocomplete="home email" maxlength=40 placeholder="Correo electrónico"></label></p>
+                        <p><label>Teléfono <input class="animado" name=telefono id=telefono type=tel autocomplete="home tel" maxlength=20 placeholder=Teléfono></label></p>
+                        <p><label>Correo electrónico <input class="animado" name=mail id=mail type=email autocomplete="home email" maxlength=40 placeholder="Correo electrónico"></label></p>
                     </fieldset>
                 </fieldset>
             </fieldset>
             <p>
-                <input type=submit value=Solicitar>
-                <input type=reset value=Limpiar>
+                <input class="animado" type=reset value=Limpiar>
+                <input class="animado" type=submit value=Solicitar>
             </p>
         </form>
     </main>
