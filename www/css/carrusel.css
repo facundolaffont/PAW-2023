@@ -1,0 +1,27 @@
+.carrusel {
+    display: grid;
+    grid-auto-flow: column;
+
+    width: 100%;
+    overflow: hidden;
+}
+  
+.carrusel-item {
+    display: block;
+    width: 100%;
+    animation: animation-carrusel 10s linear infinite;
+}
+  
+.carrusel-item img {
+    width: 100%;
+    object-fit: cover;
+}
+
+@keyframes animation-carrusel {
+    0% {
+      transform: translateX(0em);
+    }
+    100% {
+      transform: translateX(-200em);
+    }
+  }
