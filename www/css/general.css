@@ -1,64 +1,10 @@
 /*** Imports ***/
 
 @import url('https://fonts.cdnfonts.com/css/gotham');
+@import url(reset.css);
+@import url(variables.css);
 
-
-/*** Variables ***/
-
-:root {
-    --ulh-green: rgb(2,82,85);
-    --ulh-yellow: rgb(252,196,68);
-    --ulh-red: rgb(208,36,74);
-    --ulh-blue: rgb(0,157,218);
-    --ulh-copper: rgb(160,73,40);
-    --ulh-deep-brown: rgb(91,43,25);
-    --ulh-baby-blue: rgb(135,211,226);
-    --ulh-rich-olive: rgb(113,136,57);
-    --ulh-rich-grey: rgb(59,74,90);
-    --ulh-pale-gray: rgb(238,241,239);
-    
-    --h1-font-size: 4rem;
-    --h1-color: var(--ulh-green);
-    --h1-font-weight: bold;
-
-    --h2-font-size: clamp(2rem, 3vw, 3rem);
-    --h2-font-weight: 900;
-    --h2-color: var(--ulh-green);
-
-    --h3-font-size: clamp(1rem, 1.5vw, 2rem);
-    --h3-font-weight: 700;
-    --h3-color: var(--ulh-blue);
-    
-    --p-font-size: clamp(1rem, 1vw, 1rem);
-    --p-color: var(--ulh-rich-grey);
-
-    --caption-font-size: clamp(1rem, 1vw, 1rem);
-    --caption-color: var(--ulh-rich-grey);
-
-    --mobile-display: none;
-    --desktop-display: block;
-    --burger-display: none;
-    --navbar-display: flex;
-
-    --background-color: var(--ulh-pale-gray);
-    --header-footer-color: white;
-
-    --dark-1: #000000;
-    --dark-2: #212121;
-    --dark-3: #303030;
-    --dark-4: #424242;
-
-    --color-link: var(--ulh-baby-blue);
-    --color-link-visited: var(--ulh-green);
-
-    --logged: none;
-    --not-logged: block;
-
-    --nav-color-hover: var(--ulh-rich-grey);
-    --nav-color-hover-p: var(--ulh-pale-gray);
-    --nav-color: var(--ulh-pale-gray);
-    --nav-color-p: var(--ulh-rich-grey);
-}
+/*  */
 
 @media screen and (pointer: coarse) {
     :root{
@@ -295,30 +241,30 @@
 body {
     display: grid;
     grid-template-areas:    "header"
-                            "body"
+                            "main"
                             "footer";
     width: 100vw;
     height: 100vh;
-    background-color: var(--background-color);
+    background-color: var(--background-color-body);
 }
 
 header {
-    
-    background-color: var(--header-footer-color);
+    grid: header;    
+    background-color: var(--background-color-header);
+    height: fit-content;
 }
 
 main {
-    grid-area: body;
+    grid-area: main;
     margin: 1% 10%;
 }
 
 footer {
     grid-area: footer;
-    height: min(25vw, 15vh);
+    height: fit-content;
     align-self: end;
-    padding: 2vw 5vw 0 5vw; /* Funciona en versión mobile de desktop y de smartphone. */
-    box-sizing: border-box;
-    background-color: var(--header-footer-color);
+    padding: 2vw 5vw 0 5vw;
+    background-color: var(--background-color-footer);
 }
 
 /* ESTILOS */
@@ -365,8 +311,8 @@ a:link {
     color: var(--color-link);
 }
 
-a:visited {
-    color: var(--color-link-visited);
+a:visited :not(menu-option){
+    color: var(--color-link);
 }
 
 /* FOOTER */
@@ -411,20 +357,6 @@ footer p {
     height: min(5vw, 2vh);
 }
 
-.navbar{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 0;
-    padding-left: 10vw;
-    padding-right: 10vw;
-}
-
-.menu-items li{
-    list-style-type: none;
-    display: inline-block; 
-}
-
 /* TEST */
 
 .logged{
@@ -458,15 +390,16 @@ nav li {
   
 nav li a {
     display: block;
-    color: var(--nav-color-p);
+    color: var(--p-color);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
 nav li a:hover {
-    background-color: var(--ulh-green);
-    color: var(--nav-color-hover-p);
+    background-color: var(--nav-hover-color);
+    color: var(--nav-hover-color-p);
+    border-radius: 8px;
 }
 
 .nav_directions{
@@ -474,3 +407,4 @@ nav li a:hover {
     color: var(--p-color);
 }
 
+/* */
