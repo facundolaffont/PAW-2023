@@ -38,7 +38,7 @@
     --mobile-display: none;
     --desktop-display: block;
     --burger-display: none;
-    --navbar-display: block;
+    --navbar-display: flex;
 
     --background-color: var(--ulh-pale-gray);
     --header-footer-color: white;
@@ -50,6 +50,14 @@
 
     --color-link: var(--ulh-baby-blue);
     --color-link-visited: var(--ulh-green);
+
+    --logged: none;
+    --not-logged: block;
+
+    --nav-color-hover: var(--ulh-rich-grey);
+    --nav-color-hover-p: var(--ulh-pale-gray);
+    --nav-color: var(--ulh-pale-gray);
+    --nav-color-p: var(--ulh-rich-grey);
 }
 
 @media screen and (pointer: coarse) {
@@ -73,7 +81,7 @@
     } 
 } 
 
-@media screen and (orientation: landscape) {
+@media screen and (orientation: landscape){
     :root{
         --burger-display: none;
         --navbar-display: block;
@@ -295,9 +303,7 @@ body {
 }
 
 header {
-    grid-area: header;
-    height: min(25vw, 15vh);
-    box-sizing: border-box;
+    
     background-color: var(--header-footer-color);
 }
 
@@ -404,3 +410,67 @@ footer p {
 .logo-redes {
     height: min(5vw, 2vh);
 }
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0;
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+
+.menu-items li{
+    list-style-type: none;
+    display: inline-block; 
+}
+
+/* TEST */
+
+.logged{
+    display: var(--logged);
+}
+.not-logged{
+    display: var(--not-logged);
+}
+.menu-burger{
+    display: var(--burger-display);
+}
+.menu-navbar{
+    display: var(--navbar-display);
+}
+
+/* NAVBAR */
+
+nav {
+    padding-left: 2vw;
+    padding-right: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--header-footer-color);
+    overflow: hidden;
+}
+
+nav li {
+    float: left;
+}
+  
+nav li a {
+    display: block;
+    color: var(--nav-color-p);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    background-color: var(--ulh-green);
+    color: var(--nav-color-hover-p);
+}
+
+.nav_directions{
+    text-align-last: right;
+    color: var(--p-color);
+}
+
