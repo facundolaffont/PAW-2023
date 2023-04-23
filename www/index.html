@@ -5,77 +5,79 @@
     <meta charset=utf-8>
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/general.css">
+    <link rel="stylesheet" type="text/css" href="css/carrusel.css">
 </head>
 <body>
     <header>
         <nav>
-            <div class="navbar">
-                <div class="container nav-container">
-                    <div class="logo">
-                        <a href="index.html">
-                            <img src="images/Imagotipo_PAW_Hospitals.svg" alt="Logo del PAW Medical" class="logo-header">
-                        </a>
-                    </div>
-                    <div class="menu-hamburguesa">
-                        <input class="checkbox" type="checkbox" />
-                        <div class="lineas-hamburguesa">
-                            <span class="linea linea-arriba"></span>
-                            <span class="linea linea-media"></span>
-                            <span class="linea linea-abajo"></span>
-                        </div>  
-                        <div class="menu-items">
-                            <li><p><a href="pedir-turno.html">Solicitar Turno</a></p></li>
-                            <li><p><a href="servicios.html">Servicios</a></p></li>
-                            <li><p><a href="obras-sociales.html">Obras Sociales</a></p></li>
-                            <li><p><a href="institucional.html">Institucional</a></p></li>
-                            <li><p><a href="contacto.html">Contacto</a></p></li>
-                            <li><p><a href="noticias.html">Noticias</a></p></li>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-        <nav class="headernav-perfil">
-            <section>
-                <ul>
-                    <li>
-                        <p class="headernav-ingresar"><a href="ingresar.html">Ingresar</a></p>
-                    </li>
-                    <li>
-                        <p class="headernav-crear-cuenta"><a href="crear-cuenta.html">Crear Cuenta</a></p>
-                    </li>
-                    <li>
-                        <p class="headernav-mi-perfil"><a href="mi-perfil.html">Perfil</a></p>
-                    </li>
-                    <li>
-                        <p class="headernav-logout"><a href="logout.cgi">Cerrar Sesión</a></p>
-                    </li>
-                </ul>
-            </section>
-            <section class="header-contacto">
-                <address>Ruta 5 y Avenida Constitución - (6700) Luján, Buenos Aires, Argentina.</address>
-                <p>Teléfonos: <a href="tel:0800-233-5869">0800-233-5869 (Administración).</a></p>
+            <a href="index.html">
+                <img src="images/Imagotipo_PAW_Hospitals.svg" alt="Logo del UNLu PAW" class="logo-header">
+            </a>
+            <section class="menu">
+                <section class="menu-burger">
+                    <input class="checkbox" type="checkbox" />
+                    <div class="lineas-hamburguesa">
+                        <span class="linea linea-arriba"></span>
+                        <span class="linea linea-media"></span>
+                        <span class="linea linea-abajo"></span>
+                    </div>  
+                    <ul>
+                        <li><p><a href="pedir-turno.html">Solicitar Turno</a></p></li>
+                        <li><p><a href="servicios.html">Servicios</a></p></li>
+                        <li><p><a href="obras-sociales.html">Obras Sociales</a></p></li>
+                        <li><p><a href="institucional.html">Institucional</a></p></li>
+                        <li><p><a href="contacto.html">Contacto</a></p></li>
+                        <li><p><a href="noticias.html">Noticias</a></p></li>
+                    </ul>
+                </section>
+                <section class="menu-navbar">
+                    <ul>
+                        <li><p><a href="institucional.html">Institucional</a></p></li>
+                        <li><p><a href="contacto.html">Contacto</a></p></li>
+                        <li><p><a href="obras-sociales.html">Obras Sociales</a></p></li>
+                        <li><p><a href="servicios.html">Servicios</a></p></li>
+                        <li><p><a href="pedir-turno.html">Solicitar Turno</a></p></li>
+                        <li><p><a href="mi-perfil.html" class="logged">Perfil</a></p></li>
+                        <li><p><a href="logout.cgi" class="logged">Cerrar Sesión</a></p></li>
+                        <li><p><a href="ingresar.html" class="not-logged">Ingresar</a></p></li>
+                        <li><p><a href="crear-cuenta.html" class="not-logged">Crear Cuenta</a></p></li>
+                    </ul>
+                        <address class="nav_directions">Ruta 5 y Avenida Constitución - (6700) Luján, Buenos Aires, Argentina.</address>
+                        <p class="nav_directions">Teléfonos: <a href="tel:0800-233-5869" class="tel">0800-233-5869 (Administración).</a></p>
+                </section>
             </section>
         </nav>
     </header>
     <main>
         <section>
-            <ul class="carrusel-imagenes">
+            <ul class="carrusel">
                 <li>
-                    <figure>
-                        <img src="images/index-fachada-desktop.jpeg" alt="Fotografía del edificio del hospital.">
+                    <figure class="carrusel-item">
+                        <img src="images/noticia1.jpeg" alt="Fotografía del edificio del hospital.">
                         <figcaption>Descripción.</figcaption>
                     </figure>
                 </li>
                 <li>
-                    <figure>
-                        <img src="images/index-interior-desktop.jpeg" alt="Fotografía del interior del hospital.">
+                    <figure class="carrusel-item">
+                        <img src="images/noticia2.jpeg" alt="Fotografía del interior del hospital.">
                         <figcaption>Descripción.</figcaption>
                     </figure>
                 </li>
                 <li>
-                    <figure>
-                        <img src="images/index-tomógrafo-desktop.jpeg" alt="Fotografía tomógrafo.">
+                    <figure class="carrusel-item">
+                        <img src="images/noticia3.jpeg" alt="Fotografía tomógrafo.">
+                        <figcaption>Descripción.</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure class="carrusel-item">
+                        <img src="images/noticia4.jpeg" alt="Fotografía tomógrafo.">
+                        <figcaption>Descripción.</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure class="carrusel-item">
+                        <img src="images/noticia5.jpeg" alt="Fotografía tomógrafo.">
                         <figcaption>Descripción.</figcaption>
                     </figure>
                 </li>

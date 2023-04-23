@@ -16,22 +16,90 @@
     --ulh-rich-olive: rgb(113,136,57);
     --ulh-rich-grey: rgb(59,74,90);
     --ulh-pale-gray: rgb(238,241,239);
+    
+    --h1-font-size: 4rem;
+    --h1-color: var(--ulh-green);
+    --h1-font-weight: bold;
+
+    --h2-font-size: clamp(2rem, 3vw, 3rem);
+    --h2-font-weight: 900;
+    --h2-color: var(--ulh-green);
+
+    --h3-font-size: clamp(1rem, 1.5vw, 2rem);
+    --h3-font-weight: 700;
+    --h3-color: var(--ulh-blue);
+    
+    --p-font-size: clamp(1rem, 1vw, 1rem);
+    --p-color: var(--ulh-rich-grey);
+
+    --caption-font-size: clamp(1rem, 1vw, 1rem);
+    --caption-color: var(--ulh-rich-grey);
+
+    --mobile-display: none;
+    --desktop-display: block;
+    --burger-display: none;
+    --navbar-display: flex;
+
+    --background-color: var(--ulh-pale-gray);
+    --header-footer-color: white;
+
+    --dark-1: #000000;
+    --dark-2: #212121;
+    --dark-3: #303030;
+    --dark-4: #424242;
+
+    --color-link: var(--ulh-baby-blue);
+    --color-link-visited: var(--ulh-green);
+
+    --logged: none;
+    --not-logged: block;
+
+    --nav-color-hover: var(--ulh-rich-grey);
+    --nav-color-hover-p: var(--ulh-pale-gray);
+    --nav-color: var(--ulh-pale-gray);
+    --nav-color-p: var(--ulh-rich-grey);
 }
 
+@media screen and (pointer: coarse) {
+    :root{
+        --mobile-display: block;
+        --desktop-display: none;
+    }
+}
 
-/*** Media queries ***/
+@media screen and (pointer: fine) {
+    :root{
+       --mobile-display: none;
+       --desktop-display: block;
+   }
+}
 
-/* Mobile + NavBar. */
-/* @media screen and (pointer: coarse) and (orientation: landscape) { */
+@media screen and (orientation: portrait) {
+    :root{
+        --burger-display: block;
+        --navbar-display: none;
+    } 
+} 
 
-/* Mobile + Menú hamburguesa. */
-/* @media screen and (pointer: coarse) and (orientation: portrait) {
+@media screen and (orientation: landscape){
+    :root{
+        --burger-display: none;
+        --navbar-display: block;
+    }
+}
 
-/* DEBUG: fuerza mobile en portrait. */
-/* @media { */
+@media (prefers-color-scheme: light) {
+    :root {
+        --background-color: var(--dark-3);
+        --header-footer-color: var(--dark-2);
+        --p-color: var(--ulh-pale-gray);
+    }
+    .logo-header{
+        filter: grayscale(100%);        
+    }
+}
 
-/* DEBUG: fuerza mobile en portrait. */
-@media {
+@media screen and (pointer: fine) and (orientation: landscape) {
     .headernav,
     .headernav-perfil,
     .header-contacto,
@@ -41,8 +109,8 @@
     .footernav-servicios,
     .footernav-obras-sociales,
     .footernav-noticias {
-        display: none;
-    }
+        display: var(--burger-display);
+    } 
 
     header nav {
         height: 100%;
@@ -89,7 +157,6 @@
         display: inline-block;
     }
 
-
     /* Menú hamburguesa. */
 
     .container {
@@ -112,7 +179,7 @@
 
     .navbar .nav-container a {
         text-decoration: none;
-        color: var(--ulh-green);
+        color: var(--h1-color);
         padding: 0.7rem;
     }
 
@@ -221,14 +288,9 @@
     .nav-container input[type="checkbox"]:checked ~ .lineas-hamburguesa .linea-abajo {
         transform: rotateZ(-45deg) scaleX(0.75) translate(3vw, 4vw);
     }
-
 }
 
-/* Desktop + NavBar. */
-/* @media screen and (pointer: fine) and (orientation: landscape) {} */
-
-
-/*** Estilos generales ***/
+/* GRID */
 
 body {
     display: grid;
@@ -237,16 +299,17 @@ body {
                             "footer";
     width: 100vw;
     height: 100vh;
+    background-color: var(--background-color);
 }
 
 header {
-    grid-area: header;
-    height: min(25vw, 15vh);
-    box-sizing: border-box;
+    
+    background-color: var(--header-footer-color);
 }
 
 main {
     grid-area: body;
+    margin: 1% 10%;
 }
 
 footer {
@@ -255,14 +318,61 @@ footer {
     align-self: end;
     padding: 2vw 5vw 0 5vw; /* Funciona en versión mobile de desktop y de smartphone. */
     box-sizing: border-box;
+    background-color: var(--header-footer-color);
 }
+
+/* ESTILOS */
+
+html{
+    scroll-behavior: smooth;
+    width: fit-content;
+}
+
+h1 {
+    font-family: 'Gotham', sans-serif;
+    font-size: var(--h1-font-size);
+    font-weight: var(--h1-font-weight);
+    color: var(--h1-color);
+}
+
+h2 {
+    font-family: 'Gotham', sans-serif;
+    margin: 1vw 0vw;
+    font-size: var(--h2-font-size);
+    font-weight: var(--h2-font-weight);
+    color: var(--h2-color);
+}
+
+h3 {
+    font-family: 'Gotham', sans-serif;
+    margin: 1vw 0vw;
+    font-size: var(--h3-font-size);
+    font-weight: var(--h3-font-weight);
+    color: var(--h3-color);
+}
+
+p, address, img, figcaption {
+    font-family: 'Gotham', sans-serif;
+    font-size: var(--p-font-size);
+    color: var(--p-color);
+    line-height: 1.5em;
+    letter-spacing: 0.1em;
+    text-align: left;
+}
+
+a:link {
+    text-decoration-line: none;
+    color: var(--color-link);
+}
+
+a:visited {
+    color: var(--color-link-visited);
+}
+
+/* FOOTER */
 
 footer p {
     line-height: 100%;
-}
-
-header, footer {
-    background-color: var(--ulh-pale-gray);
 }
 
 .footernav p {
@@ -301,57 +411,66 @@ header, footer {
     height: min(5vw, 2vh);
 }
 
-/*** Estilos ***/
-
-p, address {
-    font-family: 'Gotham', sans-serif;
-    font-size: min(4vw, 1.5vh);
-    color: var(--ulh-rich-grey);
-    line-height: 1.5em;
-    letter-spacing: 0.1em;
-    text-align: left;
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0;
+    padding-left: 10vw;
+    padding-right: 10vw;
 }
 
-li {
-    line-height: 1.5em;
+.menu-items li{
+    list-style-type: none;
+    display: inline-block; 
 }
 
-img {
-    font-size: 3vw;
-    font-style: italic;
-    color: var(--ulh-rich-grey);
+/* TEST */
+
+.logged{
+    display: var(--logged);
+}
+.not-logged{
+    display: var(--not-logged);
+}
+.menu-burger{
+    display: var(--burger-display);
+}
+.menu-navbar{
+    display: var(--navbar-display);
 }
 
-.enlace-boton {
-    width: 170px;
-    margin: 5px 0 5px 0;
-    background-color: var(--ulh-pale-gray);
+/* NAVBAR */
+
+nav {
+    padding-left: 2vw;
+    padding-right: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--header-footer-color);
+    overflow: hidden;
 }
 
-.carrusel-imagenes {
-    display: inline;
+nav li {
+    float: left;
+}
+  
+nav li a {
+    display: block;
+    color: var(--nav-color-p);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
 
-.carrusel-imagenes li {
-    display: inline-block;
-    padding: 10px;
+nav li a:hover {
+    background-color: var(--ulh-green);
+    color: var(--nav-color-hover-p);
 }
 
-.carrusel-imagenes img::before {
-    background-color: var(--ulh-pale-gray);
-    border: 1px dashed var(--ulh-rich-grey);
+.nav_directions{
+    text-align-last: right;
+    color: var(--p-color);
 }
 
-.carrusel-imagenes figcaption {
-    font-style: italic;
-    font-size: 0.8em;
-}
-
-a:link {
-    text-decoration-line: none;
-    color: var(--ulh-rich-olive);
-}
-
-a:visited {
-    color: var(--ulh-green);
-}
