@@ -37,17 +37,20 @@
 
     /* BACKGROUND */
     --background-color-body: var(--ulh-pale-gray);
-    --background-color-header: white;
-    --background-color-footer: white;
+    --header-footer-color: white;
 
     /* NavBar */                                                    /* SELECTED OPTION */
-    --nav-hover-color: var(--ulh-green);
-    --nav-hover-color-p: white;
+    --nav-hover-background-color: var(--ulh-green);
+    --nav-hover-color: white;
     --nav-color: white;
     --nav-color-p: var(--ulh-green);
 
-    /* MENUs */
+    /* Forms */
+    --sombra: 2px 2px teal;
+    --sombra-hover: 3px 3px teal;
+    --animacion-campo: box-shadow 0.2s ease-out, transform 0.2s ease-out;
 
+    /* MENUs */
     --caption-font-size: clamp(1rem, 1vw, 1rem);
     --caption-color: var(--ulh-rich-grey);
 
@@ -55,9 +58,10 @@
     --mobile-display: none;
     --desktop-display: block;
 
-    /* Burger - NavBar*/
+    /* Burger - NavBar */
     --burger-display: none;
     --navbar-display: flex;
+    --linea-hamburguesa-color: var(--ulh-green);
 
     /* Dark Mode */
     --dark-1: #000000;
@@ -68,4 +72,7 @@
     /* logged */
     --logged: none;
     --not-logged: block;    
+
+    /* Footer */
+    --footer-content-relation: 0.65;
 }
