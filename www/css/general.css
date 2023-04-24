@@ -16,7 +16,7 @@
         --navbar-display: none;
     } 
     html {
-        font-size: 34px;
+        font-size: 38px;
     }
 } 
 
@@ -70,6 +70,13 @@ header {
     border-bottom-width: 0.2rem;
 }
 
+.logo-header {
+    height: clamp(6rem, 1vh, 7rem);
+    position: relative;
+    top: 0.35rem;
+    padding: 0.1rem 0.3rem 0.1rem 0.3rem;
+}
+
 main {
     grid-area: main;
     margin: 1% 10%;
@@ -88,12 +95,18 @@ footer {
 
 footer p {
     font-size: 0.5rem;
+    line-height: 100%;
 }
 
 footer ul {
     height: 100%;
     display: inline-block;
     vertical-align: middle;
+}
+
+.footernav p {
+    font-size: min(2.5vw, 1.5vh);
+    padding: 0.5vw 0;
 }
 
 .footernav-legales {
@@ -114,17 +127,29 @@ footer ul {
     vertical-align: middle;
 }
 
+.footernav-contacto {
+    display: block;
+}
+
+.logo-redes {
+    height: min(5vw, 2vh);
+}
+
+.iconos-redes {
+    display: block;
+}
+
+.iconos-redes li {
+    display: inline-block;
+    padding: 0 0.5vw;
+}
+
 
 /* Menú hamburguesa */
 
 .container {
     margin: auto;
     height: 100%;
-}
-
-.navbar {
-    height: 100%;
-    width: 100%;
 }
 
 .logo {
@@ -136,8 +161,20 @@ footer ul {
     grid-template-columns: repeat(3, 1fr);
 }
 
+.navbar {
+    height: 100%;
+    width: 100%;
+}
+
+.navbar ul li,
+.navbar ul p
+{
+    display: inline;
+}
+
 .navbar a {
     color: var(--h1-color);
+    display: inline;
 }
 
 .navbar a:hover{
@@ -158,7 +195,7 @@ footer ul {
 .menu-hamburguesa {
     grid-column: 3;
     align-self: center;
-    padding-top: 1.2rem;
+    padding: 1.2rem 1rem 0 0;
     justify-self: right;
 
     height: 100%;
@@ -201,7 +238,7 @@ footer ul {
 .menu-items {
     display: flex;
     height: 75vh;
-    padding: 12.5vh 0;
+    padding: 15.5vh 0;
     width: 100vw;
     transform: translate(-200%);
     flex-direction: column;
@@ -299,6 +336,11 @@ a:visited :not(menu-option){
 
 /* Estilos para form */
 
+.boton-destacado {
+    --sombra: 2px 2px black;
+    --sombra-hover: 3px 3px black;
+}
+
 .campo-form-animado {
     box-shadow: var(--sombra);
     transform: translate(0px, 0px);
@@ -313,7 +355,6 @@ a:visited :not(menu-option){
 
 input, select {
     appearance: menulist-button;
-    border-radius: 0.5rem;
     height: 1.7rem;
     color: black;
     background-color: white;
@@ -322,38 +363,6 @@ input, select {
     outline-width: 1px;
     outline-color: var(--ulh-green);
     outline-style: solid;
-}
-
-
-/* FOOTER */
-
-footer p {
-    line-height: 100%;
-}
-
-.footernav p {
-    font-size: min(2.5vw, 1.5vh);
-    padding: 0.5vw 0;
-}
-
-.logo-header {
-    height: clamp(6rem, 1vh, 7rem);
-    position: relative;
-    top: 0.35rem;
-    padding: 0.1rem 0.3rem 0.1rem 0.3rem;
-}
-
-.iconos-redes {
-    display: block;
-}
-
-.iconos-redes li {
-    display: inline-block;
-    padding: 0 0.5vw;
-}
-
-.logo-redes {
-    height: min(5vw, 2vh);
 }
 
 
@@ -369,6 +378,7 @@ footer p {
     display: var(--burger-display);
 }
 .menu-navbar{
+    width: 100vw;
     display: var(--navbar-display);
 }
 
@@ -376,7 +386,6 @@ footer p {
 /* NAVBAR */
 
 nav {
-    padding: 0 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -384,10 +393,6 @@ nav {
     overflow: hidden;
 }
 
-nav li {
-    float: left;
-}
-  
 nav li a {
     display: block;
     color: var(--p-color);

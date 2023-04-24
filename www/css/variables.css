@@ -46,8 +46,8 @@
     --nav-color-p: var(--ulh-green);
 
     /* Forms */
-    --sombra: 2px 2px teal;
-    --sombra-hover: 3px 3px teal;
+    --sombra: 2px 2px var(--ulh-green);
+    --sombra-hover: 3px 3px var(--ulh-green);
     --animacion-campo: box-shadow 0.2s ease-out, transform 0.2s ease-out;
 
     /* MENUs */
