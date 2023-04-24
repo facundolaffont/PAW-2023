@@ -1,0 +1,78 @@
+:root {
+
+    /* COLOR PALETTE */
+    --ulh-green: rgb(2,82,85);
+    --ulh-yellow: rgb(252,196,68);
+    --ulh-red: rgb(208,36,74);
+    --ulh-blue: rgb(0,157,218);
+    --ulh-copper: rgb(160,73,40);
+    --ulh-deep-brown: rgb(91,43,25);
+    --ulh-baby-blue: rgb(135,211,226);
+    --ulh-rich-olive: rgb(113,136,57);
+    --ulh-rich-grey: rgb(59,74,90);
+    --ulh-pale-gray: rgb(238,241,239);
+    
+    /* H1 */
+    --h1-color: var(--ulh-green);
+    --h1-font-size: 4rem;
+    --h1-font-weight: bold;
+
+    /* H2 */
+    --h2-color: var(--ulh-green);
+    --h2-font-size: clamp(2rem, 3vw, 3rem);
+    --h2-font-weight: 900;
+
+    /* H3 */
+    --h3-color: var(--ulh-blue);
+    --h3-font-size: clamp(1rem, 1.5vw, 2rem);
+    --h3-font-weight: 700;
+    
+    /* P */
+    --p-color: var(--ulh-rich-grey);
+    --p-font-size: clamp(1rem, 1vw, 1rem);
+
+    /* LINKS */
+    --color-link: var(--ulh-green);
+    --color-link-visited: var(--ulh-deep-brown);
+
+    /* BACKGROUND */
+    --background-color-body: var(--ulh-pale-gray);
+    --header-footer-color: white;
+
+    /* NavBar */                                                    /* SELECTED OPTION */
+    --nav-hover-background-color: var(--ulh-green);
+    --nav-hover-color: white;
+    --nav-color: white;
+    --nav-color-p: var(--ulh-green);
+
+    /* Forms */
+    --sombra: 2px 2px teal;
+    --sombra-hover: 3px 3px teal;
+    --animacion-campo: box-shadow 0.2s ease-out, transform 0.2s ease-out;
+
+    /* MENUs */
+    --caption-font-size: clamp(1rem, 1vw, 1rem);
+    --caption-color: var(--ulh-rich-grey);
+
+    /* Mobile - Desktop */
+    --mobile-display: none;
+    --desktop-display: block;
+
+    /* Burger - NavBar */
+    --burger-display: none;
+    --navbar-display: flex;
+    --linea-hamburguesa-color: var(--ulh-green);
+
+    /* Dark Mode */
+    --dark-1: #000000;
+    --dark-2: #212121;
+    --dark-3: #303030;
+    --dark-4: #424242;
+
+    /* logged */
+    --logged: none;
+    --not-logged: block;    
+
+    /* Footer */
+    --footer-content-relation: 0.65;
+}
