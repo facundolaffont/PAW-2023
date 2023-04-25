@@ -12,8 +12,10 @@
  **/
 @media screen and (orientation: portrait) and (min-width: 501px) and (max-width: 1000px) {
     :root{
+        --header-display: grid;
         --burger-display: block;
         --navbar-display: none;
+        --nav-display: flex;
     } 
     html {
         font-size: 38px;
@@ -25,16 +27,20 @@
  * */
 @media screen and (orientation: portrait) and (max-width: 500px) {
     :root{
+        --header-display: grid;
         --burger-display: block;
         --navbar-display: none;
+        --nav-display: flex;
     } 
 } 
 
 /* Desktop */
 @media screen and (orientation: landscape) {
     :root{
+        --header-display: block;
         --burger-display: none;
         --navbar-display: block;
+        --nav-display: block;
     }
 }
 
@@ -148,17 +154,13 @@ footer ul {
 /* Menú hamburguesa */
 
 .container {
+    display: var(--header-display);
     margin: auto;
     height: 100%;
 }
 
 .logo {
     grid-column: 1 / 3;
-}
-
-.nav-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
 }
 
 .navbar {
@@ -181,6 +183,20 @@ footer ul {
     font-weight: bolder;
 }
 
+.menu-hamburguesa {
+    display: var(--burger-display);
+    grid-column: 3;
+    align-self: center;
+    padding: 1.2rem 1rem 0 0;
+    justify-self: right;
+
+    height: 100%;
+}
+
+.nav-container {
+    grid-template-columns: repeat(3, 1fr);
+}
+
 .nav-container .checkbox {
     display: block;
     position: relative;
@@ -190,15 +206,6 @@ footer ul {
     z-index: 5;
     opacity: 0;
     cursor: pointer;
-}
-
-.menu-hamburguesa {
-    grid-column: 3;
-    align-self: center;
-    padding: 1.2rem 1rem 0 0;
-    justify-self: right;
-
-    height: 100%;
 }
 
 .nav-container .lineas-hamburguesa {
@@ -386,7 +393,7 @@ input, select {
 /* NAVBAR */
 
 nav {
-    display: flex;
+    display: var(--nav-display);
     align-items: center;
     justify-content: space-between;
     background-color: var(--header-footer-color);
