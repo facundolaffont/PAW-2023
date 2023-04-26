@@ -37,10 +37,14 @@
 /* Desktop */
 @media screen and (orientation: landscape) {
     :root{
-        --header-display: block;
+        --header-display: inline-block;
         --burger-display: none;
-        --navbar-display: block;
+        --navbar-display: inline-block;
         --nav-display: block;
+
+        /* Las siguientes propiedades están harcodeadas por cuestiones de diseño. */
+        --logged: none;
+        --not-logged: inline;
     }
 }
 
@@ -55,7 +59,7 @@
 }
 
 
-/* GRID */
+/* Estilos del grid. */
 
 body {
     display: grid;
@@ -151,7 +155,7 @@ footer ul {
 }
 
 
-/* Menú hamburguesa */
+/* Estilos del menú hamburguesa */
 
 .container {
     display: var(--header-display);
@@ -168,8 +172,8 @@ footer ul {
     width: 100%;
 }
 
-.navbar ul li,
-.navbar ul p
+.logo ul li,
+.menu-hamburguesa ul p
 {
     display: inline;
 }
@@ -292,7 +296,7 @@ footer ul {
 }
 
 
-/* ESTILOS */
+/* Estilos generales */
 
 html{
     scroll-behavior: smooth;
@@ -341,7 +345,7 @@ a:visited :not(menu-option){
 }
 
 
-/* Estilos para form */
+/* Estilos del form. */
 
 .boton-destacado {
     --sombra: 2px 2px black;
@@ -373,24 +377,7 @@ input, select {
 }
 
 
-/* TEST */
-
-.logged{
-    display: var(--logged);
-}
-.not-logged{
-    display: var(--not-logged);
-}
-.menu-burger{
-    display: var(--burger-display);
-}
-.menu-navbar{
-    width: 100vw;
-    display: var(--navbar-display);
-}
-
-
-/* NAVBAR */
+/* Estilos del navbar con enlaces. */
 
 nav {
     display: var(--nav-display);
@@ -414,7 +401,36 @@ nav li a:hover {
     border-radius: 8px;
 }
 
+.menu-navbar {
+    display: var(--navbar-display);
+    width: 60vw;
+}
+
+.menu-navbar p {
+    font-size: var(--nav-desktop-p-size);
+}
+
+.menu-navbar ul, .menu-navbar li {
+    display: inline-block;
+}
+
+.logged{
+    display: var(--logged);
+}
+
+.not-logged{
+    display: var(--not-logged);
+}
+
 .nav_directions{
     text-align-last: right;
     color: var(--p-color);
+}
+
+.header-info {
+    background-color: var(--nav-desktop-info-color);
+}
+
+.header-info p, .header-info address {
+    font-size: var(--nav-desktop-info-p-size);
 }
