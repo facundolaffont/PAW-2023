@@ -57,11 +57,24 @@
         box-sizing: border-box;
     }
 
+    .form-botones-reset-limpiar {
+        text-align: center;
+        width: 100%;
+        margin-top: 1.5rem;
+    }
+
+    input[type="submit"], input[type="reset"]
+    {
+        width: 47%;
+    }
+
     input[type="submit"] {
         background-color: var(--ulh-green);
         color: white;
-        width: 20rem;
-        margin-top: 0.5rem;
+    }
+
+    input[type="reset"] {
+        background-color: var(--ulh-yellow);
     }
     
     textarea {
@@ -134,7 +147,10 @@
                     <p><label>Mail <input class="campo-form-animado" name=mail id=mail type=email autocomplete="home email" maxlength=40 tabindex=4 placeholder=Mail required></label></p>
                 </fieldset>
                 <p><label>Consulta <textarea class="campo-form-animado" name=consulta id=consulta maxlength=250 tabindex=5 placeholder=Consulta required></textarea></label></p>
-                <p><input class="campo-form-animado" type=submit name=boton-enviar value=Enviar tabindex=6></p>
+                <p class="form-botones-reset-limpiar">
+                    <input class="campo-form-animado" type=reset name="limpiar" id="limpiar" tabindex=6 value="Limpiar">
+                    <input class="boton-destacado campo-form-animado" type=submit name=boton-crear-cuenta id="limpiar" tabindex=6 value="Crear cuenta">
+                </p>
             </form>
         </section>
     </main>
