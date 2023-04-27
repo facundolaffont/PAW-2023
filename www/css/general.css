@@ -138,7 +138,6 @@ main {
 
 footer {
     grid-area: footer;
-    height: fit-content;
     align-self: end;
     padding: 1rem;
     background-color: var(--header-footer-color);
@@ -148,27 +147,16 @@ footer {
 }
 
 footer p {
-    font-size: 0.5rem;
-    line-height: 100%;
+    font-size: var(--p-font-size);
+    padding: .1rem;
 }
 
 footer ul {
-    height: 100%;
     display: inline-block;
-    vertical-align: middle;
-}
-
-.footernav p {
-    font-size: min(2.5vw, 1.5vh);
-    padding: 0.5vw 0;
 }
 
 .footernav-legales {
     width: calc(var(--footer-content-relation) * (100% - 2%));
-}
-
-.footernav-legales p {
-    line-height: 0.85rem;
 }
 
 .footernav-redes {
@@ -178,26 +166,11 @@ footer ul {
 
 .footernav-redes * {
     display: inline-block;
-    vertical-align: middle;
-}
-
-.footernav-contacto {
-    display: block;
 }
 
 .logo-redes {
-    height: min(5vw, 2vh);
+    height: var(--p-font-size);
 }
-
-.iconos-redes {
-    display: block;
-}
-
-.iconos-redes li {
-    display: inline-block;
-    padding: 0 0.5vw;
-}
-
 
 /* Estilos del menú hamburguesa */
 
@@ -258,10 +231,10 @@ footer ul {
 .menu-items li p a {
     /* color: var(--ulh-green); */
     /* color: var(--h1-color); */
-    color: white;
+    color: var(--ulh-green);
+    background-color: white;
     font-weight: bold;
     display: block;
-    border-radius: 0;
     padding: 1rem 0;
 }
 
@@ -271,7 +244,8 @@ footer ul {
 }
 
 .menu-items a:hover{
-    background-color: var(--ulh-yellow);
+    background-color: var(--ulh-green);
+    color: white;
 }
 
 .nav-container .checkbox {
@@ -385,7 +359,6 @@ a:visited :not(menu-option){
     color: var(--color-link);
 }
 
-
 /* Estilos del form. */
 
 .boton-destacado {
@@ -444,16 +417,15 @@ nav {
     text-decoration: none;
 }
 
-.menu-navbar a:hover {
+.menu-navbar li:hover {
+    border-radius: 8px;
     color: var(--nav-hover-color);
     background-color: var(--nav-hover-background-color);
 }
 
 .menu-navbar p {
-    inline-size: min-content;
     padding: 0.5rem;
     text-align: center;
-    overflow-wrap: break-word;
     font-size: var(--nav-desktop-p-size);
 }
 
@@ -461,13 +433,8 @@ nav {
     display: inline-block;
 }
 
-.menu-navbar .block p {
-    margin-left: auto;
-}
-
 .menu-navbar .block li, .menu-navbar .block p {
     display: block;
-    text-align: right;
 }
 
 .logged {
@@ -487,8 +454,4 @@ nav {
     background-color: var(--nav-desktop-info-color);
     display: var(--desktop-display);
     padding: 0.5rem 1rem;
-}
-
-.header-info p, .header-info address {
-    font-size: var(--nav-desktop-info-p-size);
 }
