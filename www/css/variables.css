@@ -44,7 +44,7 @@
     --nav-hover-color: white;
     --nav-color: white;
     --nav-color-p: var(--ulh-green);
-    --nav-desktop-p-size: clamp(0.7rem, 1vw, 0.7rem);
+    --nav-desktop-p-size: clamp(1rem, 1vw, 2rem);
     --nav-desktop-info-color: var(--ulh-yellow);
     --nav-desktop-info-p-size: clamp(0.6rem, 1vw, 0.6rem);
 

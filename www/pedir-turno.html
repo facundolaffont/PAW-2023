@@ -32,8 +32,7 @@
             text-align: center;
         }
 
-        input[type="submit"],
-        input[type="reset"]
+        input[type="submit"], input[type="reset"]
         {
             width: 47%;
             margin-top: 1.2rem;
@@ -44,12 +43,16 @@
             color: white;
         }
 
+        input[type="reset"] {
+            background-color: var(--ulh-yellow);
+        }
+
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <div class="navbar">
+            <div class="navbar-flex navbar">
                 <div class="container nav-container">
                     <div class="logo">
                         <p>
@@ -81,18 +84,18 @@
                     </div>
                 </div>
                 <section class="menu-navbar">
-                    <ul>
+                    <ul class="inline-block main-items">
                         <li><p><a href="institucional.html">Institucional</a></p></li>
                         <li><p><a href="contacto.html">Contacto</a></p></li>
                         <li><p><a href="obras-sociales.html">Obras Sociales</a></p></li>
                         <li><p><a href="servicios.html">Servicios</a></p></li>
                         <li><p><a href="pedir-turno.html">Solicitar Turno</a></p></li>
                     </ul>
-                    <ul class="logged">
+                    <ul class="block logged">
                         <li><p><a href="mi-perfil.html">Perfil</a></p></li>
                         <li><p><a href="logout.cgi">Cerrar Sesión</a></p></li>
                     </ul>
-                    <ul class="not-logged">
+                    <ul class="block not-logged">
                         <li><p><a href="ingresar.html">Ingresar</a></p></li>
                         <li><p><a href="crear-cuenta.html">Crear Cuenta</a></p></li>
                     </ul>                    
