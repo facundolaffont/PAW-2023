@@ -6,84 +6,52 @@
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/general.css">
     <style>
-        :root {
-            --sombra: 1px 1px teal;
-            --sombra-hover: 2px 2px teal;
-            --animacion-campo: box-shadow 0.2s ease-out, transform 0.2s ease-out;
-        }
-
-        .lineas-hamburguesa {
-            z-index: 2;
-        }
-
-        .menu-items {
-            z-index: 1;
-        }
-
         main {
             text-align: center;
-            width: 16rem;
+            width: 22rem;
             justify-self: center;
+            margin: 3rem auto 1rem auto;
         }
 
         main > * {
             display: inline-block;
-            margin: 0 0 1rem 0;
+            margin: 0 0 1.5rem 0;
         }
 
-        .animado {
-            box-shadow: var(--sombra);
-            transform: translate(-0px, -0px);
-            transition: var(--animacion-campo);
-        }
-
-        .animado:hover {
-            box-shadow: var(--sombra-hover);
-            transform: translate(-1px, -1px);
-            transition: var(--animacion-campo);
-        }
-
-        form p {
+        form > p {
             text-align: center;
-        }
-
-        small {
-            font-size: 0.6rem;
-
-        }
-
-        form label {
-            font-size: 1rem;
-            display: block;
-            margin: 0 0 1rem 0;
-            box-sizing: border-box;
         }
 
         form input {
             width: 15rem;
             box-sizing: border-box;
-            padding: 0;
         }
 
-        /*
-        form label > * {
+        form label {
             display: block;
-            width: 15rem;
             margin: 0 0 1rem 0;
             box-sizing: border-box;
         }
-        */
+
+        form label > * {
+            display: block;
+            width: 20rem;
+            margin: 0 0 1rem 0;
+            box-sizing: border-box;
+        }
 
         input[type="submit"] {
             width: 35%;
         }
-
-        input[type="button"]
-        {
+        
+        input[type="button"] {
             width: 65%;
             margin-top: 1.2rem;
         }
 
+        #pass {
+            margin: 0 0 0.2rem 0;
+        }
     </style>
 </head>
 <body>
@@ -131,16 +99,16 @@
         <h2>Ingresar</h2>
         <form accept-charset=utf-8 name=form-ingresar action=ingresar.cgi method=post target=_self autocomplete=on>
             <fieldset name="credenciales">
-                <p><label>Usuario <input class="animado" name=usuario id=usuario type=text autocomplete=username maxlength=30 tabindex=1 placeholder=Usuario autofocus required></label></p>
+                <p><label>Usuario <input class="campo-form-animado" name=usuario id=usuario type=text autocomplete=username maxlength=30 tabindex=1 placeholder=Usuario autofocus required></label></p>
                 <p>
                     <label>Contraseña 
-                        <input class="animado" name=pass id=pass type=password minlength=10 tabindex=2 placeholder=Contraseña required>
+                        <input class="campo-form-animado" name=pass id=pass type=password minlength=10 tabindex=2 placeholder=Contraseña required>
                         <small><a href="renovar-pass.cgi">¿Olvidó su contraseña?</a></small>
                     </label>
                 </p>
             </fieldset>
-            <p><input class="animado boton" type=submit name=boton-ingresar value="Ingresar" tabindex=3></p>
-            <p><input class="animado boton" type=button name=boton-ingresar-google value="Ingresar con Google" tabindex=4></p>
+            <p><input class="campo-form-animado boton" type=submit name=boton-ingresar value="Ingresar" tabindex=3></p>
+            <p><input class="campo-form-animado boton" type=button name=boton-ingresar-google value="Ingresar con Google" tabindex=4></p>
         </form>
         <p><a href="/crear-cuenta.html">Crear cuenta</a></p>
     </main>
