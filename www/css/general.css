@@ -10,13 +10,26 @@
 /* Smartphones:
  * iPhone11 Pro Max.
  **/
-@media screen and (orientation: portrait) and (min-width: 501px) and (max-width: 1000px) {
+@media screen and (min-width: 501px) and (max-width: 969px) {
     :root{
+        --header-display: grid;
+        --desktop-display: none;
         --burger-display: block;
-        --navbar-display: none;
+        --navbar-display: block;
+        --menu-navbar-display: none;
+        --nav-display: flex;
     } 
+
     html {
-        font-size: 34px;
+        font-size: 38px;
+    }
+
+    .nav-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .logo {
+        grid-column: 1 / 3;
     }
 } 
 
@@ -25,16 +38,57 @@
  * */
 @media screen and (orientation: portrait) and (max-width: 500px) {
     :root{
+        --header-display: grid;
+        --desktop-display: none;
         --burger-display: block;
-        --navbar-display: none;
+        --navbar-display: block;
+        --menu-navbar-display: none;
+        --nav-display: flex;
     } 
+
+    nav {
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .logo {
+        grid-column: 1 / 3;
+    }
 } 
 
 /* Desktop */
-@media screen and (orientation: landscape) {
+@media screen and (orientation: landscape) and (min-width: 970px) {
     :root{
+        --header-display: inline-block;
+        --desktop-display: block;
         --burger-display: none;
-        --navbar-display: block;
+        --navbar-display: grid;
+        --menu-navbar-display: inline-block;
+        --nav-display: block;
+
+        /* Las siguientes propiedades están harcodeadas por cuestiones de diseño. */
+        --logged: none;
+        --not-logged: inline-block;
+    }
+
+    .navbar-flex {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .container {
+        grid-column: 1;
+        width: 100%;
+    }
+
+    .menu-navbar {
+        grid-column: 2 / 4;
+        width: 100%;
+        align-self: center;
+        text-align: right;
     }
 }
 
@@ -49,7 +103,7 @@
 }
 
 
-/* GRID */
+/* Estilos del grid. */
 
 body {
     display: grid;
@@ -70,6 +124,13 @@ header {
     border-bottom-width: 0.2rem;
 }
 
+.logo-header {
+    height: clamp(6rem, 1vh, 7rem);
+    position: relative;
+    top: 0.35rem;
+    padding: 0.1rem 0.3rem 0.1rem 0.3rem;
+}
+
 main {
     grid-area: main;
     margin: 1% 10%;
@@ -88,12 +149,18 @@ footer {
 
 footer p {
     font-size: 0.5rem;
+    line-height: 100%;
 }
 
 footer ul {
     height: 100%;
     display: inline-block;
     vertical-align: middle;
+}
+
+.footernav p {
+    font-size: min(2.5vw, 1.5vh);
+    padding: 0.5vw 0;
 }
 
 .footernav-legales {
@@ -114,34 +181,97 @@ footer ul {
     vertical-align: middle;
 }
 
+.footernav-contacto {
+    display: block;
+}
 
-/* Menú hamburguesa */
+.logo-redes {
+    height: min(5vw, 2vh);
+}
+
+.iconos-redes {
+    display: block;
+}
+
+.iconos-redes li {
+    display: inline-block;
+    padding: 0 0.5vw;
+}
+
+
+/* Estilos del menú hamburguesa */
 
 .container {
+    display: var(--header-display);
     margin: auto;
     height: 100%;
 }
 
 .navbar {
+    display: var(--navbar-display);
     height: 100%;
     width: 100%;
 }
 
-.logo {
-    grid-column: 1 / 3;
+.logo ul li, .menu-hamburguesa ul p
+{
+    display: inline;
 }
 
-.nav-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+.menu-hamburguesa {
+    display: var(--burger-display);
+    grid-column: 3;
+    align-self: center;
+    padding: 1.2rem 1rem 0 0;
+    justify-self: right;
+
+    height: 100%;
 }
 
-.navbar a {
-    color: var(--h1-color);
+.menu-items {
+    display: flex;
+    height: 75vh;
+    padding: 15.5vh 0;
+    width: 100vw;
+    transform: translate(-200%);
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+    transition: transform 0.4s ease-in-out;
+    z-index: 1;
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    background-color: white;
+    box-sizing: content-box;
 }
 
-.navbar a:hover{
-    font-weight: bolder;
+.menu-items li {
+    list-style: none;
+    background-color: var(--nav-hover-background-color);
+}
+
+.menu-items li:not(:last-child) { 
+   margin-bottom: 0.1rem;  
+}
+
+.menu-items li p a {
+    /* color: var(--ulh-green); */
+    /* color: var(--h1-color); */
+    color: white;
+    font-weight: bold;
+    display: block;
+    border-radius: 0;
+    padding: 1rem 0;
+}
+
+.menu-items p {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.menu-items a:hover{
+    background-color: var(--ulh-yellow);
 }
 
 .nav-container .checkbox {
@@ -153,15 +283,6 @@ footer ul {
     z-index: 5;
     opacity: 0;
     cursor: pointer;
-}
-
-.menu-hamburguesa {
-    grid-column: 3;
-    align-self: center;
-    padding-top: 1.2rem;
-    justify-self: right;
-
-    height: 100%;
 }
 
 .nav-container .lineas-hamburguesa {
@@ -198,38 +319,6 @@ footer ul {
     transition: transform 0.4s ease-in-out;
 }
 
-.menu-items {
-    display: flex;
-    height: 75vh;
-    padding: 12.5vh 0;
-    width: 100vw;
-    transform: translate(-200%);
-    flex-direction: column;
-    text-align: center;
-    justify-content: space-around;
-    transition: transform 0.4s ease-in-out;
-    z-index: 1;
-    position: absolute;
-    top: 1rem;
-    left: 0;
-    background-color: white;
-    box-sizing: content-box;
-}
-
-.menu-items li {
-    list-style: none;
-}
-
-.menu-items p {
-    color: var(--ulh-green);
-    font-size: 2.5rem;
-    text-align: center;
-}
-
-.menu-items a:hover {
-    border-radius: 0;
-}
-
 .nav-container input[type="checkbox"]:checked ~ .menu-items {
     transform: translateX(0);
 }
@@ -248,7 +337,7 @@ footer ul {
 }
 
 
-/* ESTILOS */
+/* Estilos generales */
 
 html{
     scroll-behavior: smooth;
@@ -297,7 +386,12 @@ a:visited :not(menu-option){
 }
 
 
-/* Estilos para form */
+/* Estilos del form. */
+
+.boton-destacado {
+    --sombra: 2px 2px black;
+    --sombra-hover: 3px 3px black;
+}
 
 .campo-form-animado {
     box-shadow: var(--sombra);
@@ -313,7 +407,6 @@ a:visited :not(menu-option){
 
 input, select {
     appearance: menulist-button;
-    border-radius: 0.5rem;
     height: 1.7rem;
     color: black;
     background-color: white;
@@ -324,85 +417,78 @@ input, select {
     outline-style: solid;
 }
 
-
-/* FOOTER */
-
-footer p {
-    line-height: 100%;
-}
-
-.footernav p {
-    font-size: min(2.5vw, 1.5vh);
-    padding: 0.5vw 0;
-}
-
-.logo-header {
-    height: clamp(6rem, 1vh, 7rem);
-    position: relative;
-    top: 0.35rem;
-    padding: 0.1rem 0.3rem 0.1rem 0.3rem;
-}
-
-.iconos-redes {
-    display: block;
-}
-
-.iconos-redes li {
-    display: inline-block;
-    padding: 0 0.5vw;
-}
-
-.logo-redes {
-    height: min(5vw, 2vh);
+input:hover, select:hover {
+    cursor: pointer;
 }
 
 
-/* TEST */
-
-.logged{
-    display: var(--logged);
-}
-.not-logged{
-    display: var(--not-logged);
-}
-.menu-burger{
-    display: var(--burger-display);
-}
-.menu-navbar{
-    display: var(--navbar-display);
-}
-
-
-/* NAVBAR */
+/* Estilos del navbar con enlaces. */
 
 nav {
-    padding: 0 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: var(--nav-display);
     background-color: var(--header-footer-color);
     overflow: hidden;
 }
 
-nav li {
-    float: left;
+.menu-navbar {
+    display: var(--menu-navbar-display);
 }
-  
-nav li a {
-    display: block;
+
+.menu-navbar .main-items {
+    display: inline-block;
+}
+
+.menu-navbar a {
     color: var(--p-color);
     text-align: center;
-    padding: 14px 16px;
     text-decoration: none;
 }
 
-nav li a:hover {
-    background-color: var(--nav-hover-background-color);
+.menu-navbar a:hover {
     color: var(--nav-hover-color);
-    border-radius: 8px;
+    background-color: var(--nav-hover-background-color);
+}
+
+.menu-navbar p {
+    inline-size: min-content;
+    padding: 0.5rem;
+    text-align: center;
+    overflow-wrap: break-word;
+    font-size: var(--nav-desktop-p-size);
+}
+
+.menu-navbar .inline-block p, .menu-navbar .inline-block li {
+    display: inline-block;
+}
+
+.menu-navbar .block p {
+    margin-left: auto;
+}
+
+.menu-navbar .block li, .menu-navbar .block p {
+    display: block;
+    text-align: right;
+}
+
+.logged {
+    display: var(--logged);
+}
+
+.not-logged {
+    display: var(--not-logged);
 }
 
 .nav_directions{
     text-align-last: right;
     color: var(--p-color);
+}
+
+.header-info {
+    background-color: var(--nav-desktop-info-color);
+    display: var(--desktop-display);
+    padding: 0.5rem 1rem;
+}
+
+.header-info p, .header-info address {
+    font-size: var(--nav-desktop-info-p-size);
 }
