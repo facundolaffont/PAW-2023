@@ -156,6 +156,11 @@ footer ul {
     display: inline-block;
 }
 
+.footernav p {
+    font-size: min(2.5vw, 1.5vh);
+    padding: 0.5vw 0;
+}
+
 .footernav-legales {
     width: calc(var(--footer-content-relation) * (100% - 2%));
 }
