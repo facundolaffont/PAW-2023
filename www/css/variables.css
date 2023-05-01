@@ -29,6 +29,7 @@
     
     /* P */
     --p-color: var(--ulh-rich-grey);
+    --p-color-hover: var(--ulh-pale-gray);
     --p-font-size: clamp(1rem, 1vw, 1rem);
 
     /* LINKS */
