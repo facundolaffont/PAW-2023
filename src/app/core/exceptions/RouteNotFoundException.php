@@ -1,9 +1,7 @@
 <?php
-
 namespace PAW\core\exceptions;
 
-use Exception;
+use \Exception;
 
 class RouteNotFoundException extends Exception {
-
 }

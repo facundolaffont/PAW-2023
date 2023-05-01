@@ -1,9 +1,12 @@
 <?php
 
+$srcFolder = __DIR__ . '/../src/';
+
 // Carga el script de inicializaciones.
-require __DIR__ . '/../src/bootstrap.php';
+require $srcFolder . 'bootstrap.php';
 
 // Uses.
+require $srcFolder . 'app/core/Router.php';
 use PAW\core\exceptions\RouteNotFoundException;
 use PAW\core\Router;
 
@@ -23,18 +26,20 @@ $router->loadRoutes('/politicas-privacidad', 'PageController@politicas-privacida
 $router->loadRoutes('/servicio', 'PageController@servicio');
 $router->loadRoutes('/servicios', 'PageController@servicios');
 $router->loadRoutes('/tos', 'PageController@tos');
-$router->loadRoutes('404', 'ErrorController@404');
-$router->loadRoutes('500', 'ErrorController@500');
+$router->loadRoutes('showNotFoundPage', 'ErrorController@showNotFoundPage');
+$router->loadRoutes('internalError', 'ErrorController@internalError');
 $path = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 $logger->info("Ruta accedida: {$path}.");
-try { $router->direct($path); }
+try {
+    $router->direct($path);
+}
 catch (RouteNotFoundException $e) {
-    $router->direct('404');
-    $log->info("404 (Ruta no encontrada).", ["Ruta" => $path]);
+    $router->direct('showNotFoundPage');
+    $logger->info("404 (Ruta no encontrada).", ["Ruta" => $path]);
 }
 catch (Exception $e) {
-    $router->direct('500');
-    $log->error("500 (Error del servidor).", ["Error" => $e]);
+    $router->direct('showInternalErrorPage');
+    $logger->error("500 (Error del servidor).", ["Error" => $e]);
 }
 $logger->info("200 (OK).");
 

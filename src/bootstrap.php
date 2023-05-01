@@ -3,6 +3,7 @@
 // Variables para rutas.
 $vendor = __DIR__ . '/../vendor/';
 $logs = __DIR__ . '/../logs/app.log';
+$srcFolder = __DIR__ . '/../src/';
 
 // Inicialización de plugins.
 require $vendor . 'autoload.php';
@@ -15,5 +16,4 @@ use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 $logger = new Logger('app-loger');
 $logger->pushHandler(new StreamHandler($logs, Logger::DEBUG));
-
 ?>

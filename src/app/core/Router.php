@@ -1,14 +1,15 @@
 <?php
-
 namespace PAW\core;
 
-use PAW\controllers\PageController;
-use PAW\controllers\ErrorController;
+$appDir = __DIR__ . '/../';
+require $appDir . 'controllers/PageController.php';
+require $appDir . 'controllers/ErrorController.php';
+require $appDir . 'core/exceptions/RouteNotFoundException.php';
 use PAW\core\exceptions\RouteNotFoundException;
 
 class Router {
     public array $routes;
-
+    
     public function loadRoutes($path, $controllerAndRoute) {
         $this->routes[$path] = $controllerAndRoute;
     }
@@ -18,9 +19,12 @@ class Router {
             throw new RouteNotFoundException("La ruta no existe.");
 
         list($controller, $route)  = explode('@', $this->routes[$path]);
-        $controllerObject = new $controller;
-        $controllerObject->showPage($route);
+        $controllerName = "PAW\\controllers\\{$controller}";
+        $controllerObject = new $controllerName;
+        if ($controller == 'PageController')
+            $controllerObject->showPage($route);
+        else if ($controller == 'ErrorController')
+            $controllerObject->$route();
     }
 }
-
 ?>
