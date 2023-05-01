@@ -1,0 +1,28 @@
+{
+    "name": "paw/paw-medical",
+    "description": "Trabajo práctico de Programación en Ambiente Web.",
+    "keywords": ["php", "mvc"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name":  "Facundo Laffont",
+            "email": "facundolaffont@gmail.com",
+            "role": "Creador / Desarrollador"
+        },
+        {
+            "name":  "Joaquín Tosello",
+            "email": "tossellojoaquin@gmail.com",
+            "role": "Creador / Desarrollador"
+        }
+    ],
+    "require": {
+        "php": ">= 7.4.33",
+        "filp/whoops": "^2.15",
+        "monolog/monolog": "^2.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "PAW\\": "src/"
+        }
+    }
+}
