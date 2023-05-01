@@ -103,7 +103,7 @@
     <?php require 'parts/header.view.php'; ?>
     <main>
         <h1>Crear cuenta</h1>
-        <form accept-charset=utf-8 name=form-crear-cuenta action=crear-cuenta.cgi method=post target=_self autocomplete=on>
+        <form accept-charset=utf-8 name=form-crear-cuenta action=crear-cuenta method=post target=_self autocomplete=on>
             <fieldset name=nombre-apellido>
                 <p><label>Nombre <input class="campo-form-animado" name=nombre id=nombre type=text autocomplete=name maxlength=30 tabindex=1 placeholder=Nombre autofocus required></label></p>
                 <p><label>Apellido <input class="campo-form-animado" name=apellido id=apellido type=text autocomplete=family-name maxlength=30 tabindex=2 placeholder=Apellido required></label></p>
@@ -129,7 +129,7 @@
             </p>
         </form>
         <p>¿Ya tiene su cuenta?</p>
-        <p><a href="ingresar.html">Ingresar</a></p>
+        <p><a href="ingresar">Ingresar</a></p>
     </main>
     <?php require 'parts/footer.view.php'; ?>
 </body>

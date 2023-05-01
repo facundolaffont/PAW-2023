@@ -4,7 +4,7 @@
             <div class="container nav-container">
                 <div class="logo">
                     <p>
-                        <a href="index.html">
+                        <a href="index">
                             <img src="images/Imagotipo_PAW_Hospitals.svg" alt="Logo del PAW Medical" class="logo-header">
                         </a>
                     </p>
@@ -17,30 +17,30 @@
                         <span class="linea linea-abajo"></span>
                     </div>
                     <ul class="menu-items">
-                        <li><p><a href="pedir-turno.html">Solicitar Turno</a></p></li>
-                        <li><p><a href="servicios.html">Servicios</a></p></li>
-                        <li><p><a href="obras-sociales.html">Obras Sociales</a></p></li>
-                        <li><p><a href="institucional.html">Institucional</a></p></li>
-                        <li><p><a href="contacto.html">Contacto</a></p></li>
-                        <li><p><a href="noticias.html">Noticias</a></p></li>
+                        <li><p><a href="pedir-turno">Solicitar Turno</a></p></li>
+                        <li><p><a href="servicios">Servicios</a></p></li>
+                        <li><p><a href="obras-sociales">Obras Sociales</a></p></li>
+                        <li><p><a href="institucional">Institucional</a></p></li>
+                        <li><p><a href="contacto">Contacto</a></p></li>
+                        <li><p><a href="noticias">Noticias</a></p></li>
                     </ul>
                 </div>
             </div>
             <section class="menu-navbar">
                 <ul class="inline-block main-items">
-                    <li><p><a href="institucional.html">Institucional</a></p></li>
-                    <li><p><a href="contacto.html">Contacto</a></p></li>
-                    <li><p><a href="obras-sociales.html">Obras Sociales</a></p></li>
-                    <li><p><a href="servicios.html">Servicios</a></p></li>
-                    <li><p><a href="pedir-turno.html">Solicitar Turno</a></p></li>
+                    <li><p><a href="institucional">Institucional</a></p></li>
+                    <li><p><a href="contacto">Contacto</a></p></li>
+                    <li><p><a href="obras-sociales">Obras Sociales</a></p></li>
+                    <li><p><a href="servicios">Servicios</a></p></li>
+                    <li><p><a href="pedir-turno">Solicitar Turno</a></p></li>
                 </ul>
                 <ul class="block logged">
-                    <li><p><a href="mi-perfil.html">Perfil</a></p></li>
-                    <li><p><a href="logout.cgi">Cerrar Sesión</a></p></li>
+                    <li><p><a href="mi-perfil">Perfil</a></p></li>
+                    <li><p><a href="logout">Cerrar Sesión</a></p></li>
                 </ul>
                 <ul class="block not-logged">
-                    <li><p><a href="ingresar.html">Ingresar</a></p></li>
-                    <li><p><a href="crear-cuenta.html">Crear Cuenta</a></p></li>
+                    <li><p><a href="ingresar">Ingresar</a></p></li>
+                    <li><p><a href="crear-cuenta">Crear Cuenta</a></p></li>
                 </ul>                    
             </section>
         </div>

@@ -45,7 +45,7 @@
         <h1>Obras sociales</h1>
         <ul>
             <li>
-                <p><img src="images/placeholder-image.png"> <a href="https://www.osde.com.ar/index.html">OSDE</a></p>
+                <p><img src="images/placeholder-image.png"> <a href="https://www.osde.com.ar/index">OSDE</a></p>
             </li>
             <li>
                 <p><img src="images/placeholder-image.png"> <a href="https://www.swissmedical.com.ar/">Swiss Medical</a></p>

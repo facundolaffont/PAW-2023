@@ -66,20 +66,20 @@
     <?php require 'parts/header.view.php'; ?>
     <main>
         <h2>Ingresar</h2>
-        <form accept-charset=utf-8 name=form-ingresar action=ingresar.cgi method=post target=_self autocomplete=on>
+        <form accept-charset=utf-8 name=form-ingresar action=ingresar method=post target=_self autocomplete=on>
             <fieldset name="credenciales">
                 <p><label>Usuario <input class="campo-form-animado" name=usuario id=usuario type=text autocomplete=username maxlength=30 tabindex=1 placeholder=Usuario autofocus required></label></p>
                 <p>
                     <label>Contraseña 
                         <input class="campo-form-animado" name=pass id=pass type=password minlength=10 tabindex=2 placeholder=Contraseña required>
-                        <small><a href="renovar-pass.cgi">¿Olvidó su contraseña?</a></small>
+                        <small><a href="renovar-pass">¿Olvidó su contraseña?</a></small>
                     </label>
                 </p>
             </fieldset>
             <p><input class="campo-form-animado boton" type=submit name=boton-ingresar value="Ingresar" tabindex=3></p>
             <p><input class="campo-form-animado boton" type=button name=boton-ingresar-google value="Ingresar con Google" tabindex=4></p>
         </form>
-        <p><a href="/crear-cuenta.html">Crear cuenta</a></p>
+        <p><a href="/crear-cuenta">Crear cuenta</a></p>
     </main>
     <?php require 'parts/footer.view.php'; ?>
 </body>

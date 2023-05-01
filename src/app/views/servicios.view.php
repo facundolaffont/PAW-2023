@@ -33,49 +33,49 @@
     <main>
         <ul>
             <li>
-                <p><img src="images/placeholder-image.png"><a href="servicio1.html">Servicio 1</a></p>
+                <p><img src="images/placeholder-image.png"><a href="servicio1">Servicio 1</a></p>
             </li>
             <li>
-                <p><img src="images/placeholder-image.png"><a href="servicio2.html">Servicio 2</a></p>
+                <p><img src="images/placeholder-image.png"><a href="servicio2">Servicio 2</a></p>
             </li>
             <li>
-                <p><img src="images/placeholder-image.png"><a href="servicio3.html">Servicio 3</a></p>
+                <p><img src="images/placeholder-image.png"><a href="servicio3">Servicio 3</a></p>
             </li>
             <li>
-                <p><img src="images/placeholder-image.png"><a href="servicio4.html">Servicio 4</a></p>
+                <p><img src="images/placeholder-image.png"><a href="servicio4">Servicio 4</a></p>
             </li>
             <li>
-                <p><img src="images/placeholder-image.png"><a href="servicio5.html">Servicio 5</a></p>
+                <p><img src="images/placeholder-image.png"><a href="servicio5">Servicio 5</a></p>
             </li>
             <li>
-                <p><img src="images/placeholder-image.png"><a href="servicio6.html">Servicio 6</a></p>
+                <p><img src="images/placeholder-image.png"><a href="servicio6">Servicio 6</a></p>
             </li>
             <li>
-                <p><img src="images/placeholder-image.png"><a href="servicio7.html">Servicio 7</a></p>
+                <p><img src="images/placeholder-image.png"><a href="servicio7">Servicio 7</a></p>
             </li>
             <li>
-                <p><img src="images/placeholder-image.png"><a href="servicio8.html">Servicio 8</a></p>
+                <p><img src="images/placeholder-image.png"><a href="servicio8">Servicio 8</a></p>
             </li>
             <li>
-                <p><img src="images/placeholder-image.png"><a href="servicio9.html">Servicio 9</a></p>
+                <p><img src="images/placeholder-image.png"><a href="servicio9">Servicio 9</a></p>
             </li>
             <li>
-                <p><img src="images/placeholder-image.png"><a href="servicio10.html">Servicio 10</a></p>
+                <p><img src="images/placeholder-image.png"><a href="servicio10">Servicio 10</a></p>
             </li>
             <li>
-                <p><img src="images/placeholder-image.png"><a href="servicio11.html">Servicio 11</a></p>
+                <p><img src="images/placeholder-image.png"><a href="servicio11">Servicio 11</a></p>
             </li>
             <li>
-                <p><img src="images/placeholder-image.png"><a href="servicio12.html">Servicio 12</a></p>
+                <p><img src="images/placeholder-image.png"><a href="servicio12">Servicio 12</a></p>
             </li>
             <li>
-                <p><img src="images/placeholder-image.png"><a href="servicio13.html">Servicio 13</a></p>
+                <p><img src="images/placeholder-image.png"><a href="servicio13">Servicio 13</a></p>
             </li>
             <li>
-                <p><img src="images/placeholder-image.png"><a href="servicio14.html">Servicio 14</a></p>
+                <p><img src="images/placeholder-image.png"><a href="servicio14">Servicio 14</a></p>
             </li>
             <li>
-                <p><img src="images/placeholder-image.png"><a href="servicio15.html">Servicio 15</a></p>
+                <p><img src="images/placeholder-image.png"><a href="servicio15">Servicio 15</a></p>
             </li>
         </ul>
     </main>

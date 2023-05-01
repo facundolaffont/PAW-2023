@@ -1,10 +1,10 @@
 <footer>
     <ul class="footernav-legales">
         <li>
-            <p><a href="tos.html">Términos y Condiciones</a></p>
+            <p><a href="tos">Términos y Condiciones</a></p>
         </li>
         <li>
-            <p><a href="politicas-privacidad.html">Políticas de Privacidad</a></p>
+            <p><a href="politicas-privacidad">Políticas de Privacidad</a></p>
         </li>
         <li>
             <p><small>&copy; 2023 Universidad Nacional de Luján.</small></p>
@@ -12,7 +12,7 @@
     </ul>
     <ul class="footernav-redes">
         <li class="footernav-contacto">
-            <p><a href="contacto.html">Contacto</a></p>
+            <p><a href="contacto">Contacto</a></p>
         </li>
         <li>
             <p>

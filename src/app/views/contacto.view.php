@@ -95,7 +95,7 @@
         <hr>
         <section>
             <p>También puede consultarnos utilizando el siguiente formulario:</p>
-            <form accept-charset=utf-8 name=form-contacto action=contacto.cgi method=post target=_self autocomplete=on>
+            <form accept-charset=utf-8 name=form-contacto action=contacto method=post target=_self autocomplete=on>
                 <fieldset name=nombre-apellido>
                     <p><label>Nombre <input class="campo-form-animado" name=nombre id=nombre type=text autocomplete=name maxlength=30 tabindex=1 placeholder=Nombre autofocus required></label></p>
                     <p><label>Apellido <input class="campo-form-animado" name=apellido id=apellido type=text autocomplete=family-name maxlength=30 tabindex=2 placeholder=Apellido required></label></p>

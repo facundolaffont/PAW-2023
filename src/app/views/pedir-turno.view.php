@@ -61,7 +61,7 @@
     <?php require 'parts/header.view.php'; ?>
     <main>
         <h2>Solicitar un turno</h2>
-        <form accept-charset=utf-8 name=form-pedir-turno action=pedir-turno.cgi method=post target=_self autocomplete=on>
+        <form accept-charset=utf-8 name=form-pedir-turno action=pedir-turno method=post target=_self autocomplete=on>
             <fieldset name=fs-profesional-servicio>
                 <p>
                     <label>Servicio

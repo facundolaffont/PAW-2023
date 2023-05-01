@@ -14,7 +14,7 @@
             <source srcset="images/servicio-radiología-mobile.jpeg">
             <img src="images/servicio-radiología-desktop.jpeg" alt="Imagen de un médico sosteniendo una radiografía de tórax">
         </picture>
-        <p><a href="solicitar-turno.html?servicio=Radiología">Solicitar Turno de Radiología</a></p>
+        <p><a href="pedir-turno?servicio=Radiología">Solicitar Turno de Radiología</a></p>
         <h2>Profesionales</h2>
         <ul>
             <li>

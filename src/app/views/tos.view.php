@@ -11,7 +11,7 @@
         <h2>TÉRMINOS Y CONDICIONES</h2>
         <p>Esta política de condiciones de uso es válida a partir de Marzo 2023.</p>
         
-        <p>UNLu PAW, persona jurídica de derecho privado, describe, a través de este documento, las normas de uso del sitio <a href="/www/index.html">www.unlupaw.com.ar</a> y de cualquier otro sitio web, tienda o aplicación operada por el titular.</p>
+        <p>UNLu PAW, persona jurídica de derecho privado, describe, a través de este documento, las normas de uso del sitio <a href="/www/index">www.unlupaw.com.ar</a> y de cualquier otro sitio web, tienda o aplicación operada por el titular.</p>
         <p>Al navegar por este sitio web, consideramos que está de acuerdo con las condiciones de uso que figuran a continuación.</p>
         <p>Si no está de acuerdo con los términos de este acuerdo, le pedimos que no haga ningún otro uso de este sitio web, mucho menos que se registre o envíe sus datos personales.</p>
         <p>Si cambiamos nuestras condiciones de uso, publicaremos el nuevo texto en este sitio web, con una fecha de revisión actualizada. Podemos modificar este documento en cualquier momento.</p>

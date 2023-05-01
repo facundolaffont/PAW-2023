@@ -20,16 +20,16 @@
             <nav>
                 <ul>
                     <li>
-                        <p><a href="editar-perfil.html">Editar perfil</a></p>
+                        <p><a href="editar-perfil">Editar perfil</a></p>
                     </li>
                     <li>
-                        <p><a href="pedir-turno.html">Solicitar turno</a></p>
+                        <p><a href="pedir-turno">Solicitar turno</a></p>
                     </li>
                     <li>
-                        <p><a href="mis-turnos.html">Mis turnos</a></p>
+                        <p><a href="mis-turnos">Mis turnos</a></p>
                     </li>
                     <li>
-                        <p><a href="familia.html">Familiar</a></p>
+                        <p><a href="familia">Familiar</a></p>
                     </li>
                 </ul>
             </nav>

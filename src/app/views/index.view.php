@@ -47,12 +47,12 @@
         <section>
             <nav>
                 <ul>
-                    <li><p><a href=servicios.html class="enlace-boton">Servicios</a></p></li>
-                    <li><p><a href=pedir-turno.html class="enlace-boton">Solicitar turno</a></p></li>
-                    <li><p><a href=mis-turnos.html class="enlace-boton">Mis turnos</a></p></li>
-                    <li><p><a href=quienes-somos.html class="enlace-boton">¿Quiénes somos?</a></p></li>
-                    <li><p><a href=contacto.html class="enlace-boton">Contacto</a></p></li>
-                    <li><p><a href=noticias.html class="enlace-boton">Noticias</a></p></li>
+                    <li><p><a href=servicios class="enlace-boton">Servicios</a></p></li>
+                    <li><p><a href=pedir-turno class="enlace-boton">Solicitar turno</a></p></li>
+                    <li><p><a href=mis-turnos class="enlace-boton">Mis turnos</a></p></li>
+                    <li><p><a href=quienes-somos class="enlace-boton">¿Quiénes somos?</a></p></li>
+                    <li><p><a href=contacto class="enlace-boton">Contacto</a></p></li>
+                    <li><p><a href=noticias class="enlace-boton">Noticias</a></p></li>
                 </ul>
             </nav>
         </section>
