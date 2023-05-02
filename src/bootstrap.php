@@ -1,9 +1,9 @@
 <?php
 
 // Variables para rutas.
-$vendor = __DIR__ . '/../vendor/';
-$logs = __DIR__ . '/../logs/app.log';
+$projectFolder = __DIR__ . '/../';
 $srcFolder = __DIR__ . '/../src/';
+$vendor = __DIR__ . '/../vendor/';
 
 // Inicialización de plugins.
 require $vendor . 'autoload.php';
@@ -11,13 +11,24 @@ $whoops = new \Whoops\Run;
 $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
 $whoops->register();
 
-// Uses, carga y configuración de objetos.
+// Uses.
 require $srcFolder . 'app/core/Router.php';
-use PAW\core\Router;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
+use Dotenv\Dotenv;
+use PAW\core\Router;
+use PAW\core\Config;
+use PAW\core\Request;
+
+// Configuraciones iniciales.
+$dotenv = Dotenv::createUnsafeImmutable($projectFolder);
+$dotenv->load();
+$config = new Config();
 $logger = new Logger('app-loger');
-$logger->pushHandler(new StreamHandler($logs, Logger::DEBUG));
+$handler = new StreamHandler($config->get("LOG_PATH"));
+$handler->setLevel($config->get("LOG_LEVEL"));
+$logger->pushHandler($handler);
+$request = new Request();
 
 /* Carga de rutas. */
 $router = new Router;
@@ -53,9 +64,5 @@ $router->loadToGet('/servicio', 'PageController@servicio');
 $router->loadToGet('/servicios', 'PageController@servicios');
 
 $router->loadToGet('/tos', 'PageController@tos');
-
-$router->loadToGet('showNotFoundPage', 'ErrorController@showNotFoundPage');
-
-$router->loadToGet('showInternalErrorPage', 'ErrorController@showInternalErrorPage');
 
 ?>

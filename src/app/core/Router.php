@@ -8,13 +8,22 @@ require $appDir . 'controllers/ErrorController.php';
 require $appDir . 'controllers/FormController.php';
 require $appDir . 'core/exceptions/RouteNotFoundException.php';
 use PAW\core\exceptions\RouteNotFoundException;
+use PAW\core\Request;
+use \Exception;
 
 class Router {
     public array $routes = [
         "GET" => [],
         "POST" => [],
     ];
-    
+    public string $notFound = 'showNotFoundPage';
+    public string $internalError = 'showInternalErrorPage';
+
+    public function __construct() {
+        $this->loadToGet($this->notFound, 'ErrorController@showNotFoundPage');
+        $this->loadToGet($this->internalError, 'ErrorController@showInternalErrorPage');
+    }
+
     public function loadRoutes($path, $controllerAndRoute, $method = "GET") {
         $this->routes[$method][$path] = $controllerAndRoute;
     }
@@ -27,17 +36,34 @@ class Router {
         $this->loadRoutes($path, $controllerAndRoute, "POST");
     }
 
-    public function direct($path, $method = "GET") {
-        if (!$this->exists($path, $method))
-            throw new RouteNotFoundException("La ruta no existe.");
+    public function direct(Request $request) {
+        try {
+            list($path, $method) = $request->getRoute();
+            list($controller, $route) = $this->getControllerAndRoute($path, $method);
+            $controllerName = "PAW\\controllers\\{$controller}";
+            $controllerObject = new $controllerName;
+            $controllerObject->direct($route);
+        }
+        catch (RouteNotFoundException $e) {
+            list($controller, $route) = $this->getControllerAndRoute($this->notFound, "GET");
+            $logger->info("404 (Ruta no encontrada).", ["Ruta" => $path]);
+            $controllerName = "PAW\\controllers\\{$controller}";
+            $controllerObject = new $controllerName;
+            $controllerObject->$route();
+        }
+        catch (Exception $e) {
+            list($controller, $route) = $this->getControllerAndRoute($this->internalError, "GET");
+            $logger->error("500 (Error del servidor).", ["Error" => $e]);
+            $controllerName = "PAW\\controllers\\{$controller}";
+            $controllerObject = new $controllerName;
+            $controllerObject->$route();
+        }
+    }
 
-        list($controller, $route) = $this->getControllerAndRoute($path, $method);
+    public function call($controller, $route) {
         $controllerName = "PAW\\controllers\\{$controller}";
         $controllerObject = new $controllerName;
-        if ($controller == 'ErrorController')
-            $controllerObject->$route();
-        else
-            $controllerObject->direct($route);
+        $controllerObject->$route();
     }
 
 
@@ -48,6 +74,9 @@ class Router {
     }
 
     private function getControllerAndRoute($path, $method) {
+        if (!$this->exists($path, $method))
+                throw new RouteNotFoundException("La ruta no existe.");
+
         return explode('@', $this->routes[$method][$path]);
     }
 }
