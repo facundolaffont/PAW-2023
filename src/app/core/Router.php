@@ -5,6 +5,7 @@ namespace PAW\core;
 $appDir = __DIR__ . '/../';
 require $appDir . 'controllers/PageController.php';
 require $appDir . 'controllers/ErrorController.php';
+require $appDir . 'controllers/FormController.php';
 require $appDir . 'core/exceptions/RouteNotFoundException.php';
 use PAW\core\exceptions\RouteNotFoundException;
 
@@ -33,10 +34,10 @@ class Router {
         list($controller, $route) = $this->getControllerAndRoute($path, $method);
         $controllerName = "PAW\\controllers\\{$controller}";
         $controllerObject = new $controllerName;
-        if ($controller == 'PageController')
-            $controllerObject->showPage($route);
-        else if ($controller == 'ErrorController')
+        if ($controller == 'ErrorController')
             $controllerObject->$route();
+        else
+            $controllerObject->direct($route);
     }
 
 

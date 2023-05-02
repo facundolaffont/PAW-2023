@@ -25,13 +25,13 @@ $router = new Router;
 $router->loadToGet('/', 'PageController@index');
 
 $router->loadToGet('/contacto', 'PageController@contacto');
-$router->loadToPost('/contacto', 'PageController@procesarContacto');
+$router->loadToPost('/contacto', 'FormController@procesar-contacto');
 
 $router->loadToGet('/crear-cuenta', 'PageController@crear-cuenta');
-$router->loadToPost('/crear-cuenta', 'PageController@procesarCreacionDeCuenta');
+$router->loadToPost('/crear-cuenta', 'FormController@procesar-creacion-cuenta');
 
 $router->loadToGet('/ingresar', 'PageController@ingresar');
-$router->loadToPost('/ingresar', 'PageController@procesarLogin');
+$router->loadToPost('/ingresar', 'FormController@procesar-login');
 
 $router->loadToGet('/institucional', 'PageController@institucional');
 
@@ -44,7 +44,7 @@ $router->loadToGet('/noticias', 'PageController@noticias');
 $router->loadToGet('/obras-sociales', 'PageController@obras-sociales');
 
 $router->loadToGet('/pedir-turno', 'PageController@pedir-turno');
-$router->loadToPost('/pedir-turno', 'PageController@procesarPedidoDeTurno');
+$router->loadToPost('/pedir-turno', 'FormController@procesar-pedido-turno');
 
 $router->loadToGet('/politicas-privacidad', 'PageController@politicas-privacidad');
 
@@ -56,6 +56,6 @@ $router->loadToGet('/tos', 'PageController@tos');
 
 $router->loadToGet('showNotFoundPage', 'ErrorController@showNotFoundPage');
 
-$router->loadToGet('internalError', 'ErrorController@internalError');
+$router->loadToGet('showInternalErrorPage', 'ErrorController@showInternalErrorPage');
 
 ?>
