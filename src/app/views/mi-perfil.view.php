@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang=es>
 <head>
-    <title>PAW Medical - Mi perfil</title>
-    <meta charset=utf-8>
-    <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/general.css">
+    <?php
+        $titulo = "PAW Medical - Mi perfil";
+        require __DIR__ . '/parts/head.view.php';
+    ?>
 </head>
 <body>
     <?php require 'parts/header.view.php'; ?>

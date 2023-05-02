@@ -4,7 +4,7 @@
             <div class="container nav-container">
                 <div class="logo">
                     <p>
-                        <a href="index">
+                        <a href="/">
                             <img src="images/Imagotipo_PAW_Hospitals.svg" alt="Logo del PAW Medical" class="logo-header">
                         </a>
                     </p>

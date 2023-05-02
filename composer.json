@@ -18,7 +18,8 @@
     "require": {
         "php": ">= 7.4.33",
         "filp/whoops": "^2.15",
-        "monolog/monolog": "^2.9"
+        "monolog/monolog": "^2.9",
+        "vlucas/phpdotenv": "^5.5"
     },
     "autoload": {
         "psr-4": {

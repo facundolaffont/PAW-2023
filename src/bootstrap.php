@@ -19,7 +19,7 @@ use Monolog\Handler\StreamHandler;
 $logger = new Logger('app-loger');
 $logger->pushHandler(new StreamHandler($logs, Logger::DEBUG));
 
-// Carga de rutas.
+/* Carga de rutas. */
 $router = new Router;
 
 $router->loadToGet('/', 'PageController@index');

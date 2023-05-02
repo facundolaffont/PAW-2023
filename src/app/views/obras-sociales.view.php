@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang=es>
 <head>
-    <title>PAW Medical - Obras sociales</title>
-    <meta charset=utf-8>
-    <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/general.css">
+    <?php
+        $titulo = "PAW Medical - Obras sociales";
+        require __DIR__ . '/parts/head.view.php';
+    ?>
     <style>
         main h1 {
             text-align: center;

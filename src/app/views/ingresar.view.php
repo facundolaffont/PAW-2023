@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang=es>
 <head>
-    <title>PAW Medical - Crear cuenta</title>
-    <meta charset=utf-8>
-    <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/general.css">
+    <?php
+        $titulo = "PAW Medical - Ingresar";
+        require __DIR__ . '/parts/head.view.php';
+    ?>
     <style>
         @media screen and (min-width: 450px) {
             main {
