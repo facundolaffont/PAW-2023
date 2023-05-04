@@ -13,6 +13,8 @@ $whoops->register();
 
 // Uses.
 require $srcFolder . 'app/core/Router.php';
+require $srcFolder . 'app/core/Config.php';
+require $srcFolder . 'app/core/Request.php';
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 use Dotenv\Dotenv;
@@ -23,16 +25,16 @@ use PAW\core\Request;
 // Configuraciones iniciales.
 $dotenv = Dotenv::createUnsafeImmutable($projectFolder);
 $dotenv->load();
-$config = new Config();
+$config = new Config;
 $logger = new Logger('app-loger');
 $handler = new StreamHandler($config->get("LOG_PATH"));
 $handler->setLevel($config->get("LOG_LEVEL"));
 $logger->pushHandler($handler);
-$request = new Request();
+$request = new Request;
+$router = new Router;
+$router->setLogger($logger);
 
 /* Carga de rutas. */
-$router = new Router;
-
 $router->loadToGet('/', 'PageController@index');
 
 $router->loadToGet('/contacto', 'PageController@contacto');

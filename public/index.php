@@ -7,6 +7,5 @@ require $srcFolder . 'bootstrap.php';
 
 // Enrutamiento.
 $router->direct($request);
-$logger->info("200 (OK).", ["Ruta" => $path]);
 
 ?>

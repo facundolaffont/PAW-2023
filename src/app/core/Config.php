@@ -2,16 +2,16 @@
 namespace PAW\core;
 
 class Config {
+
     public function __construct()
     {
         $this->configs["LOG_LEVEL"] = getenv("LOG_LEVEL", "INFO");
         $path = getenv("LOG_PATH", "/logs/app.log");
         $this->configs["LOG_PATH"] = $this->joinPaths('..', $path);
-
     }
 
     public function get($name) {
-        $this->configs[$name] ?? null;
+        return $this->configs[$name] ?? null;
     }
 
 
@@ -26,6 +26,7 @@ class Config {
         
         return preg_replace('#/+#', '/', join('/', $paths));
     }
+
 }
 
 ?>

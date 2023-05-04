@@ -6,12 +6,16 @@ $appDir = __DIR__ . '/../';
 require $appDir . 'controllers/PageController.php';
 require $appDir . 'controllers/ErrorController.php';
 require $appDir . 'controllers/FormController.php';
+require $appDir . 'core/traits/Loggable.php';
 require $appDir . 'core/exceptions/RouteNotFoundException.php';
+use \Exception;
 use PAW\core\exceptions\RouteNotFoundException;
 use PAW\core\Request;
-use \Exception;
+use PAW\core\traits\Loggable;
 
 class Router {
+    use Loggable;
+
     public array $routes = [
         "GET" => [],
         "POST" => [],
@@ -43,27 +47,25 @@ class Router {
             $controllerName = "PAW\\controllers\\{$controller}";
             $controllerObject = new $controllerName;
             $controllerObject->direct($route);
+            $this->logger->info("200 (OK).", [
+                "Ruta" => $path,
+                "Método" => $method,
+            ]);
         }
         catch (RouteNotFoundException $e) {
             list($controller, $route) = $this->getControllerAndRoute($this->notFound, "GET");
-            $logger->info("404 (Ruta no encontrada).", ["Ruta" => $path]);
             $controllerName = "PAW\\controllers\\{$controller}";
             $controllerObject = new $controllerName;
             $controllerObject->$route();
+            $this->logger->debug("404 (Ruta no encontrada).", ["Error" => $e]);
         }
         catch (Exception $e) {
             list($controller, $route) = $this->getControllerAndRoute($this->internalError, "GET");
-            $logger->error("500 (Error del servidor).", ["Error" => $e]);
             $controllerName = "PAW\\controllers\\{$controller}";
             $controllerObject = new $controllerName;
             $controllerObject->$route();
+            $this->logger->error("500 (Error del servidor).", ["Error" => $e]);
         }
-    }
-
-    public function call($controller, $route) {
-        $controllerName = "PAW\\controllers\\{$controller}";
-        $controllerObject = new $controllerName;
-        $controllerObject->$route();
     }
 
 
