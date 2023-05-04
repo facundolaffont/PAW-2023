@@ -1,13 +1,6 @@
-<?php
-namespace PAW\core;
+<?php namespace PAW\core;
 
 // Uses.
-$appDir = __DIR__ . '/../';
-require $appDir . 'controllers/PageController.php';
-require $appDir . 'controllers/ErrorController.php';
-require $appDir . 'controllers/FormController.php';
-require $appDir . 'core/traits/Loggable.php';
-require $appDir . 'core/exceptions/RouteNotFoundException.php';
 use \Exception;
 use PAW\core\exceptions\RouteNotFoundException;
 use PAW\core\Request;

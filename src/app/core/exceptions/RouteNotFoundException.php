@@ -1,5 +1,4 @@
-<?php
-namespace PAW\core\exceptions;
+<?php namespace PAW\core\exceptions;
 
 use \Exception;
 

@@ -23,7 +23,7 @@
     },
     "autoload": {
         "psr-4": {
-            "PAW\\": "src/"
+            "PAW\\": "src/app/"
         }
     }
 }

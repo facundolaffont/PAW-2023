@@ -1,5 +1,4 @@
-<?php
-namespace PAW\core;
+<?php namespace PAW\core;
 
 class Config {
 

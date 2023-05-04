@@ -1,5 +1,4 @@
-<?php
-namespace PAW\controllers;
+<?php namespace PAW\controllers;
 
 class FormController {
     public function __construct() {

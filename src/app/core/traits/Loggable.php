@@ -1,5 +1,4 @@
-<?php
-namespace PAW\core\traits;
+<?php namespace PAW\core\traits;
 
 use Monolog\Logger;
 
