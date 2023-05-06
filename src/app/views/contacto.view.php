@@ -15,6 +15,18 @@
         }
     }
 
+    .mensaje-form-enviado {
+        position: relative;
+        border: solid 1px;
+        border-radius: 8px;
+        padding: 0.5rem;
+        left: -13rem;
+        top: -2.5rem;
+        background-color: var(--ulh-yellow);
+        box-shadow: var(--sombra);
+        cursor: default;
+    }
+
     main {
         text-align: center;
         width: 22rem;
@@ -82,6 +94,9 @@
 <body>
     <?php require 'parts/header.view.php'; ?>
     <main>
+        <div>
+            <div class="mensaje-form-enviado">Enviado ✓</div>
+        </div>
         <h1>Contacto</h1>
         <section>
             <p>Las consultas telefónicas se realizan a los siguientes números:</p>
