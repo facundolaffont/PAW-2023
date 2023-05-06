@@ -14,6 +14,24 @@
             }
         }
 
+        .mensaje-form-enviado {
+            position: relative;
+            width: 0;
+        }
+
+        .mensaje-form-enviado div {
+            position: absolute;
+            width: 5.5rem;
+            border: solid 1px;
+            border-radius: 8px;
+            padding: 0.5rem;
+            left: -13rem;
+            top: -2rem;
+            background-color: var(--ulh-yellow);
+            box-shadow: var(--sombra);
+            cursor: default;
+        }
+
         main {
             text-align: center;
             width: 22rem;
@@ -61,6 +79,11 @@
 <body>
     <?php require 'parts/header.view.php'; ?>
     <main>
+        <?php if ($processed) : ?>
+            <div class="mensaje-form-enviado">
+                <div>Enviado ✓</div>
+            </div>
+        <?php endif; ?>
         <h2>Solicitar un turno</h2>
         <form accept-charset=utf-8 name=form-pedir-turno action=pedir-turno method=post target=_self autocomplete=on>
             <fieldset name=fs-profesional-servicio>

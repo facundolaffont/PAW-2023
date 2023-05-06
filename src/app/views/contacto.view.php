@@ -17,11 +17,17 @@
 
     .mensaje-form-enviado {
         position: relative;
+        width: 0;
+    }
+
+    .mensaje-form-enviado div {
+        position: absolute;
+        width: 5.5rem;
         border: solid 1px;
         border-radius: 8px;
         padding: 0.5rem;
-        left: -13rem;
-        top: -2.5rem;
+        left: -5.5rem;
+        top: -4.5rem;
         background-color: var(--ulh-yellow);
         box-shadow: var(--sombra);
         cursor: default;
@@ -94,9 +100,11 @@
 <body>
     <?php require 'parts/header.view.php'; ?>
     <main>
-        <div>
-            <div class="mensaje-form-enviado">Enviado ✓</div>
-        </div>
+        <?php if ($processed) : ?>
+            <div class="mensaje-form-enviado">
+                <div>Enviado ✓</div>
+            </div>
+        <?php endif; ?>
         <h1>Contacto</h1>
         <section>
             <p>Las consultas telefónicas se realizan a los siguientes números:</p>

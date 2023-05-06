@@ -5,9 +5,19 @@ class FormController {
         $this->coreDir = __DIR__ . "/../core/";
     }
 
-    public function direct($route) {
-        require $this->coreDir . $route . '.php';
-        http_response_code(200);
+    public function direct($route, $processed = 0) {
+
+        // TODO: procesamiento del formulario.
+
+        // Se procesó correctamente el formulario.
+        $pageController = new PageController;
+        $pageController->direct(
+            substr(
+                $route,
+                strpos($route, "-") + 1
+            ),
+            1
+        );
     }
 
 
