@@ -7,7 +7,7 @@
     ?>
     <style>
         .formulario{
-            width: 25vw;                       
+            width: 50vw;                       
             margin: 3rem auto;                  
             padding: 2rem 2rem;                 
             border: var(--form-border);
@@ -32,18 +32,11 @@
             border: solid 1px;
             border-radius: 8px;
             padding: 0.5rem;
-            left: -4rem;
-            top: -2.5rem;
+            left: -3rem;
+            top: -30rem;
             background-color: var(--ulh-yellow);
             box-shadow: var(--sombra);
             cursor: default;
-        }
-
-        main {
-            text-align: center;
-            width: 25vw;
-            justify-self: center;
-            margin: 3rem auto 1rem auto;
         }
 
         form label select,
@@ -71,21 +64,18 @@
         input[type="reset"]{
             background-color: var(--form-button-reset-background-color);
             color: var(--form-button-reset-color);
-
             width: 100%;
         }
 
         input[type="submit"]{
             background-color: var(--form-button-submit-background-color);
             color: var(--form-button-submit-color);
-            
         }
 
         .buttons{
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1rem;
-
             font-size: var(--p-font-size);
             color: var(--p-color-hover-2);
         }
