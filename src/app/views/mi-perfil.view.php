@@ -2,7 +2,7 @@
 <html lang=es>
 <head>
     <?php
-        $titulo = "PAW Medical - Mi perfil";
+        $titulo = "Mi perfil | UNLu PAW";
         require __DIR__ . '/parts/head.view.php';
     ?>
 </head>

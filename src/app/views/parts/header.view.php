@@ -1,52 +1,40 @@
 <header>
-    <nav>
-        <div class="navbar-flex navbar">
-            <div class="container nav-container">
-                <div class="logo">
-                    <p>
-                        <a href="/">
-                            <img src="images/Imagotipo_PAW_Hospitals.svg" alt="Logo del PAW Medical" class="logo-header">
-                        </a>
-                    </p>
-                </div>
-                <div class="menu-hamburguesa">
-                    <input class="checkbox" type="checkbox" />
-                    <div class="lineas-hamburguesa">
-                        <span class="linea linea-arriba"></span>
-                        <span class="linea linea-media"></span>
-                        <span class="linea linea-abajo"></span>
-                    </div>
-                    <ul class="menu-items">
-                        <li><p><a href="pedir-turno">Solicitar Turno</a></p></li>
-                        <li><p><a href="servicios">Servicios</a></p></li>
-                        <li><p><a href="obras-sociales">Obras Sociales</a></p></li>
-                        <li><p><a href="institucional">Institucional</a></p></li>
-                        <li><p><a href="contacto">Contacto</a></p></li>
-                        <li><p><a href="noticias">Noticias</a></p></li>
-                    </ul>
-                </div>
-            </div>
-            <section class="menu-navbar">
-                <ul class="inline-block main-items">
-                    <li><p><a href="institucional">Institucional</a></p></li>
-                    <li><p><a href="contacto">Contacto</a></p></li>
-                    <li><p><a href="obras-sociales">Obras Sociales</a></p></li>
-                    <li><p><a href="servicios">Servicios</a></p></li>
-                    <li><p><a href="pedir-turno">Solicitar Turno</a></p></li>
-                </ul>
-                <ul class="block logged">
-                    <li><p><a href="mi-perfil">Perfil</a></p></li>
-                    <li><p><a href="logout">Cerrar Sesión</a></p></li>
-                </ul>
-                <ul class="block not-logged">
-                    <li><p><a href="ingresar">Ingresar</a></p></li>
-                    <li><p><a href="crear-cuenta">Crear Cuenta</a></p></li>
-                </ul>                    
-            </section>
-        </div>
+    <nav >
+        <a href="index">
+            <img src="images/Imagotipo_PAW_Hospitals.svg" alt="Imagotipo PAW Hospitals" class="nav-logo logo-lightmode">
+            <img src="images/Imagotipo_PAW_Hospitals-blanco.png" alt="Imagotipo_PAW_Hospitals-blanco" class="nav-logo logo-darkmode">
+        </a>
+        <section class="header-burger">
+            <label for="menu" class="nav_label">
+                <img src="images/menu.svg" alt="menu_hamburguesa" class="nav_img">
+            </label>
+            <input type="checkbox" id="menu" class="nav_input">
+            <ul class="nav_menu">
+                <li class="button nav_item"><a href="pedir-turno">Solicitar Turno</a></li>
+                <li class="button nav_item"><a href="servicios">Servicios</a></li>
+                <li class="button nav_item"><a href="obras-sociales">Obras Sociales</a></li>
+                <li class="button nav_item"><a href="institucional">Institucional</a></li>
+                <li class="button nav_item"><a href="contacto">Contacto</a></li>
+                <li class="button nav_item"><a href="noticias">Noticias</a></li>
+            </ul>
+        </section>
+        <section class="header-navbar">
+            <ul>
+                <li class="button"><a href="institucional">Institucional</a></li>
+                <li class="button"><a href="contacto">Contacto</a></li>
+                <li class="button"><a href="obras-sociales">Obras Sociales</a></li>
+                <li class="button"><a href="servicios">Servicios</a></li>
+                <li class="button" id="solicitar-turno"><a href="pedir-turno">Solicitar Turno</a></li>
+
+                <li class="button logged"><a href="mi-perfil">Perfil</a></li>
+                <li class="button logged"><a href="logout">Cerrar Sesión</a></li>
+                
+                <li class="button not-logged"><a href="ingresar">Ingresar</a></li>
+                <li class="button not-logged"><a href="crear-cuenta">Crear Cuenta</a></li>
+        </section>
         <section class="header-info">
-            <address class="nav_directions">Ruta 5 y Avenida Constitución - (6700) Luján, Buenos Aires, Argentina.</address>
-            <p class="nav_directions">Teléfonos: <a href="tel:0800-233-5869" class="tel">0800-233-5869 (Administración).</a></p>
+            <address class="header-directions">Ruta 5 y Avenida Constitución - (6700) Luján, Buenos Aires, Argentina.</address>
+            <p class="header-directions">Teléfonos: <a href="tel:0800-233-5869" class="tel">0800-233-5869 (Administración).</a></p>
         </section>
     </nav>
 </header>

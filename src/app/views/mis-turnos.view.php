@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <?php
-        $titulo = "PAW Medical - Mis turnos";
+        $titulo = "Mis turnos | UNLu PAW";
         require __DIR__ . '/parts/head.view.php';
     ?>
 </head>

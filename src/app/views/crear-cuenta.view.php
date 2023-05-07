@@ -2,7 +2,7 @@
 <html lang=es>
 <head>
     <?php
-        $titulo = "PAW Medical - Crear cuenta";
+        $titulo = "Crear cuenta | UNLu PAW";
         require __DIR__ . '/parts/head.view.php';
     ?>
     <style>
@@ -16,7 +16,7 @@
 
         main {
             text-align: center;
-            width: 27rem;
+            width: 22rem;
             justify-self: center;
             margin: 3rem auto 2rem auto;
         }
@@ -24,6 +24,10 @@
         main > h1, main > form {
             display: inline-block;
             margin: 0 0 1.5rem 0;
+        }
+
+        h2 {
+            text-align: center;
         }
         
         .telefonos {
@@ -78,7 +82,7 @@
             width: 47%;
         }
 
-        input[type="checkbox"] {
+        input[type="checkbox"]:not(.nav_input) {
             width: auto;
             height: auto;
             display: inline;
@@ -102,7 +106,7 @@
 <body>
     <?php require 'parts/header.view.php'; ?>
     <main>
-        <h1>Crear cuenta</h1>
+        <h2>Crear cuenta</h2>
         <form accept-charset=utf-8 name=form-crear-cuenta action=crear-cuenta method=post target=_self autocomplete=on>
             <fieldset name=nombre-apellido>
                 <p><label>Nombre <input class="campo-form-animado" name=nombre id=nombre type=text autocomplete=name maxlength=30 tabindex=1 placeholder=Nombre autofocus required></label></p>

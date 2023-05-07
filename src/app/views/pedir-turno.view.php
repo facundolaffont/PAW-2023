@@ -2,16 +2,23 @@
 <html lang=es>
 <head>
     <?php
-        $titulo = "PAW Medical - Solicitar turno";
+        $titulo = "Solicitar turno | UNLu PAW";
         require __DIR__ . '/parts/head.view.php';
     ?>
     <style>
-        @media screen and (min-width: 450px) {
-            main {
-                padding: 1rem 1rem 0 1rem;
-                border: 1px solid;
-                border-radius: 1rem;
-            }
+        .formulario{
+            width: 25vw;                       
+            margin: 3rem auto;                  
+            padding: 2rem 2rem;                 
+            border: var(--form-border);
+            background-color: var(--form-background-color);
+            border-radius: 10px;
+            display: grid;
+            grid-template-areas:    "title  title"
+                                    "form   form"
+                                    "reset  submit";
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
         }
 
         .mensaje-form-enviado {
@@ -34,62 +41,71 @@
 
         main {
             text-align: center;
-            width: 22rem;
+            width: 25vw;
             justify-self: center;
             margin: 3rem auto 1rem auto;
         }
 
-        main > * {
-            display: inline-block;
-            margin: 0 0 1.5rem 0;
-        }
-
-        form label {
-            font-size: 1rem;
-        }
-
-        form label > * {
-            display: block;
-            width: 20rem;
+        form label select,
+        form label input{
+            width: 100%;
             margin: 0 0 1rem 0;
             box-sizing: border-box;
+        }  
+
+        form{
+            grid-area: form;
         }
 
-        form > p {
+        h2{
+            grid-area: title;
             text-align: center;
         }
 
-        input[type="submit"], input[type="reset"]
-        {
-            width: 47%;
-            margin-top: 1.2rem;
+        .service{
+            grid-area: service;
+            grid-column: span 2;
+            width: 100%;
         }
 
-        input[type="submit"] {
-            background-color: var(--ulh-green);
-            color: white;
+        input[type="reset"]{
+            background-color: var(--form-button-reset-background-color);
+            color: var(--form-button-reset-color);
+
+            width: 100%;
         }
 
-        input[type="reset"] {
-            background-color: var(--ulh-yellow);
+        input[type="submit"]{
+            background-color: var(--form-button-submit-background-color);
+            color: var(--form-button-submit-color);
+            
         }
 
+        .buttons{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+
+            font-size: var(--p-font-size);
+            color: var(--p-color-hover-2);
+        }
     </style>
 </head>
 <body>
     <?php require 'parts/header.view.php'; ?>
     <main>
-        <?php if ($processed) : ?>
-            <div class="mensaje-form-enviado">
-                <div>Enviado ✓</div>
-            </div>
-        <?php endif; ?>
-        <h2>Solicitar un turno</h2>
-        <form accept-charset=utf-8 name=form-pedir-turno action=pedir-turno method=post target=_self autocomplete=on>
-            <fieldset name=fs-profesional-servicio>
-                <p>
+        <section class="formulario">
+            <?php if ($processed) : ?>
+                <div class="mensaje-form-enviado">
+                    <div>Enviado ✓</div>
+                </div>
+            <?php endif; ?>
+            <h2>Solicitar un turno</h2>
+            <form accept-charset=utf-8 name=form-pedir-turno action=pedir-turno method=post target=_self autocomplete=on>
+                <fieldset name=fs-profesional-servicio>
+                <p class="service">
                     <label>Servicio
-                        <select class="campo-form-animado" size=1 name=servicio id=servicio autofocus required>
+                        <select class="campo-form-animado " size=1 name=servicio id=servicio autofocus required>
                             <option value=0>---</option>
                             <option value=1>Alergología e inmunología</option>
                             <option value=2>Anestesiología</option>
@@ -220,11 +236,12 @@
                     </fieldset>
                 </fieldset>
             </fieldset>
-            <p>
+            <section class="buttons">
                 <input class="campo-form-animado" type=reset value=Limpiar>
                 <input class="boton-destacado campo-form-animado" type=submit value=Solicitar>
-            </p>
-        </form>
+            </section>
+            </form>
+        </section>
     </main>
     <?php require 'parts/footer.view.php'; ?>
 </body>

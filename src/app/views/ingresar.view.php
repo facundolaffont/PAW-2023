@@ -2,7 +2,7 @@
 <html lang=es>
 <head>
     <?php
-        $titulo = "PAW Medical - Ingresar";
+        $titulo = "Ingresar | UNLu PAW";
         require __DIR__ . '/parts/head.view.php';
     ?>
     <style>
@@ -79,7 +79,7 @@
             <p><input class="campo-form-animado boton" type=submit name=boton-ingresar value="Ingresar" tabindex=3></p>
             <p><input class="campo-form-animado boton" type=button name=boton-ingresar-google value="Ingresar con Google" tabindex=4></p>
         </form>
-        <p><a href="/crear-cuenta">Crear cuenta</a></p>
+        <p><a href="crear-cuenta">Crear cuenta</a></p>
     </main>
     <?php require 'parts/footer.view.php'; ?>
 </body>

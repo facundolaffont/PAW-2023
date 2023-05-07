@@ -2,36 +2,55 @@
 <html lang="es">
 <head>
     <?php
-        $titulo = "PAW Medical - Servicios";
+        $titulo = "Servicios | UNLu PAW";
         require __DIR__ . '/parts/head.view.php';
     ?>
     <style>
-        main li {
-            display: inline-block;
-            inline-size: fit-content;
-            border:  0.1rem solid /* black */;
-            border-radius: 1rem;
-            padding: 0.5rem 1rem;
-            margin: 0.5rem;
+        h2 {
+            text-align: center;
         }
 
-        main li img, main li a {
-            display: block;
+        .servicios-list {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1rem;
+        }
+
+        .servicios-list li {
+            display: grid;
+            grid-template-areas:    "img"
+                                    "text";
+        }
+
+        .servicios-list li {
+            display: grid;
+            place-content: center;
+            padding: 1rem;
+            border:  0.1rem solid var(--ulh-green);
+            border-radius: 1rem;
         }
 
         main li img {
+            grid-area: img;
+            display: block;
             width: 6rem;
             height: 6rem;
-            border: 0.1rem solid /* black */;
+            border: 0.1rem solid var(--ulh-green);
             border-radius: 10rem;
-            /* background-color: ... */
+        }
+
+        li a {
+            grid-area: text;
+            display: block;
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <?php require 'parts/header.view.php'; ?>
     <main>
-        <ul>
+        <h2>Servicios</h2>
+        <ul class="servicios-list">
             <li>
                 <p><img src="images/placeholder-image.png"><a href="servicio1">Servicio 1</a></p>
             </li>

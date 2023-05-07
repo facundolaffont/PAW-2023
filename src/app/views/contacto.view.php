@@ -2,7 +2,7 @@
 <html lang=es>
 <head>
     <?php
-        $titulo = "PAW Medical - Contacto";
+        $titulo = "Contacto | UNLu PAW";
         require __DIR__ . '/parts/head.view.php';
     ?>
 </head>
@@ -127,7 +127,7 @@
                 <div>Datos incorrectos</div>
             </div>
         <?php break; } ?>
-        <h1>Contacto</h1>
+        <h2>Contacto</h2>
         <section>
             <p>Las consultas telefónicas se realizan a los siguientes números:</p>
             <ul class="telefonos">

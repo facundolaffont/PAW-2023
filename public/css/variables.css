@@ -1,54 +1,60 @@
 :root {
 
-    /* COLOR PALETTE */
+    /* --------------------- */
+    /* --- COLOR PALETTE --- */
+    /* --------------------- */
+
     --ulh-green: rgb(2,82,85);
+    --ulh-blue: rgb(0,157,218);
     --ulh-yellow: rgb(252,196,68);
     --ulh-red: rgb(208,36,74);
-    --ulh-blue: rgb(0,157,218);
-    --ulh-copper: rgb(160,73,40);
-    --ulh-deep-brown: rgb(91,43,25);
-    --ulh-baby-blue: rgb(135,211,226);
-    --ulh-rich-olive: rgb(113,136,57);
-    --ulh-rich-grey: rgb(59,74,90);
+    --ulh-rich-gray: rgb(59,74,90);
     --ulh-pale-gray: rgb(238,241,239);
-    
-    /* H1 */
-    --h1-color: var(--ulh-green);
+
+    --dark-1: #000000;
+    --dark-2: #212121;
+    --dark-3: #303030;
+    --dark-4: #424242;
+
+    /* ------------- */
+    /* --- BASIC --- */
+    /* ------------- */
+
     --h1-font-size: 4rem;
-    --h1-font-weight: bold;
-
-    /* H2 */
-    --h2-color: var(--ulh-green);
     --h2-font-size: clamp(2rem, 3vw, 3rem);
-    --h2-font-weight: 900;
-
-    /* H3 */
-    --h3-color: var(--ulh-blue);
     --h3-font-size: clamp(1rem, 1.5vw, 2rem);
-    --h3-font-weight: 700;
+    --p-font-size: 1rem;
     
-    /* P */
-    --p-color: var(--ulh-rich-grey);
-    --p-font-size: clamp(1rem, 1vw, 1rem);
+    --h1-font-weight: 900;
+    --h2-font-weight: 800;
+    --h3-font-weight: 700;
 
     /* LINKS */
-    --color-link: var(--ulh-green);
-    --color-link-visited: var(--ulh-deep-brown);
+    
+    
 
-    /* BACKGROUND */
-    --background-color-body: var(--ulh-pale-gray);
-    --header-footer-color: white;
+    /* -------------- */
+    /* --- ASSETS --- */
+    /* -------------- */
 
-    /* NavBar */                                                    /* SELECTED OPTION */
-    --nav-hover-background-color: var(--ulh-green);
-    --nav-hover-color: white;
-    --nav-color: white;
-    --nav-color-p: var(--ulh-green);
-    --nav-desktop-p-size: clamp(1rem, 1vw, 2rem);
-    --nav-desktop-info-color: var(--ulh-yellow);
-    --nav-desktop-info-p-size: clamp(0.6rem, 1vw, 0.6rem);
+    /* Button */
+    --button-background-color: transparent;
+    --button-background-color-hover: var(--ulh-green);
+    --button-color: black;
+    --button-color-hover: white;
 
     /* Forms */
+    --form-button-submit-background-color: var(--ulh-green);
+    --form-button-submit-color: var(--ulh-pale-gray);
+
+    --form-button-cancel-background-color: var(--ulh-red);
+    --form-button-cancel-color: var(--ulh-rich-gray);
+
+    --form-button-reset-background-color: var(--ulh-yellow);
+
+    --form-border: 1px solid var(--ulh-green);
+    --form-background-color: transparent;
+
     --sombra: 2px 2px var(--ulh-green);
     --sombra-hover: 3px 3px var(--ulh-green);
     --animacion-campo: box-shadow 0.2s ease-out, transform 0.2s ease-out;
@@ -56,6 +62,18 @@
     /* MENUs */
     --caption-font-size: clamp(1rem, 1vw, 1rem);
     --caption-color: var(--ulh-rich-grey);
+
+    /* -------------- */
+    /* --- STATES --- */
+    /* -------------- */
+
+    /* logged */
+    --logged: none;
+    --not-logged: block;    
+
+    /* Logo */
+    --logo-lightmode: block;
+    --logo-darkmode: none;
 
     /* Mobile - Desktop */
     --mobile-display: none;
@@ -65,17 +83,199 @@
     --burger-display: none;
     --navbar-display: flex;
     --linea-hamburguesa-color: var(--ulh-green);
+ 
 
-    /* Dark Mode */
-    --dark-1: #000000;
-    --dark-2: #212121;
-    --dark-3: #303030;
-    --dark-4: #424242;
+}
 
-    /* logged */
-    --logged: none;
-    --not-logged: block;    
+/* Modo oscuro */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --body-background-color: var(--dark-4);
 
-    /* Footer */
-    --footer-content-relation: 0.65;
+        --header-background-color: var(--dark-2);
+        --header-background-color-2: var(--dark-3);
+
+        --footer-background-color: var(--dark-2);
+
+        --p-color: var(--ulh-pale-gray);
+        --p-color-2: var(--ulh-rich-grey);
+        --p-color-hover: var(--ulh-rich-grey);
+        --p-color-hover-2: var(--ulh-pale-gray);
+
+        --directions-background-color: var(--ulh-green);
+
+        --h1-color: var(--ulh-green);
+        --h2-color: var(--ulh-green);
+        --h3-color: var(--ulh-blue);
+        
+        --link-color: var(--ulh-green);
+        --link-color-visited: var(--ulh-deep-brown);
+
+
+        --logo-lightmode: none;
+        --logo-darkmode: block;
+        
+        --form-background-color: var(--ulh-pale-gray);
+        --form-border: 5px solid var(--ulh-green);
+
+
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root{
+        --body-background-color: white;
+
+        --header-background-color: var(--ulh-pale-gray);
+        --header-background-color-2: var(--ulh-green);
+
+        --footer-background-color: var(--ulh-pale-gray);
+
+        --p-color: var(--ulh-rich-grey);
+        --p-color-2: var(--ulh-pale-gray);
+        --p-color-hover: var(--ulh-pale-gray);
+        --p-color-hover-2: var(--ulh-rich-gray);
+
+        --directions-background-color: var(--ulh-green);
+
+        --h1-color: var(--ulh-green);
+        --h2-color: var(--ulh-green);
+        --h3-color: var(--ulh-blue);
+
+        --link-color: var(--ulh-green);
+        --link-color-visited: var(--ulh-deep-brown);
+    }
+}
+
+
+/* Toggle Navbar / Burger */
+@media screen and (orientation: landscape){
+    :root{
+        --burger-display: none;
+        --navbar-display: grid;
+    }
+}
+@media screen and (orientation: portrait){
+    :root{
+        --burger-display: grid;
+        --navbar-display: none;
+    }
+}
+
+/* Toggle Desktop / Mobile fratures */
+@media screen and (pointer: fine){
+    :root{
+        --mobile-display: none;
+        --desktop-display: block;
+    }
+}
+@media screen and (pointer: coarse){
+    :root{
+        --mobile-display: block;
+        --desktop-display: none;
+    }
+}
+
+.logo-lightmode{
+    display: var(--logo-lightmode);
+}
+.logo-darkmode{
+    display: var(--logo-darkmode);
+}
+
+.menu-burger{
+    display: var(--burger-display);
+}
+.menu-navbar{
+    display: var(--navbar-display);
+}
+
+
+
+h1 {
+    font-family: 'Gotham', sans-serif;
+    font-size: var(--h1-font-size);
+    font-weight: var(--h1-font-weight);
+    color: var(--h1-color);
+}
+
+h2 {
+    font-family: 'Gotham', sans-serif;
+    margin: 1vw 0vw;
+    font-size: var(--h2-font-size);
+    font-weight: var(--h2-font-weight);
+    color: var(--h2-color);
+}
+
+h3 {
+    font-family: 'Gotham', sans-serif;
+    margin: 1vw 0vw;
+    font-size: var(--h3-font-size);
+    font-weight: var(--h3-font-weight);
+    color: var(--h3-color);
+}
+
+p, a, address, figcaption {
+    font-family: 'Gotham', sans-serif;
+    font-size: var(--p-font-size);
+    color: var(--p-color);
+    line-height: 1.5em;
+    letter-spacing: 0.1em;
+    text-align: left;
+}
+
+a:link {
+    text-decoration-line: none;
+    color: var(--color-link);
+}
+
+a:visited :not(menu-option){
+    color: var(--color-link);
+}
+
+.logged {
+    display: var(--logged);
+}
+
+.not-logged {
+    display: var(--not-logged);
+}
+
+/* -------------------------------------------------------------------- */
+
+.boton-destacado {
+    --sombra: 2px 2px black;
+    --sombra-hover: 3px 3px black;
+}
+
+.campo-form-animado {
+    box-shadow: var(--sombra);
+    transform: translate(0px, 0px);
+    transition: var(--animacion-campo);
+}
+
+.campo-form-animado:hover {
+    box-shadow: var(--sombra-hover);
+    transform: translate(-1px, -1px);
+    transition: var(--animacion-campo);
+}
+
+input, select {
+    appearance: menulist-button;
+    height: 1.7rem;
+    color: var(--p-color);
+    background-color: var(--body-background-color);
+    font-size: var(--p-font-size);
+    padding-left: 0.5rem;
+    outline-width: 1px;
+    outline-color: var(--ulh-green);
+    outline-style: solid;
+}
+
+input:hover, select:hover {
+    cursor: pointer;
+}
+
+body{
+    background-color: var(--body-background-color);
 }

@@ -2,37 +2,37 @@
 <html lang=es>
 <head>
     <?php
-        $titulo = "PAW Medical - Obras sociales";
+        $titulo = "Obras sociales | UNLu PAW";
         require __DIR__ . '/parts/head.view.php';
     ?>
     <style>
-        main h1 {
+        h2 {
             text-align: center;
         }
 
-        main ul {
+        .ooss-list {
             margin-top: 2rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            row-gap: 1rem;
         }
 
-        main ul p {
-            width: 16rem;
+        .ooss-elem {
+            display: grid;
+            grid-template-areas: "img   link";
+            grid-template-columns: auto 1fr;
         }
-
-        main li {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            margin: 0.5rem;
-        }
-
-        main li img {
+        
+        .ooss-elem img {
+            grid-area: img;  
             width: 6rem;
             height: 6rem;
-            border: 0.1rem solid /* COLOR */;
+            border: 0.1rem solid var(--ulh-green);
             border-radius: 10rem;
-            /* background-color: COLOR */
         }
-
-        main li a {
+        
+        .ooss-elem a {
+            grid-area: link;
             position: relative;
             top: -2.5rem;
             margin-left: 0.8rem;
@@ -42,21 +42,21 @@
 <body>
     <?php require 'parts/header.view.php'; ?>
     <main>
-        <h1>Obras sociales</h1>
-        <ul>
-            <li>
-                <p><img src="images/placeholder-image.png"> <a href="https://www.osde.com.ar/index">OSDE</a></p>
+        <h2>Obras sociales</h2>
+        <ul class="ooss-list">
+            <li class="ooss-elem">
+                <p><img src="images/placeholder-image.png"> <a href="https://www.osde.com.ar/index.html">OSDE</a></p>
             </li>
-            <li>
+            <li class="ooss-elem">
                 <p><img src="images/placeholder-image.png"> <a href="https://www.swissmedical.com.ar/">Swiss Medical</a></p>
             </li>
-            <li>
+            <li class="ooss-elem">
                 <p><img src="images/placeholder-image.png"> <a href="https://www.ioma.gba.gob.ar/">IOMA</a></p>
             </li>
-            <li>
+            <li class="ooss-elem">
                 <p><img src="images/placeholder-image.png"> <a href="https://www.medife.com.ar/">Medifé</a></p>
             </li>
-            <li>
+            <li class="ooss-elem">
                 <p><img src="images/placeholder-image.png"> <a href="https://www.pami.org.ar/">PAMI</a></p>
             </li>
         </ul>

@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <?php
-        $titulo = "PAW Medical - Políticas de privacidad";
+        $titulo = "Políticas | UNLu PAW";
         require __DIR__ . '/parts/head.view.php';
     ?>
 </head>
