@@ -1,50 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>UNLu PAW - Términos y condiciones</title>
+    <title>TOS | UNLu PAW</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/general.css">
 </head>
 <body>
     
     <header>
-        <nav>
+        <nav >
             <a href="index.html">
-                <img src="images/Imagotipo_PAW_Hospitals.svg" alt="Logo del UNLu PAW" class="logo-header">
+                <img src="images/Imagotipo_PAW_Hospitals.svg" alt="Imagotipo PAW Hospitals" class="nav-logo logo-lightmode">
+                <img src="images/Imagotipo_PAW_Hospitals-blanco.png" alt="Imagotipo_PAW_Hospitals-blanco" class="nav-logo logo-darkmode">
             </a>
-            <section class="menu">
-                <section class="menu-burger">
-                    <input class="checkbox" type="checkbox" />
-                    <div class="lineas-hamburguesa">
-                        <span class="linea linea-arriba"></span>
-                        <span class="linea linea-media"></span>
-                        <span class="linea linea-abajo"></span>
-                    </div>  
-                    <ul>
-                        <li><p><a href="pedir-turno.html" class="menu-option">Solicitar Turno</a></p></li>
-                        <li><p><a href="servicios.html" class="menu-option">Servicios</a></p></li>
-                        <li><p><a href="obras-sociales.html" class="menu-option">Obras Sociales</a></p></li>
-                        <li><p><a href="institucional.html" class="menu-option">Institucional</a></p></li>
-                        <li><p><a href="contacto.html" class="menu-option">Contacto</a></p></li>
-                        <li><p><a href="noticias.html" class="menu-option">Noticias</a></p></li>
-                    </ul>
-                </section>
-                <section class="menu-navbar">
-                    <ul>
-                        <li><p><a href="institucional.html" class="menu-option">Institucional</a></p></li>
-                        <li><p><a href="contacto.html" class="menu-option">Contacto</a></p></li>
-                        <li><p><a href="obras-sociales.html" class="menu-option">Obras Sociales</a></p></li>
-                        <li><p><a href="servicios.html" class="menu-option">Servicios</a></p></li>
-                        <li><p><a href="pedir-turno.html" class="menu-option">Solicitar Turno</a></p></li>
-                        
-                        <li><p><a href="mi-perfil.html" class="logged menu-option">Perfil</a></p></li>
-                        <li><p><a href="logout.cgi" class="logged menu-option">Cerrar Sesión</a></p></li>
-                        <li><p><a href="ingresar.html" class="not-logged menu-option">Ingresar</a></p></li>
-                        <li><p><a href="crear-cuenta.html" class="not-logged menu-option">Crear Cuenta</a></p></li>
-                    </ul>
-                        <address class="nav_directions">Ruta 5 y Avenida Constitución - (6700) Luján, Buenos Aires, Argentina.</address>
-                        <p class="nav_directions">Teléfonos: <a href="tel:0800-233-5869" class="tel">0800-233-5869 (Administración).</a></p>
-                </section>
+            <section class="header-burger">
+                <label for="menu" class="nav_label">
+                    <img src="images/menu.svg" alt="menu_hamburguesa" class="nav_img">
+                </label>
+                <input type="checkbox" id="menu" class="nav_input">
+                <ul class="nav_menu">
+                    <li class="button nav_item"><a href="pedir-turno.html">Solicitar Turno</a></li>
+                    <li class="button nav_item"><a href="servicios.html">Servicios</a></li>
+                    <li class="button nav_item"><a href="obras-sociales.html">Obras Sociales</a></li>
+                    <li class="button nav_item"><a href="institucional.html">Institucional</a></li>
+                    <li class="button nav_item"><a href="contacto.html">Contacto</a></li>
+                    <li class="button nav_item"><a href="noticias.html">Noticias</a></li>
+                </ul>
+            </section>
+            <section class="header-navbar">
+                <ul>
+                    <li class="button"><a href="institucional.html">Institucional</a></li>
+                    <li class="button"><a href="contacto.html">Contacto</a></li>
+                    <li class="button"><a href="obras-sociales.html">Obras Sociales</a></li>
+                    <li class="button"><a href="servicios.html">Servicios</a></li>
+                    <li class="button" id="solicitar-turno"><a href="pedir-turno.html">Solicitar Turno</a></li>
+
+                    <li class="button logged"><a href="mi-perfil.html">Perfil</a></li>
+                    <li class="button logged"><a href="logout.cgi">Cerrar Sesión</a></li>
+                    
+                    <li class="button not-logged"><a href="ingresar.html">Ingresar</a></li>
+                    <li class="button not-logged"><a href="crear-cuenta.html">Crear Cuenta</a></li>
+            </section>
+            <section class="header-info">
+                <address class="header-directions">Ruta 5 y Avenida Constitución - (6700) Luján, Buenos Aires, Argentina.</address>
+                <p class="header-directions">Teléfonos: <a href="tel:0800-233-5869" class="tel">0800-233-5869 (Administración).</a></p>
             </section>
         </nav>
     </header>
@@ -133,91 +132,42 @@
         </ul>
     </main>
     <footer>
-        <ul class="footernav">
-            <li class="footernav-institucional">
-                <p><a href="institucional.html">Institucional</a></p>
-            </li>
-            <li class="footernav-pdp">
-                <p><a href="politicas-privacidad.html">Políticas de Privacidad</a></p>
-            </li>
-            <li class="footernav-tyc">
-                <p><a href="tos.html">Términos y Condiciones</a></p>
-            </li>
-            <li class="footernav-turnos">
-                <p><a href="pedir-turno.html">Solicitar Turno</a></p>
-            </li>
-            <li class="footernav-servicios">
-                <p><a href="servicios.html">Servicios</a></p>
-            </li>
-            <li class="footernav-obras-sociales">
-                <p><a href="obras-sociales.html">Obras Sociales</a></p>
-            </li>
-            <li class="footernav-noticias">
-                <p><a href="noticias.html">Noticias</a></p>
-            </li>
-            <li class="footernav-contacto">
-                <p><a href="contacto.html">Contacto</a></p>
-            </li>
-        </ul>
-        <ul class="iconos-redes">
-            <li>
-                <p>
-                <a href="www.facebook.com/PAWMedical">
-                    <picture>
-                        <source srcset="images/facebook-logo-mobile.png">
-                        <img src="images/facebook-logo-desktop.png" alt="Logo de Facebook" class="logo-redes">
-                    </picture>
-                </a>
-                </p>
-            </li>
-            <li>
-                <p>
-                <a href="www.instagram.com/PAWMedical">
-                    <picture>
-                        <source srcset="images/instagram-logo-mobile.png">
-                        <img src="images/instagram-logo-desktop.png" alt="Logo de Instagram" class="logo-redes">
-                    </picture>
-                </a>
-                </p>
-            </li>
-            <li>
-                <p>
-                <a href="www.twitter.com/PAWMedical">
-                    <picture>
-                        <source srcset="images/twitter-logo-mobile.png">
-                        <img src="images/twitter-logo-desktop.png" alt="Logo de Twitter" class="logo-redes">
-                    </picture>
-                </a>
-                </p>
-            </li>
-        </ul>
-        <ul class="footer-telefonos">
-            <li>
-                <p>Urgencias: <a href="tel:0800-235-3856">0800-235-3856</a></p>
-            </li>
-            <li>
-                <p>Turnos <a href="tel:0800-333-2548">0800-333-2548</a></p>
-            </li>
-            <li>
-                <p>Administración <a href="tel:0800-233-5869">0800-233-5869</a></p>
-            </li>
-            <li>
-                <p>Proveedores <a href="tel:0800-223-8468">0800-233-8468</a></p>
-            </li>
-        </ul>
-        <ul class="logo-footer">
-            <li>
-                <a href="index.html">
-                    <picture>
-                        <source srcset="images/isotipoUNLuPAW.svg">
-                        <img src="images/isotipoUNLuPAW.svg" alt="Logo del PAW Hospitals">
-                    </picture>
-                </a>
-            </li>
-            <li>
-                <p><small>&copy; 2023 Universidad Nacional de Luján.</small></p>
-            </li>
-        </ul>
+        <nav>
+            <ul class="footer-nav">
+                <li class="footer-nav-item" id="footer-copy"><p><small>&copy; 2023 Universidad Nacional de Luján.</small></p></li>
+                <li class="footer-nav-item" id="footer-privacidad"><a href="politicas-privacidad.html">Políticas de Privacidad</a></li>
+                <li class="footer-nav-item" id="footer-tos"><a href="tos.html">Términos y Condiciones</a></li>
+                <li class="footer-nav-item" id="footer-contacto"><a href="contacto.html">Contacto</a></li>
+                <li>
+                    <ul class="footer-redes">
+                        <li>
+                            <a href="www.facebook.com/unlupaw">
+                                <picture>
+                                    <source srcset="images/facebook-logo-mobile.png">
+                                    <img src="images/facebook-logo-desktop.png" alt="Logo de Facebook" class="footer-redes-item" id="footer-facebook">
+                                </picture>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="www.instagram.com/unlupaw">
+                                <picture>
+                                    <source srcset="images/instagram-logo-mobile.png">
+                                    <img src="images/instagram-logo-desktop.png" alt="Logo de Instagram" class="footer-redes-item" id="footer-instagram">
+                                </picture>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="www.twitter.com/unlupaw">
+                                <picture>
+                                    <source srcset="images/twitter-logo-mobile.png">
+                                    <img src="images/twitter-logo-mobile.png" alt="Logo de Twitter" class="footer-redes-item" id="footer-twitter">
+                                </picture>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
     </footer>
 </body>
 </html>
