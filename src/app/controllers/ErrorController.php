@@ -7,7 +7,7 @@ class ErrorController {
         $this->viewsDir = __DIR__ . "/../views/";
     }
 
-    public function showNotFoundPage() {
+    public function showPageNotFound() {
         require $this->viewsDir . '404.view.php';
         http_response_code(404);
     }

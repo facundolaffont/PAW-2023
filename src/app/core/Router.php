@@ -13,12 +13,12 @@ class Router {
         "GET" => [],
         "POST" => [],
     ];
-    public string $notFound = 'showNotFoundPage';
+    public string $notFound = 'showPageNotFound';
     public string $internalError = 'showInternalErrorPage';
 
     public function __construct() {
-        $this->loadToGet($this->notFound, 'ErrorController@showNotFoundPage');
-        $this->loadToGet($this->internalError, 'ErrorController@showInternalErrorPage');
+        $this->loadToGet($this->notFound, 'ErrorController@' . $this->notFound);
+        $this->loadToGet($this->internalError, 'ErrorController@' . $this->internalError);
     }
 
     public function loadRoutes($path, $controllerAndRoute, $method = "GET") {
@@ -37,9 +37,7 @@ class Router {
         try {
             list($path, $method) = $request->getRoute();
             list($controller, $route) = $this->getControllerAndRoute($path, $method);
-            $controllerName = "PAW\\controllers\\{$controller}";
-            $controllerObject = new $controllerName;
-            $controllerObject->direct($route);
+            $this->call($controller, $route);
             $this->logger->info("200 (OK).", [
                 "Ruta" => $path,
                 "Método" => $method,
@@ -47,22 +45,24 @@ class Router {
         }
         catch (RouteNotFoundException $e) {
             list($controller, $route) = $this->getControllerAndRoute($this->notFound, "GET");
-            $controllerName = "PAW\\controllers\\{$controller}";
-            $controllerObject = new $controllerName;
-            $controllerObject->$route();
+            $this->call($controller, $route);
             $this->logger->debug("404 (Ruta no encontrada).", ["Error" => $e]);
         }
         catch (Exception $e) {
             list($controller, $route) = $this->getControllerAndRoute($this->internalError, "GET");
-            $controllerName = "PAW\\controllers\\{$controller}";
-            $controllerObject = new $controllerName;
-            $controllerObject->$route();
+            $this->call($controller, $route);
             $this->logger->error("500 (Error del servidor).", ["Error" => $e]);
         }
     }
 
 
     /* Private. */
+
+    private function call($controller, $route) {
+        $controllerName = "PAW\\controllers\\{$controller}";
+        $controllerObject = new $controllerName;
+        $controllerObject->$route();
+    }
 
     private function exists($path, $method) {
         return array_key_exists($path, $this->routes[$method]);

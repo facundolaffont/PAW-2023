@@ -33,6 +33,24 @@
         cursor: default;
     }
 
+    .mensaje-form-invalido {
+        position: relative;
+        width: 0;
+    }
+
+    .mensaje-form-invalido div {
+        position: absolute;
+        width: 9.5rem;
+        border-radius: 8px;
+        padding: 0.5rem;
+        left: -5.5rem;
+        top: -4.5rem;
+        color: white;
+        background-color: var(--ulh-red);
+        box-shadow: 2px 2px black;
+        cursor: default;
+    }
+
     main {
         text-align: center;
         width: 22rem;
@@ -100,11 +118,15 @@
 <body>
     <?php require 'parts/header.view.php'; ?>
     <main>
-        <?php if ($processed) : ?>
+        <?php switch ($processed) { case 1: ?>
             <div class="mensaje-form-enviado">
                 <div>Enviado ✓</div>
             </div>
-        <?php endif; ?>
+        <?php break; case 2: ?>
+            <div class="mensaje-form-invalido">
+                <div>Datos incorrectos</div>
+            </div>
+        <?php break; } ?>
         <h1>Contacto</h1>
         <section>
             <p>Las consultas telefónicas se realizan a los siguientes números:</p>

@@ -25,8 +25,8 @@
             border: solid 1px;
             border-radius: 8px;
             padding: 0.5rem;
-            left: -13rem;
-            top: -2rem;
+            left: -4rem;
+            top: -2.5rem;
             background-color: var(--ulh-yellow);
             box-shadow: var(--sombra);
             cursor: default;
