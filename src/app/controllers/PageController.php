@@ -22,7 +22,8 @@ class PageController {
         require $this->viewsDir . 'contacto.view.php';
     }
 
-    public function crearCuenta($responseCode = 200) {
+    public function crearCuenta($processed = 0, $responseCode = 200) {
+        $this->logger->debug("Valor de \$processed: $processed", [__FUNCTION__]);
         $this->logger->info("Código de respuesta HTTP: $responseCode", [__FUNCTION__]);
         http_response_code($responseCode);
         require $this->viewsDir . 'crear-cuenta.view.php';
@@ -34,7 +35,9 @@ class PageController {
         require $this->viewsDir . 'index.view.php';
     }
 
-    public function ingresar($responseCode = 200) {
+    public function ingresar($processed = 0, $user = "", $responseCode = 200) {
+        $this->logger->debug("Valor de \$user: $user", [__FUNCTION__]);
+        $this->logger->debug("Valor de \$processed: $processed", [__FUNCTION__]);
         $this->logger->info("Código de respuesta HTTP: $responseCode", [__FUNCTION__]);
         http_response_code($responseCode);
         require $this->viewsDir . 'ingresar.view.php';

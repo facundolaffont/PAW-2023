@@ -26,6 +26,18 @@
             margin: 0 0 1.5rem 0;
         }
 
+        .mensaje-form-invalido {
+            display: block;
+            margin: 0 auto 1rem auto;
+            width: 9.5rem;
+            border-radius: 8px;
+            padding: 0.5rem;
+            color: white;
+            background-color: var(--ulh-red);
+            box-shadow: 2px 2px black;
+            cursor: default;
+        }
+
         h2 {
             text-align: center;
         }
@@ -107,6 +119,9 @@
     <?php require 'parts/header.view.php'; ?>
     <main>
         <h2>Crear cuenta</h2>
+        <?php switch ($processed) { case 0: case 1: break; default: ?>
+            <div class="mensaje-form-invalido">Datos incorrectos</div>
+        <?php break; } ?>
         <form accept-charset=utf-8 name=form-crear-cuenta action=crear-cuenta method=post target=_self autocomplete=on>
             <fieldset name=nombre-apellido>
                 <p><label>Nombre <input class="campo-form-animado" name=nombre id=nombre type=text autocomplete=name maxlength=30 tabindex=1 placeholder=Nombre autofocus required></label></p>

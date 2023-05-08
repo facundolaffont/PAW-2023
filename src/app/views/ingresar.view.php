@@ -14,6 +14,18 @@
             }
         }
 
+        .mensaje-form-invalido {
+            display: block;
+            margin: 0 auto 1rem auto;
+            width: 9.5rem;
+            border-radius: 8px;
+            padding: 0.5rem;
+            color: white;
+            background-color: var(--ulh-red);
+            box-shadow: 2px 2px black;
+            cursor: default;
+        }
+
         main {
             text-align: center;
             width: 22rem;
@@ -66,6 +78,9 @@
     <?php require 'parts/header.view.php'; ?>
     <main>
         <h2>Ingresar</h2>
+        <?php switch ($processed) { case 0: case 1: break; default: ?>
+            <div class="mensaje-form-invalido">Datos incorrectos</div>
+        <?php break; } ?>
         <form accept-charset=utf-8 name=form-ingresar action=ingresar method=post target=_self autocomplete=on>
             <fieldset name="credenciales">
                 <p><label>Usuario <input class="campo-form-animado" name=usuario id=usuario type=text autocomplete=username maxlength=30 tabindex=1 placeholder=Usuario autofocus required></label></p>
