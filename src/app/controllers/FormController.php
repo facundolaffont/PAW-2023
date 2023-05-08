@@ -32,7 +32,7 @@ class FormController {
         
         if (
             !preg_match(
-                "/^[a-zA-ZÀ-ÿ\u00f1\u00d1][a-zA-ZÀ-ÿ\u00f1\u00d1 ]*$/",
+                "/^[a-zA-ZÀ-ÿ\x{00f1}\x{00d1}][a-zA-ZÀ-ÿ\x{00f1}\x{00d1} ]*$/",
                 $_POST["nombre"],
             )
             ||
@@ -46,7 +46,7 @@ class FormController {
         
         if ( 
             !preg_match(
-                "/^[a-zA-ZÀ-ÿ\u00f1\u00d1][a-zA-ZÀ-ÿ\u00f1\u00d1 ]*$/",
+                "/^[a-zA-ZÀ-ÿ\x{00f1}\x{00d1}][a-zA-ZÀ-ÿ\x{00f1}\x{00d1} ]*$/",
                 $_POST["apellido"],
             )
             ||
@@ -186,7 +186,7 @@ class FormController {
         if ($_POST["paciente"] == "+") {
             if (
                 !preg_match(
-                    "/^[a-zA-ZÀ-ÿ\u00f1\u00d1][a-zA-ZÀ-ÿ\u00f1\u00d1 ]*$/",
+                    "/^[a-zA-ZÀ-ÿ\x{00f1}\x{00d1}][a-zA-ZÀ-ÿ\x{00f1}\x{00d1} ]*$/",
                     $_POST["nombre"],
                 )
                 ||
@@ -200,7 +200,7 @@ class FormController {
     
             if (
                 !preg_match(
-                    "/^[a-zA-ZÀ-ÿ\u00f1\u00d1][a-zA-ZÀ-ÿ\u00f1\u00d1 ]*$/",
+                    "/^[a-zA-ZÀ-ÿ\x{00f1}\x{00d1}][a-zA-ZÀ-ÿ\x{00f1}\x{00d1} ]*$/",
                     $_POST["apellido"],
                 )
                 ||

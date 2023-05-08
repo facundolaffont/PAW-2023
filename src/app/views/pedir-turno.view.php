@@ -62,7 +62,7 @@
             grid-area: form;
         }
 
-        h2 {
+        .title {
             grid-area: title;
             text-align: center;
         }
@@ -97,12 +97,14 @@
     <?php require 'parts/header.view.php'; ?>
     <main>
         <section class="formulario">
-            <h2>Solicitar un turno</h2>
-            <?php switch ($processed) { case 0: break; case 1: ?>
-                <div class="mensaje-form-enviado">Enviado ✓</div>
-            <?php break; default:?>
-                <div class="mensaje-form-invalido">Datos incorrectos</div>
-            <?php break; } ?>
+            <div class="title">
+                <h2>Solicitar un turno</h2>
+                <?php switch ($processed) { case 0: break; case 1: ?>
+                    <div class="mensaje-form-enviado">Enviado ✓</div>
+                <?php break; default:?>
+                    <div class="mensaje-form-invalido">Datos incorrectos</div>
+                <?php break; } ?>
+            </div>
             <form accept-charset=utf-8 name=form-pedir-turno action=pedir-turno method=post target=_self autocomplete=on>
                 <fieldset name=fs-profesional-servicio>
                 <p class="service">
