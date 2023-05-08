@@ -38,10 +38,6 @@ class Router {
             list($path, $method) = $request->getRoute();
             list($controller, $route) = $this->getControllerAndRoute($path, $method);
             $this->call($controller, $route);
-            $this->logger->info("200 (OK).", [
-                "Ruta" => $path,
-                "Método" => $method,
-            ]);
         }
         catch (RouteNotFoundException $e) {
             list($controller, $route) = $this->getControllerAndRoute($this->notFound, "GET");

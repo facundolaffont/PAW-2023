@@ -6,13 +6,19 @@
         require __DIR__ . '/parts/head.view.php';
     ?>
     <style>
-        .formulario{
+        @media screen and (min-width: 450px) {
+            .formulario {
+                outline: var(--form-border);
+                outline-offset: 1rem;
+                border-radius: 1px;
+            }
+        }
+
+        .formulario {
             width: 50vw;                       
             margin: 3rem auto;                  
             padding: 2rem 2rem;                 
-            border: var(--form-border);
             background-color: var(--form-background-color);
-            border-radius: 10px;
             display: grid;
             grid-template-areas:    "title  title"
                                     "form   form"
@@ -22,57 +28,63 @@
         }
 
         .mensaje-form-enviado {
-            position: relative;
-            width: 0;
-        }
-
-        .mensaje-form-enviado div {
-            position: absolute;
+            display: block;
+            margin: 0 auto 1rem auto;
             width: 5.5rem;
             border: solid 1px;
             border-radius: 8px;
             padding: 0.5rem;
-            left: -3rem;
-            top: -30rem;
             background-color: var(--ulh-yellow);
             box-shadow: var(--sombra);
             cursor: default;
         }
 
+        .mensaje-form-invalido {
+            display: block;
+            margin: 0 auto 1rem auto;
+            width: 9.5rem;
+            border-radius: 8px;
+            padding: 0.5rem;
+            color: white;
+            background-color: var(--ulh-red);
+            box-shadow: 2px 2px black;
+            cursor: default;
+        }
+
         form label select,
-        form label input{
+        form label input {
             width: 100%;
             margin: 0 0 1rem 0;
             box-sizing: border-box;
         }  
 
-        form{
+        form {
             grid-area: form;
         }
 
-        h2{
+        h2 {
             grid-area: title;
             text-align: center;
         }
 
-        .service{
+        .service {
             grid-area: service;
             grid-column: span 2;
             width: 100%;
         }
 
-        input[type="reset"]{
+        input[type="reset"] {
             background-color: var(--form-button-reset-background-color);
             color: var(--form-button-reset-color);
             width: 100%;
         }
 
-        input[type="submit"]{
+        input[type="submit"] {
             background-color: var(--form-button-submit-background-color);
             color: var(--form-button-submit-color);
         }
 
-        .buttons{
+        .buttons {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1rem;
@@ -85,12 +97,12 @@
     <?php require 'parts/header.view.php'; ?>
     <main>
         <section class="formulario">
-            <?php if ($processed) : ?>
-                <div class="mensaje-form-enviado">
-                    <div>Enviado ✓</div>
-                </div>
-            <?php endif; ?>
             <h2>Solicitar un turno</h2>
+            <?php switch ($processed) { case 0: break; case 1: ?>
+                <div class="mensaje-form-enviado">Enviado ✓</div>
+            <?php break; default:?>
+                <div class="mensaje-form-invalido">Datos incorrectos</div>
+            <?php break; } ?>
             <form accept-charset=utf-8 name=form-pedir-turno action=pedir-turno method=post target=_self autocomplete=on>
                 <fieldset name=fs-profesional-servicio>
                 <p class="service">
@@ -209,7 +221,7 @@
                             <option value=2>Juan Pérez</option>
                             <option value=3>Emilia Pérez</option>
                             <option value=4>Estefanía Pérez</option>
-                            <option value=5>NUEVO PACIENTE...</option>
+                            <option value="+">NUEVO PACIENTE...</option>
                         </select>
                     </label>
                 </p>

@@ -7,7 +7,7 @@
     ?>
 </head>
 <style>
-    @media screen and (min-width: 450px) {
+    @media screen and (min-width: 500px) {
         main {
             padding: 1.5rem 3rem 1rem 3rem;
             border: 1px solid;
@@ -16,35 +16,23 @@
     }
 
     .mensaje-form-enviado {
-        position: relative;
-        width: 0;
-    }
-
-    .mensaje-form-enviado div {
-        position: absolute;
+        display: block;
+        margin: 0 auto 1rem auto;
         width: 5.5rem;
         border: solid 1px;
         border-radius: 8px;
         padding: 0.5rem;
-        left: -5.5rem;
-        top: -4.5rem;
         background-color: var(--ulh-yellow);
         box-shadow: var(--sombra);
         cursor: default;
     }
 
     .mensaje-form-invalido {
-        position: relative;
-        width: 0;
-    }
-
-    .mensaje-form-invalido div {
-        position: absolute;
+        display: block;
+        margin: 0 auto 1rem auto;
         width: 9.5rem;
         border-radius: 8px;
         padding: 0.5rem;
-        left: -5.5rem;
-        top: -4.5rem;
         color: white;
         background-color: var(--ulh-red);
         box-shadow: 2px 2px black;
@@ -58,7 +46,7 @@
         margin: 3rem auto 1rem auto;
     }
 
-    main > * {
+    main > *:not(h2) {
         display: inline-block;
         margin: 0 0 1.5rem 0;
     }
@@ -118,16 +106,12 @@
 <body>
     <?php require 'parts/header.view.php'; ?>
     <main>
-        <?php switch ($processed) { case 1: ?>
-            <div class="mensaje-form-enviado">
-                <div>Enviado ✓</div>
-            </div>
-        <?php break; case 2: ?>
-            <div class="mensaje-form-invalido">
-                <div>Datos incorrectos</div>
-            </div>
-        <?php break; } ?>
         <h2>Contacto</h2>
+        <?php switch ($processed) { case 0: break; case 1: ?>
+            <div class="mensaje-form-enviado">Enviado ✓</div>
+        <?php break; default:?>
+            <div class="mensaje-form-invalido">Datos incorrectos</div>
+        <?php break; } ?>
         <section>
             <p>Las consultas telefónicas se realizan a los siguientes números:</p>
             <ul class="telefonos">

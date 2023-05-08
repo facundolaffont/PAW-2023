@@ -1,88 +1,110 @@
 <?php namespace PAW\controllers;
 
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+use PAW\core\Config;
+
 class PageController {
     public function __construct() {
+        $logger = new Logger('PageController-logger');
+        $config = new Config;
+        $handler = new StreamHandler($config->get("LOG_PATH"));
+        $handler->setLevel($config->get("LOG_LEVEL"));
+        $logger->pushHandler($handler);
+        $this->logger = $logger;
         $this->viewsDir = __DIR__ . "/../views/";
     }
 
-    public function contacto($processed = 0) {
+    public function contacto($processed = 0, $responseCode = 200) {
+        $this->logger->debug("Valor de \$processed: $processed", [__FUNCTION__]);
+        $this->logger->info("Código de respuesta HTTP: $responseCode", [__FUNCTION__]);
+        http_response_code($responseCode);
         require $this->viewsDir . 'contacto.view.php';
-        http_response_code(200);
     }
 
-    public function crearCuenta() {
+    public function crearCuenta($responseCode = 200) {
+        $this->logger->info("Código de respuesta HTTP: $responseCode", [__FUNCTION__]);
+        http_response_code($responseCode);
         require $this->viewsDir . 'crear-cuenta.view.php';
-        http_response_code(200);
     }
 
-    public function index() {
+    public function index($responseCode = 200) {
+        $this->logger->info("Código de respuesta HTTP: $responseCode", [__FUNCTION__]);
+        http_response_code($responseCode);
         require $this->viewsDir . 'index.view.php';
-        http_response_code(200);
     }
 
-    public function ingresar() {
+    public function ingresar($responseCode = 200) {
+        $this->logger->info("Código de respuesta HTTP: $responseCode", [__FUNCTION__]);
+        http_response_code($responseCode);
         require $this->viewsDir . 'ingresar.view.php';
-        http_response_code(200);
     }
 
-    public function institucional() {
+    public function institucional($responseCode = 200) {
+        $this->logger->info("Código de respuesta HTTP: $responseCode", [__FUNCTION__]);
+        http_response_code($responseCode);
         require $this->viewsDir . 'institucional.view.php';
-        http_response_code(200);
     }
 
-    public function miPerfil() {
+    public function miPerfil($responseCode = 200) {
+        $this->logger->info("Código de respuesta HTTP: $responseCode", [__FUNCTION__]);
+        http_response_code($responseCode);
         require $this->viewsDir . 'mi-perfil.view.php';
-        http_response_code(200);
     }
 
-    public function misTurnos() {
+    public function misTurnos($responseCode = 200) {
+        $this->logger->info("Código de respuesta HTTP: $responseCode", [__FUNCTION__]);
+        http_response_code($responseCode);
         require $this->viewsDir . 'mis-turnos.view.php';
-        http_response_code(200);
     }
 
-    public function noticias() {
+    public function noticias($responseCode = 200) {
+        $this->logger->info("Código de respuesta HTTP: $responseCode", [__FUNCTION__]);
+        http_response_code($responseCode);
         require $this->viewsDir . 'noticias.view.php';
-        http_response_code(200);
     }
 
-    public function obrasSociales() {
+    public function obrasSociales($responseCode = 200) {
+        $this->logger->info("Código de respuesta HTTP: $responseCode", [__FUNCTION__]);
+        http_response_code($responseCode);
         require $this->viewsDir . 'obras-sociales.view.php';
-        http_response_code(200);
     }
 
-    public function pedirTurno($processed = 0) {
+    public function pedirTurno($processed = 0, $responseCode = 200) {
+        $this->logger->debug("Valor de \$processed: $processed", [__FUNCTION__]);
+        $this->logger->info("Código de respuesta HTTP: $responseCode", [__FUNCTION__]);
+        http_response_code($responseCode);
         require $this->viewsDir . 'pedir-turno.view.php';
-        http_response_code(200);
     }
 
-    public function politicasPrivacidad() {
+    public function politicasPrivacidad($responseCode = 200) {
+        $this->logger->info("Código de respuesta HTTP: $responseCode", [__FUNCTION__]);
+        http_response_code($responseCode);
         require $this->viewsDir . 'politicas-privacidad.view.php';
-        http_response_code(200);
     }
 
-    public function servicio() {
+    public function servicio($responseCode = 200) {
+        $this->logger->info("Código de respuesta HTTP: $responseCode", [__FUNCTION__]);
+        http_response_code($responseCode);
         require $this->viewsDir . 'servicio.view.php';
-        http_response_code(200);
     }
 
-    public function servicios() {
+    public function servicios($responseCode = 200) {
+        $this->logger->info("Código de respuesta HTTP: $responseCode", [__FUNCTION__]);
+        http_response_code($responseCode);
         require $this->viewsDir . 'servicios.view.php';
-        http_response_code(200);
     }
 
-    public function tos() {
+    public function tos($responseCode = 200) {
+        $this->logger->info("Código de respuesta HTTP: $responseCode", [__FUNCTION__]);
+        http_response_code($responseCode);
         require $this->viewsDir . 'tos.view.php';
-        http_response_code(200);
-    }
-
-    public function direct($route, $processed = 0) {
-        require $this->viewsDir . $route . '.view.php';
-        http_response_code(200);
     }
 
 
     /* Private. */
 
     private string $viewsDir;
+    private Logger $logger;
 }
 ?>

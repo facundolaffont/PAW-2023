@@ -22,7 +22,7 @@ use PAW\core\Request;
 $dotenv = Dotenv::createUnsafeImmutable($projectFolder);
 $dotenv->load();
 $config = new Config;
-$logger = new Logger('app-loger');
+$logger = new Logger('Router-logger');
 $handler = new StreamHandler($config->get("LOG_PATH"));
 $handler->setLevel($config->get("LOG_LEVEL"));
 $logger->pushHandler($handler);
