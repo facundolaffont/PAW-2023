@@ -91,6 +91,13 @@
             font-size: var(--p-font-size);
             color: var(--p-color-hover-2);
         }
+
+        .file-input {
+            outline-style: none;
+            padding-left: 0;
+            padding-top: 0.1rem;
+        }
+
     </style>
 </head>
 <body>
@@ -105,7 +112,15 @@
                     <div class="mensaje-form-invalido">Datos incorrectos</div>
                 <?php break; } ?>
             </div>
-            <form accept-charset=utf-8 name=form-pedir-turno action=pedir-turno method=post target=_self autocomplete=on>
+            <form
+                accept-charset=utf-8
+                name=form-pedir-turno
+                action=pedir-turno
+                method=post
+                enctype="multipart/form-data"
+                target=_self
+                autocomplete=on
+            >
                 <fieldset name=fs-profesional-servicio>
                 <p class="service">
                     <label>Servicio
@@ -240,6 +255,11 @@
                     </fieldset>
                 </fieldset>
             </fieldset>
+            <p>
+                <label>Imagen de estudio
+                    <input class="file-input" type="file" name="file" id="file" accept="image/jpeg, images/png" />
+                </label>
+            </p>
             <section class="buttons">
                 <input class="campo-form-animado" type=reset value=Limpiar>
                 <input class="boton-destacado campo-form-animado" type=submit value=Solicitar>

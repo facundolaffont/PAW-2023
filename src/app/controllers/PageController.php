@@ -5,6 +5,7 @@ use Monolog\Handler\StreamHandler;
 use PAW\core\Config;
 
 class PageController {
+    
     public function __construct() {
         $logger = new Logger('PageController-logger');
         $config = new Config;

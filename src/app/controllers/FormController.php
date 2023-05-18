@@ -24,31 +24,31 @@ class FormController {
             || !isset($_POST["mail"])
             || !isset($_POST["consulta"])
         ) {
-            $this->logger->debug('$_POST: ' . $_POST, [__FUNCTION__]);
+            $this->logger->error('$_POST: ' . print_r($_POST, true), ["Función: {__FUNCTION__}"]);
             $this->pageController->contacto(2);
             return;
         }
         
         if (!$this->validProperName($_POST["nombre"])) {
-            $this->logger->debug('$_POST["nombre"]: ' . $_POST["nombre"], [__FUNCTION__]);
+            $this->logger->error('$_POST["nombre"]: ' . $_POST["nombre"], ["Función: {__FUNCTION__}"]);
             $this->pageController->contacto(3);
             return;
         }
         
         if (!$this->validProperName($_POST["apellido"])) {
-            $this->logger->debug('$_POST["apellido"]: ' . $_POST["apellido"], [__FUNCTION__]);
+            $this->logger->error('$_POST["apellido"]: ' . $_POST["apellido"], ["Función: {__FUNCTION__}"]);
             $this->pageController->contacto(4);
             return;
         }
 
         if (!$this->validTelephone($_POST["telefono"])) {
-            $this->logger->debug('$_POST["telefono"]: ' . $_POST["telefono"], [__FUNCTION__]);
+            $this->logger->error('$_POST["telefono"]: ' . $_POST["telefono"], ["Función: {__FUNCTION__}"]);
             $this->pageController->contacto(5);
             return;
         }
         
         if (!$this->validEmail($_POST["mail"])) {
-            $this->logger->debug('$_POST["mail"]: ' . $_POST["mail"], [__FUNCTION__]);
+            $this->logger->error('$_POST["mail"]: ' . $_POST["mail"], ["Función: {__FUNCTION__}"]);
             $this->pageController->contacto(6);
             return;
         }
@@ -57,7 +57,7 @@ class FormController {
             $_POST["consulta"] == ""
             || strlen($_POST["consulta"]) > 250
         ) {
-            $this->logger->debug('$_POST["consulta"]: ' . $_POST["consulta"], [__FUNCTION__]);
+            $this->logger->error('$_POST["consulta"]: ' . $_POST["consulta"], ["Función: {__FUNCTION__}"]);
             $this->pageController->contacto(7);
             return;
         }
@@ -79,62 +79,80 @@ class FormController {
             || !isset($_POST["pass"])
             || !isset($_POST["pass2"])
         ) {
-            $this->logger->debug('$_POST: ' . $_POST, [__FUNCTION__]);
+            $this->logger->error('$_POST: ' . print_r($_POST, true), ["Función: {__FUNCTION__}"]);
             $this->pageController->crearCuenta(2);
             return;
         }
 
         if (!$this->validProperName($_POST["nombre"])) {
-            $this->logger->debug('$_POST["nombre"]: ' . $_POST["nombre"], [__FUNCTION__]);
+            $this->logger->error('$_POST["nombre"]: ' . $_POST["nombre"], ["Función: {__FUNCTION__}"]);
             $this->pageController->crearCuenta(3);
             return;
         }
 
         if (!$this->validProperName($_POST["apellido"])) {
-            $this->logger->debug('$_POST["apellido"]: ' . $_POST["apellido"], [__FUNCTION__]);
+            $this->logger->error('$_POST["apellido"]: ' . $_POST["apellido"], ["Función: {__FUNCTION__}"]);
             $this->pageController->crearCuenta(4);
             return;
         }
 
         if (!$this->validDNI($_POST["dni"])) {
-            $this->logger->debug('$_POST["dni"]: ' . $_POST["dni"], [__FUNCTION__]);
+            $this->logger->error('$_POST["dni"]: ' . $_POST["dni"], ["Función: {__FUNCTION__}"]);
             $this->pageController->crearCuenta(5);
             return;
         }
 
         if (!$this->validDate($_POST["fecha-nac"])) {
-            $this->logger->debug('$_POST["fecha-nac"]: ' . $_POST["fecha-nac"], [__FUNCTION__]);
+            $this->logger->error('$_POST["fecha-nac"]: ' . $_POST["fecha-nac"], ["Función: {__FUNCTION__}"]);
             $this->pageController->crearCuenta(6);
             return;
         }
 
         if (!$this->validTelephone($_POST["telefono"])) {
-            $this->logger->debug('$_POST["telefono"]: ' . $_POST["telefono"], [__FUNCTION__]);
+            $this->logger->error('$_POST["telefono"]: ' . $_POST["telefono"], ["Función: {__FUNCTION__}"]);
             $this->pageController->crearCuenta(7);
             return;
         }
 
         if (!$this->validEmail($_POST["mail"])) {
-            $this->logger->debug('$_POST["mail"]: ' . $_POST["mail"], [__FUNCTION__]);
+            $this->logger->error('$_POST["mail"]: ' . $_POST["mail"], ["Función: {__FUNCTION__}"]);
             $this->pageController->crearCuenta(8);
             return;
         }
 
         if (!$this->validEmail($_POST["mail2"])) {
-            $this->logger->debug('$_POST["mail2"]: ' . $_POST["mail2"], [__FUNCTION__]);
+            $this->logger->error('$_POST["mail2"]: ' . $_POST["mail2"], ["Función: {__FUNCTION__}"]);
             $this->pageController->crearCuenta(9);
             return;
         }
 
+        if (!$this->identicalArguments($_POST["mail"], $_POST["mail2"])) {
+            $this->logger->error("Los mails no son iguales.", [
+                "\$_POST['mail']: {$_POST['mail']}",
+                "\$_POST['mail2']: {$_POST['mail2']}"
+            ]);
+            $this->pageController->crearCuenta(89);
+            return;
+        }
+
         if (!$this->validPass($_POST["pass"])) {
-            $this->logger->debug('$_POST["pass"]: ' . $_POST["pass"], [__FUNCTION__]);
+            $this->logger->error('$_POST["pass"]: ' . $_POST["pass"], ["Función: {__FUNCTION__}"]);
             $this->pageController->crearCuenta(10);
             return;
         }
 
         if (!$this->validPass($_POST["pass2"])) {
-            $this->logger->debug('$_POST["pass2"]: ' . $_POST["pass2"], [__FUNCTION__]);
+            $this->logger->error('$_POST["pass2"]: ' . $_POST["pass2"], ["Función: {__FUNCTION__}"]);
             $this->pageController->crearCuenta(11);
+            return;
+        }
+
+        if (!$this->identicalArguments($_POST["pass"], $_POST["pass2"])) {
+            $this->logger->error("Las contraseñas no son iguales.", [
+                "\$_POST['pass']: {$_POST['pass']}",
+                "\$_POST['pass2']: {$_POST['pass2']}"
+            ]);
+            $this->pageController->crearCuenta(1011);
             return;
         }
 
@@ -147,19 +165,19 @@ class FormController {
                !isset($_POST["usuario"])
             || !isset($_POST["pass"])
         ) {
-            $this->logger->debug('$_POST: ' . $_POST, [__FUNCTION__]);
+            $this->logger->error('$_POST: ' . print_r($_POST, true), ["Función: {__FUNCTION__}"]);
             $this->pageController->ingresar(2);
             return;
         }
         
         if (!$this->validUser($_POST["usuario"])) {
-            $this->logger->debug('$_POST["usuario"]: ' . $_POST["usuario"], [__FUNCTION__]);
+            $this->logger->error('$_POST["usuario"]: ' . $_POST["usuario"], ["Función: {__FUNCTION__}"]);
             $this->pageController->ingresar(3);
             return;
         }
 
         if (!$this->validPass($_POST["pass"])) {
-            $this->logger->debug('$_POST["pass"]: ' . $_POST["pass"], [__FUNCTION__]);
+            $this->logger->error('$_POST["pass"]: ' . $_POST["pass"], ["Función: {__FUNCTION__}"]);
             $this->pageController->ingresar(4);
             return;
         }
@@ -169,6 +187,10 @@ class FormController {
     }
 
     public function procesarPedirTurno() {
+        
+        $this->logger->debug('$_POST: ' . print_r($_POST, true), ["Función: {__FUNCTION__}"]);
+        $this->logger->debug('$_FILES: ' . print_r($_FILES, true), ["Función: {__FUNCTION__}"]);
+
         if (
                !isset($_POST["servicio"])
             || !isset($_POST["profesional"])
@@ -182,75 +204,86 @@ class FormController {
             || !isset($_POST["telefono"])
             || !isset($_POST["mail"])
         ) {
-            $this->logger->debug('$_POST: ' . $_POST, [__FUNCTION__]);
+            $this->logger->error('$_POST: ' . print_r($_POST, true), ["Función: {__FUNCTION__}"]);
             $this->pageController->pedirTurno(2);
             return;
         }
         
         if (!$this->validID($_POST["servicio"])) {
-            $this->logger->debug('$_POST["servicio"]: ' . $_POST["servicio"], [__FUNCTION__]);
+            $this->logger->error('$_POST["servicio"]: ' . $_POST["servicio"], ["Función: {__FUNCTION__}"]);
             $this->pageController->pedirTurno(3);
             return;
         }
         
         if (!$this->validID($_POST["profesional"])) {
-            $this->logger->debug('$_POST["profesional"]: ' . $_POST["profesional"], [__FUNCTION__]);
+            $this->logger->error('$_POST["profesional"]: ' . $_POST["profesional"], ["Función: {__FUNCTION__}"]);
             $this->pageController->pedirTurno(4);
             return;
         }
 
         if (!$this->validDate($_POST["fecha-turno"])) {
-            $this->logger->debug('$_POST["fecha-turno"]: ' . $_POST["fecha-turno"], [__FUNCTION__]);
+            $this->logger->error('$_POST["fecha-turno"]: ' . $_POST["fecha-turno"], ["Función: {__FUNCTION__}"]);
             $this->pageController->pedirTurno(5);
             return;
         }
         
         if (!$this->validHora($_POST["hora-turno"])) {
-            $this->logger->debug('$_POST["hora-turno"]: ' . $_POST["hora-turno"], [__FUNCTION__]);
+            $this->logger->error('$_POST["hora-turno"]: ' . $_POST["hora-turno"], ["Función: {__FUNCTION__}"]);
             $this->pageController->pedirTurno(6);
             return;
         }
 
         if ($_POST["paciente"] == "+") {
             if (!$this->validProperName($_POST["nombre"])) {
-                $this->logger->debug('$_POST["nombre"]: ' . $_POST["nombre"], [__FUNCTION__]);
+                $this->logger->error('$_POST["nombre"]: ' . $_POST["nombre"], ["Función: {__FUNCTION__}"]);
                 $this->pageController->pedirTurno(8);
                 return;
             }
     
             if (!$this->validProperName($_POST["apellido"])) {
-                $this->logger->debug('$_POST["apellido"]: ' . $_POST["apellido"], [__FUNCTION__]);
+                $this->logger->error('$_POST["apellido"]: ' . $_POST["apellido"], ["Función: {__FUNCTION__}"]);
                 $this->pageController->pedirTurno(9);
                 return;
             }
     
             if (!$this->validDate($_POST["fecha-nac"])) {
-                $this->logger->debug('$_POST["fecha-nac"]: ' . $_POST["fecha-nac"], [__FUNCTION__]);
+                $this->logger->error('$_POST["fecha-nac"]: ' . $_POST["fecha-nac"], ["Función: {__FUNCTION__}"]);
                 $this->pageController->pedirTurno(10);
                 return;
             }
 
             if (!$this->validEdad($_POST["edad"])) {
-                $this->logger->debug('$_POST["edad"]: ' . $_POST["edad"], [__FUNCTION__]);
+                $this->logger->error('$_POST["edad"]: ' . $_POST["edad"], ["Función: {__FUNCTION__}"]);
                 $this->pageController->pedirTurno(11);
                 return;
             }
 
             if (!$this->validTelephone($_POST["telefono"])) {
-                $this->logger->debug('$_POST["telefono"]: ' . $_POST["telefono"], [__FUNCTION__]);
+                $this->logger->error('$_POST["telefono"]: ' . $_POST["telefono"], ["Función: {__FUNCTION__}"]);
                 $this->pageController->pedirTurno(12);
                 return;
             }
 
             if (!$this->validEmail($_POST["mail"])) {
-                $this->logger->debug('$_POST["mail"]: ' . $_POST["mail"], [__FUNCTION__]);
+                $this->logger->error('$_POST["mail"]: ' . $_POST["mail"], ["Función: {__FUNCTION__}"]);
                 $this->pageController->pedirTurno(13);
                 return;
             }
         } else if (!$this->validID($_POST["paciente"])) {
-            $this->logger->debug('$_POST["paciente"]: ' . $_POST["paciente"], [__FUNCTION__]);
+            $this->logger->error('$_POST["paciente"]: ' . $_POST["paciente"], ["Función: {__FUNCTION__}"]);
             $this->pageController->pedirTurno(7);
             return;
+        }
+
+        if(isset($_FILES["file"])) {
+            if (!$this->validFileType($_FILES["file"]["type"])) {
+                $this->logger->error("Tipo de archivo no válido.", [
+                    "\$_POST['file']['type']: {$_FILES['file']['type']}",
+                    "Función: {__FUNCTION__}"
+                ]);
+                $this->pageController->pedirTurno(14);
+                return;
+            }
         }
 
         // Se procesa correctamente.
@@ -326,6 +359,12 @@ class FormController {
         return true;
     }
 
+    private function identicalArguments($arg1, $arg2) {
+        if ($arg1 != $arg2) return false;
+
+        return true;
+    }
+
     private function validHora($hora) {
         if (
             !preg_match(
@@ -373,6 +412,13 @@ class FormController {
         ) return false;
 
         return true;
+    }
+
+    private function validFileType($file) {
+        if ($file == "image/jpeg" || $file == "image/png")
+            return true;
+
+        return false;
     }
 }
 ?>

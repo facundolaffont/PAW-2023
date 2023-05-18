@@ -83,10 +83,36 @@
         <?php break; } ?>
         <form accept-charset=utf-8 name=form-ingresar action=ingresar method=post target=_self autocomplete=on>
             <fieldset name="credenciales">
-                <p><label>Usuario <input class="campo-form-animado" name=usuario id=usuario type=text autocomplete=username maxlength=30 tabindex=1 placeholder=Usuario autofocus required></label></p>
                 <p>
-                    <label>Contraseña 
-                        <input class="campo-form-animado" name=pass id=pass type=password minlength=10 tabindex=2 placeholder=Contraseña required>
+                    <label>Usuario
+                        <input
+                            class="campo-form-animado"
+                            name=usuario
+                            id=usuario
+                            type=text
+                            autocomplete=username
+                            maxlength=30
+                            tabindex=1
+                            placeholder=Usuario
+                            value="<?= $user ?>"
+                            <?php if ($processed != 1) echo "autofocus" ?>
+                            required
+                        >
+                    </label>
+                </p>
+                <p>
+                    <label>Contraseña
+                        <input
+                            class="campo-form-animado"
+                            name=pass
+                            id=pass
+                            type=password
+                            minlength=10
+                            tabindex=2
+                            placeholder=Contraseña
+                            <?php if ($processed == 1) echo "autofocus" ?>
+                            required
+                        >
                         <small><a href="renovar-pass">¿Olvidó su contraseña?</a></small>
                     </label>
                 </p>
