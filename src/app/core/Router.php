@@ -36,7 +36,9 @@ class Router {
     public function direct(Request $request) {
         try {
             list($path, $method) = $request->getRoute();
+            $this->logger->debug("\$path: $path, \$method: $method", ["Función: {__FUNCTION__}"]);
             list($controller, $route) = $this->getControllerAndRoute($path, $method);
+            $this->logger->debug("\$controller: $controller, \$route: $route", ["Función: {__FUNCTION__}"]);
             $this->call($controller, $route);
         }
         catch (RouteNotFoundException $e) {

@@ -1,6 +1,6 @@
 <header>
     <nav >
-        <a href="index">
+        <a href="/">
             <img src="images/Imagotipo_PAW_Hospitals.svg" alt="Imagotipo PAW Hospitals" class="nav-logo logo-lightmode">
             <img src="images/Imagotipo_PAW_Hospitals-blanco.png" alt="Imagotipo_PAW_Hospitals-blanco" class="nav-logo logo-darkmode">
         </a>

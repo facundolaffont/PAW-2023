@@ -1,3 +1,5 @@
+.gitignore
 vendor/
 logs/
 .env
+/public/images/*.xcf
