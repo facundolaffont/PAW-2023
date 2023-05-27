@@ -6,5 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
         'https://picsum.photos/1103/300'
     ];
 
-    new Carousel(images);
+    console.debug("Se cargará el carrusel...");
+    debugger
+    new Carousel(document.querySelector(".section-carousel"), images);
+    console.debug("Se cargó el carrusel.");
 });

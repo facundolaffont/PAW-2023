@@ -138,14 +138,7 @@
 <body>
     <?php require 'parts/header.view.php'; ?>
     <main>
-        <section class="section-carrusel">
-            <div id="slider-container" class="carrusel">
-                <div id="slider"></div>
-                <div id="loading-bar"></div>
-                <div id="thumbs"></div>
-                <div id="prev-btn"><img src="images/carrusel-arrow.png" width="40" height="40"/></div>
-                <div id="next-btn"><img src="images/carrusel-arrow.png" width="40" height="40"/></div>
-            </div>
+        <section class="section-carousel">
         </section>
         <section class="buttons">
             <nav>

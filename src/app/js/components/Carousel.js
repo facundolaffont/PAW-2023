@@ -3,25 +3,65 @@ class Carousel {
     /**
      * Constructor de la clase Carousel.
      * 
+     * @param {HTMLElement} container - Contenedor en el cual se agregarán los nuevos elementos que mostrarán el carrusel.
      * @param {Array.<String>} imageSources - Imágenes que serán mostradas en el carrusel.
      */
-    constructor(imageSources) {
+    constructor(container, imageSources) {
         
+        console.debug("Se ejecuta el constructor de Carousel.");
+
         // Inicializaciones.
         this.#imageSources = imageSources;
         this.#currentIndex = 0;
 
-        // Genera la estructura del carrusel.
+        /**
+         * Genera la siguiente estructura para el carrusel:
+         * 
+         *  <div id="slider-container" class="carousel">
+         *      <div id="slider"></div>
+         *      <div id="loading-bar"></div>
+         *      <div id="thumbs"></div>
+         *      <div id="prev-btn"><img src="images/carousel-arrow.png" width="40" height="40"/></div>
+         *      <div id="next-btn"><img src="images/carousel-arrow.png" width="40" height="40"/></div>
+         *  </div>
+         */
         this.#slider = document.createElement("div");
-        this.#slider.classList.add("slider");
+        this.#slider.setAttribute("id","slider");
+
         this.#loadingBar = document.createElement("div");
-        this.#loadingBar.classList.add("loading-bar");
+        this.#loadingBar.setAttribute("id","loading-bar");
+
         this.#thumbs = document.createElement("div");
-        this.#thumbs.classList.add("thumbs");
+        this.#thumbs.setAttribute("id","thumbs");
+
+        let prevBtnImg = document.createElement("img");
+        prevBtnImg.setAttribute("src","images/carousel-arrow.png");
+        prevBtnImg.setAttribute("width","40");
+        prevBtnImg.setAttribute("height","40");
+
         this.#prevBtn = document.createElement("div");
-        this.#prevBtn.classList.add("prev-btn");
+        this.#prevBtn.setAttribute("id","prev-btn");
+        this.#prevBtn.appendChild(prevBtnImg);
+
+        let nextBtnImg = document.createElement("img");
+        nextBtnImg.setAttribute("src","images/carousel-arrow.png");
+        nextBtnImg.setAttribute("width","40");
+        nextBtnImg.setAttribute("height","40");
+
         this.#nextBtn = document.createElement("div");
-        this.#nextBtn.classList.add("next-btn");
+        this.#nextBtn.setAttribute("id","next-btn");
+        this.#nextBtn.appendChild(nextBtnImg);
+
+        this.#carousel = document.createElement("div");
+        this.#carousel.setAttribute("id","slider-container");
+        this.#carousel.setAttribute("class","carousel");
+        this.#carousel.appendChild(this.#slider);
+        this.#carousel.appendChild(this.#loadingBar);
+        this.#carousel.appendChild(this.#thumbs);
+        this.#carousel.appendChild(this.#prevBtn);
+        this.#carousel.appendChild(this.#nextBtn);
+
+        container.appendChild(this.#carousel);
 
         // TODO: cargar el .css para el carrusel.
 
@@ -34,7 +74,7 @@ class Carousel {
 
 
     /* Private */
-
+    #carousel;
     #slider;
     #loadingBar;
     #thumbs;
@@ -47,6 +87,8 @@ class Carousel {
     // cambiar las imáganes del slide con las flechas derecha e
     // izquierda.
     #handleKeyPress(event) {
+
+        console.debug("Se ejecuta el método Carousel.handleKeyPress.");
 
         // Flecha izquierda.
         if (event.keyCode === 37) {
@@ -68,9 +110,12 @@ class Carousel {
     }
 
     #loadImages(images, totalImages) {
+
+        console.debug("Se ejecuta el método Carousel.loadImages.");
+
         let loadedImages = 0; // Almacena la cantidad de imágenes que ya se cargaron.
     
-        images.forEach((image, index) => {
+        images.forEach.call(this, (image, index) => {
             let img = new Image();
     
             // Establece un evento que se ejecutará cuando se cargue la imagen,
@@ -121,7 +166,10 @@ class Carousel {
     }
 
     #startSlider(totalImages) {
-    this.#loadingBar.style.display = 'none';
+    
+        console.debug("Se ejecuta el método Carousel.startSlider.");
+
+        this.#loadingBar.style.display = 'none';
         
         // Cambia la propiedad display de las imágenes del carrusel a block.
         let slides = document.querySelectorAll('.slide');
@@ -179,6 +227,8 @@ class Carousel {
         let swipeStarted = false;
     
         function handleSwipeStart(event) {
+
+            console.debug("Se ejecuta el método Carousel.startSlider.handleSwipeStart.");
             console.debug(`handleSwipeStart(${event})`);
             console.debug(`e.type = ${event.type}`);
     
@@ -200,9 +250,13 @@ class Carousel {
             // slider.style.transform = `translateX(${currentTranslateX}%)`;
     
             console.debug(`startX = ${startX}`);
+
         }
     
         function handleSwipeMove(event) {
+            
+            console.debug("Se ejecuta el método Carousel.startSlider.handleSwipeMove.");
+
             if (swipeStarted) {
                 console.debug(`handleSwipeMove(${event})`);
                 console.debug(`event.type = ${event.type}`);
@@ -240,6 +294,8 @@ class Carousel {
         }
     
         function handleSwipeEnd(event) {
+
+            console.debug("Se ejecuta el método Carousel.startSlider.handleSwipeMove.");
             console.debug(`handleSwipeEnd(${event})`);
             console.debug(`event.type = ${event.type}`);
     
@@ -248,10 +304,13 @@ class Carousel {
             // updateSlider();
     
             swipeStarted = false;
+
         }
     }
 
     #updateSlider() {
+
+        console.debug("Se ejecuta el método Carousel.updateSlider.");
 
         // Deja de mostrar todas las imágenes del carrusel, excepto la
         // que corresponde.
