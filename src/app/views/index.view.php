@@ -6,6 +6,12 @@
         require __DIR__ . '/parts/head.view.php';
     ?>
     <link rel="stylesheet" type="text/css" href="css/carrusel.css">
+    <script>
+        // TODO: cambiar el archivo .js que se agrega, para que sea la app,
+        // y para que se cargue el componente Carousel.
+        <?php require __DIR__ . '/../js/components/Carousel.js' ?>
+        <?php require __DIR__ . '/../js/index.js' ?>
+    </script>
     <style>
 
         main{
@@ -155,8 +161,5 @@
         </section>
     </main>
     <?php require 'parts/footer.view.php'; ?>
-    <script>
-        <?php require __DIR__ . '/../js/carrusel.js' ?>
-    </script>
 </body>
 </html>
