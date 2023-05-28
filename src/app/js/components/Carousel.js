@@ -17,12 +17,12 @@ class Carousel {
         /**
          * Genera la siguiente estructura para el carrusel:
          * 
-         *  <div id="slider-container" class="carousel">
-         *      <div id="slider"></div>
+         *  <div id="slider-container" class="carousel-width">
+         *      <div id="slider" class="carousel-width"></div>
          *      <div id="loading-bar"></div>
          *      <div id="thumbs"></div>
-         *      <div id="prev-btn"><img src="images/carousel-arrow.png" width="40" height="40"/></div>
-         *      <div id="next-btn"><img src="images/carousel-arrow.png" width="40" height="40"/></div>
+         *      <div id="prev-btn" class="carousel-button"><img src="images/carousel-arrow.png" width="40" height="40"/></div>
+         *      <div id="next-btn" class="carousel-button"><img src="images/carousel-arrow.png" width="40" height="40"/></div>
          *  </div>
          */
         this.#slider = document.createElement("div");
@@ -64,6 +64,8 @@ class Carousel {
         this.#carousel.appendChild(this.#prevBtn);
         this.#carousel.appendChild(this.#nextBtn);
 
+        // Agrega la estructura del carrusel dentro del contenedor HTML pasado
+        // como parámetro.
         container.appendChild(this.#carousel);
 
         // Añade el estilo del carrusel en la página.
@@ -72,8 +74,6 @@ class Carousel {
         link.type = "text/css";
         link.href = "css/carousel.css";
         document.head.appendChild(link);
-
-        // TODO: cargar el .css para el carrusel.
 
         // Establece una función callback que se ejecuta cuando se presione una tecla.
         document.addEventListener("keydown", this.#handleKeyPress.bind(this));
@@ -157,7 +157,7 @@ class Carousel {
     
             // Agrega las imágenes al DOM.
             img.src = image;
-            img.classList.add('slide', 'carousel-width');
+            img.classList.add('slide');
             this.#slider.appendChild(img);
     
             // Crea los thumbs, les añade los respectivos callbacks,
@@ -166,18 +166,7 @@ class Carousel {
             thumb.classList.add('thumb');
             thumb.addEventListener('click', (event) => {
                 this.#currentIndex = index;
-                event.target.classList.remove('thumb-mouseover');
-                updateSlider();
-            });
-            thumb.addEventListener('mouseover', (event) => {
-                if (this.#currentIndex != index) {
-                    event.target.classList.add('thumb-mouseover');
-                    updateSlider();
-                }
-            });
-            thumb.addEventListener('mouseout', (event) => {
-                event.target.classList.remove('thumb-mouseover');
-                updateSlider();
+                this.#updateSlider();
             });
             this.#thumbs.appendChild(thumb);
     

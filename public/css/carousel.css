@@ -146,8 +146,12 @@
 }
 
 .slide {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
   display: none;
   height: 400px;
+  width: auto;
 }
 
 #loading-bar {
@@ -182,6 +186,10 @@
 
 .thumb-active {
   background-color: var(--ulh-green);
+}
+
+.thumb:not(.thumb-active):hover {
+  background-color: var(--ulh-yellow);
 }
 
 .thumb-mouseover {
