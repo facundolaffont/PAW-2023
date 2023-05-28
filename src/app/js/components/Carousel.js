@@ -158,7 +158,7 @@ class Carousel {
     
             // Agrega las imágenes al DOM.
             img.src = image;
-            img.classList.add('slide');
+            img.classList.add('slide', 'img-size');
             this.#slider.appendChild(img);
     
             // Crea los thumbs, les añade los respectivos callbacks,

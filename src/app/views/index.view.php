@@ -13,6 +13,38 @@
     </script>
     <style>
 
+        /**
+         * Aplica a:
+         *  + Desktop.
+         *
+         * No aplica a:
+         *  + Desktop en modo Responsive Design (Galaxy S20 Linux): orientación portrait y landscape.
+         *  + Desktop con Mobile Simulator (sólo tiene orientación portrait): Galaxy S21.
+         */
+        @media screen and (width >= 1130px) {
+
+            .carousel-margin {
+                margin: 4rem auto 0 auto;
+            }
+
+        }
+
+        /**
+         * Aplica a:
+         *  + Desktop en modo Responsive Design (Galaxy S20 Linux): orientación portrait y landscape.
+         *  + Desktop con Mobile Simulator (sólo tiene orientación portrait): Galaxy S21.
+         *
+         * No aplica a:
+         *  + Desktop.
+         */
+        @media screen and (width < 1130px) {
+            
+            .carousel-margin {
+                margin: 2rem auto 0 auto;
+            }
+
+        }
+
         main {
             display: grid;
             grid-template-areas:    "carrousel"
@@ -20,6 +52,10 @@
             grid-template-rows: auto 1fr;
         }
         
+        .section-carousel {
+            border: solid 1px black;
+        }
+
         .buttons nav ul {
             grid-area: buttons;
             display: grid;
@@ -44,7 +80,7 @@
 <body>
     <?php require 'parts/header.view.php'; ?>
     <main>
-        <section class="section-carousel">
+        <section class="section-carousel carousel-margin">
         </section>
         <section class="buttons">
             <nav>
