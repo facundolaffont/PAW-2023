@@ -121,7 +121,7 @@
 @media screen and (width >= 1130px) {
   
   .carousel-width {
-    width: 100vw;
+    width: 80vw;
   }
 
 }
@@ -134,7 +134,7 @@
 #slider-container {
   position: relative;
   height: 400px;
-  overflow: hidden;            
+  overflow: hidden;
 }
 
 #slider {
