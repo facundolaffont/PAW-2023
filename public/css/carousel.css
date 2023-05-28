@@ -100,8 +100,15 @@
     margin: 0;
   }
 
-  .carousel-width {
+  .carousel {
     width: 100vw;
+    height: 10rem;
+  }
+
+  .thumb-size {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 0.5rem;
   }
 
   .carousel-button {
@@ -120,8 +127,19 @@
  */
 @media screen and (width >= 1130px) {
   
-  .carousel-width {
+  .carousel {
     width: 80vw;
+    height: 25rem;
+  }
+
+  .thumb-size {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+  }
+
+  .thumb:not(.thumb-active):hover {
+    background-color: var(--ulh-yellow);
   }
 
 }
@@ -133,7 +151,6 @@
 
 #slider-container {
   position: relative;
-  height: 400px;
   overflow: hidden;
 }
 
@@ -179,10 +196,7 @@
 
 .thumb {
   display: inline-block;
-  width: 15px;
-  height: 15px;
   margin: 0 5px;
-  border-radius: 15px;
   border: solid 1px black;
   background-color: #FFF;
   cursor: pointer;
@@ -190,10 +204,6 @@
 
 .thumb-active {
   background-color: var(--ulh-green);
-}
-
-.thumb:not(.thumb-active):hover {
-  background-color: var(--ulh-yellow);
 }
 
 .thumb-mouseover {

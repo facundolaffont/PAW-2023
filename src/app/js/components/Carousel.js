@@ -17,8 +17,8 @@ class Carousel {
         /**
          * Genera la siguiente estructura para el carrusel:
          * 
-         *  <div id="slider-container" class="carousel-width">
-         *      <div id="slider" class="carousel-width"></div>
+         *  <div id="slider-container" class="carousel">
+         *      <div id="slider" class="carousel"></div>
          *      <div id="loading-bar"></div>
          *      <div id="thumbs"></div>
          *      <div id="prev-btn" class="carousel-button"><img src="images/carousel-arrow.png" width="40" height="40"/></div>
@@ -27,7 +27,7 @@ class Carousel {
          */
         this.#slider = document.createElement("div");
         this.#slider.setAttribute("id", "slider");
-        this.#slider.setAttribute("class", "carousel-width");
+        this.#slider.setAttribute("class", "carousel");
 
         this.#loadingBar = document.createElement("div");
         this.#loadingBar.setAttribute("id", "loading-bar");
@@ -57,7 +57,7 @@ class Carousel {
 
         this.#carousel = document.createElement("div");
         this.#carousel.setAttribute("id", "slider-container");
-        this.#carousel.setAttribute("class", "carousel-width");
+        this.#carousel.setAttribute("class", "carousel");
         this.#carousel.appendChild(this.#slider);
         this.#carousel.appendChild(this.#loadingBar);
         this.#carousel.appendChild(this.#thumbs);
@@ -164,7 +164,7 @@ class Carousel {
             // Crea los thumbs, les añade los respectivos callbacks,
             // y los agrega al DOM.
             let thumb = document.createElement('div');
-            thumb.classList.add('thumb');
+            thumb.classList.add('thumb', 'thumb-size');
             thumb.addEventListener('click', (event) => {
                 this.#currentIndex = index;
                 this.#updateSlider();
