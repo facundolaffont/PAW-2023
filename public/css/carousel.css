@@ -1,0 +1,211 @@
+/* #slider-container {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  overflow: hidden;
+} */
+
+/* #slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 600px;
+  height: 400px;
+  transition: transform 0.5s ease-in-out;
+} */
+
+/* .slide {
+  display: none;
+  width: 600px;
+  height: 400px;
+} */
+
+/* #loading-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 5px;
+  background-color: #000;
+  transition: width 0.3s ease-in-out;
+} */
+
+/* #thumbs {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+} */
+
+/* .thumb {
+  display: inline-block;
+  width: 60px;
+  height: 40px;
+  margin: 0 5px;
+  background-color: #ccc;
+  cursor: pointer;
+} */
+
+/* #prev-btn,
+#next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: #ccc;
+  cursor: pointer;
+} */
+
+/* #prev-btn {
+  left: 10px;
+} */
+
+/* #next-btn {
+  right: 10px;
+} */
+
+/* .carousel-item {
+    display: block;
+    width: 100%;
+    animation: animation-carousel 10s linear infinite;
+}
+  
+.carousel-item img {
+    width: 100%;
+    object-fit: cover;
+} */
+
+/* @keyframes animation-carousel {
+
+  0% { transform: translateX(0em); }
+
+  100% { transform: translateX(-200em); }
+
+} */
+
+/**
+ * Aplica a:
+ *  + Desktop en modo Responsive Design (Galaxy S20 Linux): orientación portrait y landscape.
+ *  + Desktop con Mobile Simulator (sólo tiene orientación portrait): Galaxy S21.
+ *
+ * No aplica a:
+ *  + Desktop.
+ */
+@media screen and (width < 1130px) {
+  
+  main {
+    margin: 0;
+  }
+
+  .carousel-width {
+    width: 100vw;
+  }
+
+  .carousel-button {
+    display: none;
+  }
+
+}
+
+/**
+ * Aplica a:
+ *  + Desktop.
+ *
+ * No aplica a:
+ *  + Desktop en modo Responsive Design (Galaxy S20 Linux): orientación portrait y landscape.
+ *  + Desktop con Mobile Simulator (sólo tiene orientación portrait): Galaxy S21.
+ */
+@media screen and (width >= 1130px) {
+  
+  .carousel-width {
+    width: 100vw;
+  }
+
+}
+
+.section-carousel {
+  margin: 4rem auto 0 auto;
+  border: solid 1px black;
+}
+
+#slider-container {
+  position: relative;
+  height: 400px;
+  overflow: hidden;            
+}
+
+#slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 400px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  display: none;
+  height: 400px;
+}
+
+#loading-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 5px;
+  background-color: #000;
+  transition: width 0.3s ease-in-out;
+}
+
+#thumbs {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.thumb {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 0 5px;
+  border-radius: 15px;
+  border: solid 1px black;
+  background-color: #FFF;
+  cursor: pointer;
+}
+
+.thumb-active {
+  background-color: var(--ulh-green);
+}
+
+.thumb-mouseover {
+  background-color: var(--ulh-yellow);
+}
+
+#prev-btn,
+#next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+#prev-btn {
+  left: 10px;
+}
+
+#prev-btn img {
+  transform: scaleX(-1);
+}
+
+#next-btn {
+  right: 10px;
+}

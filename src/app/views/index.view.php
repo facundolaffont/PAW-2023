@@ -5,7 +5,6 @@
         $titulo = "UNLu PAW";
         require __DIR__ . '/parts/head.view.php';
     ?>
-    <link rel="stylesheet" type="text/css" href="css/carrusel.css">
     <script>
         // TODO: cambiar el archivo .js que se agrega, para que sea la app,
         // y para que se cargue el componente Carousel.
@@ -14,18 +13,14 @@
     </script>
     <style>
 
-        main{
+        main {
             display: grid;
             grid-template-areas:    "carrousel"
                                     "buttons";
             grid-template-rows: auto 1fr;
         }
-
-        .carrousel{
-            grid-area: carrousel;
-        }
         
-        .buttons nav ul{
+        .buttons nav ul {
             grid-area: buttons;
             display: grid;
             width: 100%;
@@ -42,95 +37,6 @@
 
             border: 5px solid var(--ulh-green);
             border-radius: 10px;
-        }
-        
-
-        /* Estilos para el carrusel */
-
-        .section-carrusel {
-            margin: 4rem auto 0 auto;
-        }
-
-        #slider-container {
-            position: relative;
-            width: 80vw;
-            height: 400px;
-            overflow: hidden;
-        }
-
-        #slider {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 80vw;
-            height: 400px;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .slide {
-            display: none;
-            width: 80vw;
-            height: 400px;
-        }
-
-        #loading-bar {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 5px;
-            background-color: #000;
-            transition: width 0.3s ease-in-out;
-        }
-
-        #thumbs {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 10px 0;
-            text-align: center;
-        }
-
-        .thumb {
-            display: inline-block;
-            width: 15px;
-            height: 15px;
-            margin: 0 5px;
-            border-radius: 15px;
-            border: solid 1px black;
-            background-color: #FFF;
-            cursor: pointer;
-        }
-
-        .thumb-active {
-            background-color: var(--ulh-green);
-        }
-
-        .thumb-mouseover {
-            background-color: var(--ulh-yellow);
-        }
-
-        #prev-btn,
-        #next-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 40px;
-            height: 40px;
-            cursor: pointer;
-        }
-
-        #prev-btn {
-            left: 10px;
-        }
-
-        #prev-btn img {
-            transform: scaleX(-1);
-        }
-
-        #next-btn {
-            right: 10px;
         }
 
     </style>

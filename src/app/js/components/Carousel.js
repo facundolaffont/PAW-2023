@@ -26,35 +26,38 @@ class Carousel {
          *  </div>
          */
         this.#slider = document.createElement("div");
-        this.#slider.setAttribute("id","slider");
+        this.#slider.setAttribute("id", "slider");
+        this.#slider.setAttribute("class", "carousel-width");
 
         this.#loadingBar = document.createElement("div");
-        this.#loadingBar.setAttribute("id","loading-bar");
+        this.#loadingBar.setAttribute("id", "loading-bar");
 
         this.#thumbs = document.createElement("div");
-        this.#thumbs.setAttribute("id","thumbs");
+        this.#thumbs.setAttribute("id", "thumbs");
 
         let prevBtnImg = document.createElement("img");
-        prevBtnImg.setAttribute("src","images/carousel-arrow.png");
-        prevBtnImg.setAttribute("width","40");
-        prevBtnImg.setAttribute("height","40");
+        prevBtnImg.setAttribute("src", "images/carousel-arrow.png");
+        prevBtnImg.setAttribute("width", "40");
+        prevBtnImg.setAttribute("height", "40");
 
         this.#prevBtn = document.createElement("div");
-        this.#prevBtn.setAttribute("id","prev-btn");
+        this.#prevBtn.setAttribute("id", "prev-btn");
+        this.#prevBtn.setAttribute("class", "carousel-button");
         this.#prevBtn.appendChild(prevBtnImg);
 
         let nextBtnImg = document.createElement("img");
-        nextBtnImg.setAttribute("src","images/carousel-arrow.png");
-        nextBtnImg.setAttribute("width","40");
-        nextBtnImg.setAttribute("height","40");
+        nextBtnImg.setAttribute("src", "images/carousel-arrow.png");
+        nextBtnImg.setAttribute("width", "40");
+        nextBtnImg.setAttribute("height", "40");
 
         this.#nextBtn = document.createElement("div");
-        this.#nextBtn.setAttribute("id","next-btn");
+        this.#nextBtn.setAttribute("id", "next-btn");
+        this.#nextBtn.setAttribute("class", "carousel-button");
         this.#nextBtn.appendChild(nextBtnImg);
 
         this.#carousel = document.createElement("div");
-        this.#carousel.setAttribute("id","slider-container");
-        this.#carousel.setAttribute("class","carousel");
+        this.#carousel.setAttribute("id", "slider-container");
+        this.#carousel.setAttribute("class", "carousel-width");
         this.#carousel.appendChild(this.#slider);
         this.#carousel.appendChild(this.#loadingBar);
         this.#carousel.appendChild(this.#thumbs);
@@ -63,13 +66,21 @@ class Carousel {
 
         container.appendChild(this.#carousel);
 
+        // Añade el estilo del carrusel en la página.
+        let link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.type = "text/css";
+        link.href = "css/carousel.css";
+        document.head.appendChild(link);
+
         // TODO: cargar el .css para el carrusel.
 
         // Establece una función callback que se ejecuta cuando se presione una tecla.
-        this.#handleKeyPress.bind(this);
-        document.addEventListener("keydown", this.#handleKeyPress);
+        document.addEventListener("keydown", this.#handleKeyPress.bind(this));
 
+        // Carga las imágenes, muestra el carrusel y habilita su funcionalidad.
         this.#loadImages(this.#imageSources, this.#imageSources.length);
+        
     }
 
 
@@ -83,9 +94,16 @@ class Carousel {
     #imageSources;
     #currentIndex; // Índice de la imagen mostrada actualmente.
 
-    // Se ejecuta cada vez que se presiona una tecla, y permite
-    // cambiar las imáganes del slide con las flechas derecha e
-    // izquierda.
+    /**
+     * Se ejecuta cada vez que se presiona una tecla, y permite
+     * cambiar las imáganes del slide con las flechas derecha e
+     * izquierda.
+     * 
+     * Se debe llamar como una función enlazada, pasándole como valor
+     * de 'this' el de la instancia actual de la clase Carousel.
+     * 
+     * @param {KeyboardEvent} event
+     */
     #handleKeyPress(event) {
 
         console.debug("Se ejecuta el método Carousel.handleKeyPress.");
@@ -115,13 +133,16 @@ class Carousel {
 
         let loadedImages = 0; // Almacena la cantidad de imágenes que ya se cargaron.
     
-        images.forEach.call(this, (image, index) => {
+        images.forEach((image, index) => {
+
+            console.debug("Se ejecuta Carousel.#loadImages.images.forEach.call.");
+
             let img = new Image();
     
             // Establece un evento que se ejecutará cuando se cargue la imagen,
             // que calcula el progreso de la carga, lo muestra, e inicia el
             // carrusel si se terminaron de cargar todas las imágenes.
-            img.onload = function() {
+            img.onload = () => {
                 loadedImages++;
                 let progress = (loadedImages / totalImages) * 100;
                 this.#loadingBar.style.width = progress + '%';
@@ -136,7 +157,7 @@ class Carousel {
     
             // Agrega las imágenes al DOM.
             img.src = image;
-            img.classList.add('slide');
+            img.classList.add('slide', 'carousel-width');
             this.#slider.appendChild(img);
     
             // Crea los thumbs, les añade los respectivos callbacks,
@@ -212,8 +233,8 @@ class Carousel {
     
         // Establece las funciones callback para cuando se mueva
         // el mouse o se mueva el dedo.
-        this.#slider.addEventListener('mousemove', handleSwipeMove);
-        this.#slider.addEventListener('touchmove', handleSwipeMove);
+        this.#slider.addEventListener('mousemove', handleSwipeMove.bind(this));
+        this.#slider.addEventListener('touchmove', handleSwipeMove.bind(this));
     
         // Establece las funciones callback para cuando se libere
         // el clic o se quite el dedo de la pantalla del smartphone.

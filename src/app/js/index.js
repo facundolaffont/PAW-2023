@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     console.debug("Se cargará el carrusel...");
-    debugger
     new Carousel(document.querySelector(".section-carousel"), images);
-    console.debug("Se cargó el carrusel.");
+    console.debug("Se cargó y habilitó el carrusel.");
 });

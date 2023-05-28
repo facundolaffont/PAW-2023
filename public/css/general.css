@@ -120,7 +120,15 @@ header nav{
     display: var(--burger-display);
 }
 
-@media screen and (width < 1130px){
+/**
+ * Aplica a:
+ *  + Desktop en modo Responsive Design (Galaxy S20 Linux): orientación portrait y landscape.
+ *  + Desktop con Mobile Simulator (sólo tiene orientación portrait): Galaxy S21.
+ *
+ * No aplica a:
+ *  + Desktop.
+ */
+@media screen and (width < 1130px) {
     header nav{
         display: grid;                                              /* Nav grid */
         grid-template-areas:    "header-logo   header-menu";         /* Template row 1 */
@@ -237,7 +245,13 @@ footer nav{
     width: var(--p-font-size);
 }
 
-@media screen and (820px <= width <= 1360px){
+/**
+ * No aplica a:
+ *  + Desktop.
+ *  + Desktop en modo Responsive Design (Galaxy S20 Linux): orientación portrait y landscape.
+ *  + Desktop con Mobile Simulator (sólo tiene orientación portrait): Galaxy S21.
+ */
+@media screen and (820px <= width <= 1360px) {
     .footer-nav{
         display: grid;
         width: 100vw;
@@ -268,7 +282,14 @@ footer nav{
         grid-area: copy;
     }
 }
-@media screen and (width < 820px){
+
+/**
+ * No aplica a:
+ *  + Desktop.
+ *  + Desktop en modo Responsive Design (Galaxy S20 Linux): orientación portrait y landscape.
+ *  + Desktop con Mobile Simulator (sólo tiene orientación portrait): Galaxy S21.
+ */
+@media screen and (width < 820px) {
     .footer-nav{
         display: grid;
         width: 100vw;

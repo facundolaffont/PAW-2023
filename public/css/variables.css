@@ -122,6 +122,7 @@
     }
 }
 
+/* Modo claro. */
 @media (prefers-color-scheme: light) {
     :root{
         --body-background-color: white;
@@ -149,27 +150,63 @@
 
 
 /* Toggle Navbar / Burger */
-@media screen and (orientation: landscape){
+/**
+ * Aplica a:
+ *  + Desktop.
+ *  + Desktop en modo Responsive Design (Galaxy S20): con orientación landscape.
+ *
+ * No aplica a:
+ *  + Desktop en modo Responsive Design (Galaxy S20): con orientación portrait.
+ *  + Desktop con Mobile Simulator (sólo tiene orientación portrait): Galaxy S21.
+ */
+@media screen and (orientation: landscape) {
     :root{
         --burger-display: none;
         --navbar-display: grid;
     }
 }
-@media screen and (orientation: portrait){
+
+/**
+ * Aplica a:
+ *  + Desktop en modo Responsive Design (Galaxy S20): con orientación portrait.
+ *  + Desktop con Mobile Simulator (sólo tiene orientación portrait): Galaxy S21.
+ *
+ * No aplica a:
+ *  + Desktop.
+ *  + Desktop en modo Responsive Design (Galaxy S20): con orientación landscape.
+ */
+@media screen and (orientation: portrait) {
     :root{
         --burger-display: grid;
         --navbar-display: none;
     }
 }
 
-/* Toggle Desktop / Mobile fratures */
-@media screen and (pointer: fine){
+/* Toggle Desktop / Mobile features */
+/**
+ * Aplica a:
+ *  + Desktop.
+ *  + Desktop con Mobile Simulator (sólo tiene orientación portrait): Galaxy S21.
+ *
+ * No aplica a:
+ *  + Desktop en modo Responsive Design (Galaxy S20): con orientación portrait y landscape.
+ */
+@media screen and (pointer: fine) {
     :root{
         --mobile-display: none;
         --desktop-display: block;
     }
 }
-@media screen and (pointer: coarse){
+
+/**
+ * Aplica a:
+ *  + Desktop en modo Responsive Design (Galaxy S20): con orientación portrait y landscape.
+ *
+ * No aplica a:
+ *  + Desktop.
+ *  + Desktop con Mobile Simulator (sólo tiene orientación portrait): Galaxy S21.
+ */
+@media screen and (pointer: coarse) {
     :root{
         --mobile-display: block;
         --desktop-display: none;
