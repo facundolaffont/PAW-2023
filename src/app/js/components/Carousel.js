@@ -85,6 +85,7 @@ class Carousel {
 
 
     /* Private */
+
     #carousel;
     #slider;
     #loadingBar;
@@ -179,7 +180,7 @@ class Carousel {
     
         console.debug("Se ejecuta el método Carousel.startSlider.");
 
-        this.#loadingBar.style.display = 'none';
+        this.#loadingBar.classList.add("not-displayed");
         
         // Cambia la propiedad display de las imágenes del carrusel a block.
         let slides = document.querySelectorAll('.slide');
